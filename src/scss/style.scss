@@ -1,0 +1,69 @@
+
+//@import "mixins/*";
+//
+//@import "variables";
+//@import "bootstrap";
+//
+//@import "components/*";
+
+// https://color.adobe.com/ja/Yellow-Red-Blue-green-brown-color-theme-6608574/?showPublished=true
+
+$brand-yellow: #F4B700;
+$brand-brown : #594324;
+$brand-red   : #E03A01;
+$brand-blue  : #176B86;
+$brand-green : #4D8E26;
+
+.site{
+  background: $brand-yellow;
+
+  &-branding{
+    font-size: 4em;
+  }
+
+  &-title{
+    font-size: inherit;
+    a{
+      &:link, &:visited{
+        color: #000;
+        text-decoration: none;
+      }
+      &:hover, &:active{
+        color: $brand-red;
+        text-decoration: none;
+      }
+    }
+  }
+  &-description{
+    color: $brand-brown;
+  }
+}
+
+body{
+  background: $brand-brown;
+}
+
+a{
+  &:link, &:visited{
+    color: $brand-blue;
+    text-decoration: underline;
+  }
+  &:hover, &:active{
+    color: lighten($brand-blue, 10);
+    text-decoration: none;
+  }
+}
+
+.content-area{
+  a{
+    &:link, &:visited{
+      color: $brand-blue;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      color: $brand-red;
+      text-decoration: none;
+    }
+  }
+}
+
