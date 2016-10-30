@@ -37,6 +37,26 @@ $brand-green : #4D8E26;
   &-description{
     color: $brand-brown;
   }
+  &-header-menu{
+    .menu-item{
+      a{
+          &:link, &:visited{
+            color: $brand-brown;
+            text-decoration: none;
+          }
+          &:hover, &:active{
+            color: $brand-red;
+            text-decoration: none;
+          }
+      }
+    }
+  }
+}
+
+.social-navigation a{
+  text-decoration: none !important;
+  border-color: $brand-brown;
+  color: $brand-brown !important;
 }
 
 body{

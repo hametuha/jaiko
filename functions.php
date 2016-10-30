@@ -37,17 +37,3 @@ add_action( 'wp_head', function () {
 	</script>
 	<?php
 }, 99 );
-
-
-add_action( 'init', function() {
-	register_taxonomy( 'plugin', [ 'post' ], [
-		'label'        => __( 'Plugins', 'jaiko' ),
-		'hierarchical' => true,
-		'public'       => true,
-		'rewrite'      => [
-			'slug'         => 'plugin',
-			'with_front'   => false,
-			'hierarchical' => true,
-		],
-	] );
-} );
