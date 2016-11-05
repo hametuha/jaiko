@@ -1,4 +1,3 @@
-
 //@import "mixins/*";
 //
 //@import "variables";
@@ -9,81 +8,136 @@
 // https://color.adobe.com/ja/Yellow-Red-Blue-green-brown-color-theme-6608574/?showPublished=true
 
 $brand-yellow: #F4B700;
-$brand-brown : #594324;
-$brand-red   : #E03A01;
-$brand-blue  : #176B86;
-$brand-green : #4D8E26;
+$brand-brown: #594324;
+$brand-red: #E03A01;
+$brand-blue: #176B86;
+$brand-green: #4D8E26;
 
-.site{
+.site {
   background: $brand-yellow;
 
-  &-branding{
+  &-branding {
     font-size: 4em;
   }
 
-  &-title{
+  &-title {
     font-size: inherit;
-    a{
-      &:link, &:visited{
+    a {
+      &:link, &:visited {
         color: #000;
         text-decoration: none;
       }
-      &:hover, &:active{
+      &:hover, &:active {
         color: $brand-red;
         text-decoration: none;
       }
     }
   }
-  &-description{
+  &-description {
     color: $brand-brown;
   }
-  &-header-menu{
-    .menu-item{
-      a{
-          &:link, &:visited{
-            color: $brand-brown;
-            text-decoration: none;
-          }
-          &:hover, &:active{
-            color: $brand-red;
-            text-decoration: none;
-          }
+  &-header-menu {
+    .menu-item {
+      a {
+        &:link, &:visited {
+          color: $brand-brown;
+          text-decoration: none;
+        }
+        &:hover, &:active {
+          color: $brand-red;
+          text-decoration: none;
+        }
       }
     }
   }
 }
 
-.social-navigation a{
+.social-navigation a {
   text-decoration: none !important;
   border-color: $brand-brown;
   color: $brand-brown !important;
 }
 
-body{
+body {
   background: $brand-brown;
 }
 
-a{
-  &:link, &:visited{
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+.warifu-license-wrapper{
+  margin: 20px 0;
+}
+
+a {
+  &:link, &:visited {
     color: $brand-blue;
     text-decoration: underline;
   }
-  &:hover, &:active{
+  &:hover, &:active {
     color: lighten($brand-blue, 10);
     text-decoration: none;
   }
 }
 
-.content-area{
-  a{
-    &:link, &:visited{
+.content-area {
+  a {
+    &:link, &:visited {
       color: $brand-blue;
       text-decoration: none;
     }
-    &:hover, &:active{
+    &:hover, &:active {
       color: $brand-red;
       text-decoration: none;
     }
   }
 }
 
+.author-info{
+  margin-top: 20px;
+  border-top-color: $brand-brown;
+}
+
+.author-heading {
+  font-weight: normal;
+  margin-right: 0.5em;
+}
+
+.bogo-language-switcher{
+  text-align: center;
+  li{
+    padding: 10px 10px 10px 30px !important;
+    background-position: 10px center !important;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid $brand-brown;
+    color: darken($brand-yellow, 10);
+    &:hover{
+      background-color: lighten($brand-yellow, 10);
+    }
+    &.no-translation{
+      border-color: darken($brand-yellow, 10);
+    }
+    &.current{
+      background-color: $brand-brown;
+      color: #fff;
+      &:hover{
+        background-color: $brand-brown;
+      }
+    }
+    a{
+      &:link, &:visited{
+        color: $brand-brown;
+        text-decoration: none;
+      }
+      &:hover, &:active{
+        color: $brand-red;
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

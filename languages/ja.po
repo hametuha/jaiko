@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jaiko\n"
+"POT-Creation-Date: 2016-11-06 02:07+0900\n"
+"PO-Revision-Date: 2016-11-06 02:07+0900\n"
+"Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
+"Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
+
+#: functions.php:71
+msgid "Add On"
+msgstr "﻿アドオン"
+
+#: functions.php:93
+#, php-format
+msgid "Hi, %s!"
+msgstr "こんにちは、%sさん"
+
+#: functions.php:96
+msgid "Try It!"
+msgstr "試してみる"
+
+#: functions.php:129
+msgid "Login"
+msgstr "ログイン"
+
+#: header.php:27
+msgid "Skip to content"
+msgstr "コンテンツへ"
+
+#: header.php:47
+msgid "Menu"
+msgstr "メニュー"
+
+#: header.php:51
+#, fuzzy
+msgid "Primary Menu"
+msgstr "メニュー"
+
+#: header.php:62
+#, fuzzy
+msgid "Social Links Menu"
+msgstr "メニュー"
+
+#: template-parts/biography.php:31
+msgid "Who meade this site?"
+msgstr "このサイトの作者は？"
+
+#: template-parts/biography.php:33
+msgid "Author:"
+msgstr "投稿者："
+
+#: template-parts/biography.php:42
+#, fuzzy, php-format
+msgid "View all posts by %s"
+msgstr "%sを見る"
+
+#: template-parts/block-mail.php:7
+msgid "Join our News Letter!"
+msgstr "ニュースレターを購読してください"
+
+#: template-parts/block-mail.php:10
+msgid "Email Address"
+msgstr "メールアドレス"
+
+#: template-parts/block-mail.php:15
+msgid "First Name"
+msgstr "姓"
+
+#: template-parts/block-mail.php:19
+msgid "Last Name"
+msgstr "名"
+
+#: template-parts/block-mail.php:23
+msgid "Available Languages"
+msgstr "利用できる言語"
+
+#: template-parts/block-mail.php:40
+msgid "Subscribe"
+msgstr "購読する"
+
+#: template-parts/content-none.php:13
+#, fuzzy
+msgid "Nothing Found"
+msgstr "申し訳ございません。入力された住所にはなにもみつかりませんでした。"
+
+#: template-parts/content-none.php:18
+msgid ""
+"We can't find any contents. URL is wrong or no translation available. Search "
+"form might help you."
+msgstr ""
+"コンテンツが見つかりませんでした。URLが間違っているか、翻訳が存在しません。検"
+"索するとなにかわかるかもしれません。"
+
+#: template-parts/content-page.php:30 template-parts/content-single.php:15
+#, fuzzy
+msgid "Pages:"
+msgstr ""
+"WordPressのログイン・ユーザー登録・パスワード紛失のページをあなたのテーマに準"
+"じたテーマに。"
+
+#: template-parts/content-page.php:34 template-parts/content-single.php:19
+#, fuzzy
+msgid "Page"
+msgstr "あなたのページ"
+
+#: template-parts/content-page.php:44 template-parts/content-single.php:41
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-single.php:25
+msgid "Product Support"
+msgstr "プロダクト サポート"

@@ -20,6 +20,9 @@
 		the_content();
 
 		if ( is_front_page() ) {
+
+			get_template_part( 'template-parts/block', 'mail' );
+
 			get_template_part( 'template-parts/biography' );
 		}
 
