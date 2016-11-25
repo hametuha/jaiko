@@ -12,10 +12,33 @@
 						<?php if ( is_front_page() ) : ?>
 							<?php _e( 'Who meade this site?', 'jaiko' ); ?>
 						<?php else : ?>
-							<?php _e( 'Author:', 'twentysixteen' ); ?>
+							<?php _e( 'Author:', 'jaiko' ); ?>
 						<?php endif; ?>
 					</span>
 					<?php echo get_the_author(); ?>
+
+					<?php foreach ( [ 'facebook', 'twitter' ] as $sns ) :
+						$url = false;
+						$value = get_user_meta( get_the_author_meta( 'ID' ), $sns, true );
+						switch ( $sns ) {
+							case 'facebook':
+								$url = $value;
+								break;
+							case 'twitter':
+								if ( $screen_name = ltrim( trim( $value ), '@' ) ) {
+									$url = sprintf( 'https://twitter.com/%s', $screen_name );
+								}
+								break;
+						}
+						if ( ! $value || ! $url ) {
+							continue;
+						}
+						?>
+						<a href="<?= esc_url( $url ) ?>" target="_blank">
+							<i class="dashicons dashicons-<?= $sns ?>"></i>
+						</a>
+					<?php endforeach; ?>
+
 				</h2>
 				<p class="author-desc">
 					<?php the_author_meta( 'description' ); ?>

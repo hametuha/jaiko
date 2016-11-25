@@ -20,6 +20,15 @@
     &-label{
       color: $brand-brown;
     }
+    a{
+      margin-left: 10px;
+      .dashicons-twitter{
+        color: #1da1f2;
+      }
+      .dashicons-facebook{
+        color: #3b5998;
+      }
+    }
   }
   &-desc{
     font-size: 20px;

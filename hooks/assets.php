@@ -61,7 +61,11 @@ add_action( 'wp_footer', function () {
 						$(li).addClass('no-translation');
 					} else {
 						var curLang = $link.text();
-						$link.text('Also available in ' + curLang + '.');
+						if ( $(li).hasClass('ja') ) {
+							$link.text( curLang + '版があります' );
+						} else {
+							$link.text('Also available in ' + curLang + '.');
+						}
 					}
 				}
 			});

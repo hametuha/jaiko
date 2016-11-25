@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2016-11-24 21:04+0900\n"
-"PO-Revision-Date: 2016-11-24 21:07+0900\n"
+"POT-Creation-Date: 2016-11-25 23:24+0900\n"
+"PO-Revision-Date: 2016-11-25 23:28+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -34,17 +34,19 @@ msgstr "%sへの一件の返信"
 #, php-format
 msgid "%1$s response to %2$s"
 msgid_plural "%1$s responses to %2$s"
-msgstr[0] ""
+msgstr[0] "%2$sへのコメント%1$s件"
 
 #: comments.php:43
 msgid "Comments are closed."
-msgstr ""
+msgstr "コメントは停止中です。"
 
 #: footer.php:17
 msgid ""
 "We provide you the professional information about WordPress plugins. Join us "
 "and hack WP!"
 msgstr ""
+"WordPressプラグインに関するプロフェッショナルな情報を提供します。登録し、"
+"WordPressをハックしましょう！"
 
 #: footer.php:21
 msgid "Links"
@@ -74,17 +76,37 @@ msgstr "つぶやく"
 msgid "Install Gianism"
 msgstr "Gianismをインストール"
 
+#: front-page.php:30
+msgid "Enhance Your Login"
+msgstr "よりよいログイン"
+
+#: front-page.php:33
+msgid "Missing link between WordPress and Application"
+msgstr "WordPressとアプリケーションのミッシングリンク"
+
 #: front-page.php:40
 msgid ""
 "User can login via facebook, google, twitter and instagram account. Extra "
 "SNS are add-ons."
 msgstr ""
+"ユーザーはfacebookやGoogle、twitter、instagramのアカウントでログインできま"
+"す。その他のSNSもアドオンで。"
 
 #: front-page.php:43
 msgid ""
 "Experienced developers can use additional features. Facebook Graph API, "
 "Twitter API and Google API."
 msgstr ""
+"上級開発者は追加の機能を利用することもできます。Facebook Graph APIやTwitter "
+"API、Google APIなど。"
+
+#: front-page.php:65
+msgid "What We Provide You"
+msgstr "このサイトでお届けするもの"
+
+#: front-page.php:68
+msgid "Gianism.info is the information hub for WordPress Developer!"
+msgstr "Gianism.infoはWordPress開発者のための情報拠点です！"
 
 #: front-page.php:87
 #, php-format
@@ -92,6 +114,9 @@ msgid ""
 "<strong>Tips blog:</strong> You can get latest information and notable tips "
 "from our <a href=\"%1$s\">blog list</a>. The latest is &quot;%2$s&quot;."
 msgstr ""
+"<strong>ティップス記事:</strong> You can get latest information and notable "
+"tips from our <a href=\"%1$s\">ブログ一覧</a>から最新情報や役立つティップスを"
+"探してください。最新の記事は「%2$s」です。"
 
 #: front-page.php:96
 #, php-format
@@ -99,29 +124,96 @@ msgid ""
 "<strong>Add ons:</strong> We provide <a href=\"%s\">add ons and plugins</a>. "
 "Each of them is intended to work with user oriented features."
 msgstr ""
+"<strong>アドオン:</strong> 私たちは<a href=\"%s\">アドオンとプラグイン</a>を"
+"提供しています。どれもユーザー志向のプラグインです。"
 
 #: front-page.php:104
 msgid ""
 "<strong>Support Forum:</strong> In progress. You will be able to ask "
 "anything there!"
 msgstr ""
+"<strong>サポートフォーラム:</strong> 準備中です。なんでも聞くことができます！"
 
 #: front-page.php:111
 msgid ""
 "<strong>Private Chat:</strong> In Progress. You might have some secret "
 "information. So, aks us privately!"
 msgstr ""
+"<strong>プライベートチャット:</strong> 準備中です。公開できない情報もあると思"
+"いますので、こっそり聞いてください。"
+
+#: front-page.php:126
+msgid "Our load maps"
+msgstr "ロードマップ"
+
+#: front-page.php:129
+msgid "We have plans for making our WordPress super social"
+msgstr "WordPressをものすごいソーシャルにするための準備をしています"
+
+#: front-page.php:135
+msgid "Natural UX"
+msgstr "自然なUX"
+
+#: front-page.php:138
+msgid ""
+"WordPress is blog tool. So, authors and users are separated. Admin screen is "
+"complicated for\n"
+"\t\t\t\t\t\t\tordinary user.\n"
+"\t\t\t\t\t\t\tWe are creating plugins which are well integrated with Gianism "
+"and make user experience\n"
+"\t\t\t\t\t\t\tbetter."
+msgstr ""
+"WordPressはブログツールです。そのため、投稿者とユーザーはわけて考えられていま"
+"す。管理画面は普通のユーザーにとっては複雑すぎます。私たちはGianismと連携して"
+"ユーザー体験を向上させるプラグインを開発中です。"
+
+#: front-page.php:147
+msgid "1 to 1"
+msgstr "1対1"
+
+#: front-page.php:150
+msgid ""
+"All interactive actions on WordPress are author-centered like comment.\n"
+"\t\t\t\t\t\t\tSocial web site requires 1 to 1 communication like message, "
+"chat and non-verbal \"like\".\n"
+"\t\t\t\t\t\t\tBesides that, we need notification system. Of course, we are "
+"ahead toward them."
+msgstr ""
+"コメントがそうであるように、WordPressにおけるインタラクティブな動作は投稿者中"
+"心になっています。ソーシャルなWebサイトはメッセージやチャット、言葉を使わない"
+"「いいね」のような1対1のコミュニケーションを必要としています。それに加え、通"
+"知システムも必要ですね。もちろん、その準備もしていますよ。"
+
+#: front-page.php:158
+msgid "Mobile Apps"
+msgstr "モバイルアプリ"
+
+#: front-page.php:161
+msgid ""
+"As long as we know, there are few solution to use WordPress as Mobile App's "
+"backend.\n"
+"\t\t\t\t\t\t\tWP REST API is the one, but there are many things to integrate "
+"a bunch of plugins to it.\n"
+"\t\t\t\t\t\t\tWe think all our plugins should be REST API ready."
+msgstr ""
+"私たちの知る限り、WordPressをモバイルアプリのバックエンドとして利用するソ"
+"リューションは多くありません。WP REST APIがその一つですが、たくさんのプラグイ"
+"ンを連携させるためにはやるべきことがやまほどあります。私たちは私たちのプラグ"
+"インすべてがREST APIに対応するべきと考えています。"
 
 #: front-page.php:173
 #, php-format
 msgid "Howday, %s! Please let me know <a href=\"%s\">about you</a>!"
 msgstr ""
+"こんにちは、%sさん！　<a href=\"%s\">あなたについて</a>もっと教えてください！"
 
 #: front-page.php:181
 msgid ""
 "Are you interested with them? Gianism.info is the living example. Log in and "
 "get in touch with us!"
 msgstr ""
+"興味を持っていただけましたか？　Gianism.infoは実例です。ログインして、もっと"
+"詳しく見てみましょう！"
 
 #: front-page.php:185
 msgid "Login"
@@ -135,6 +227,18 @@ msgid ""
 msgstr ""
 "この記事は登録済みユーザー専用です。残り%1$d%%のコンテンツを読むためには、<a "
 "href=\"%2$s\" rel=\"nofollow\">ログイン</a>してください。"
+
+#: hooks/admin.php:12
+msgid "aside"
+msgstr "余談"
+
+#: hooks/admin.php:24
+msgid "Twitter Account"
+msgstr "twitterアカウント"
+
+#: hooks/admin.php:25
+msgid "Facebook Page URL"
+msgstr "FacebookページのURL"
 
 #: hooks/comments.php:6
 msgctxt "noun"
@@ -163,11 +267,11 @@ msgstr "サイドバー"
 
 #: hooks/widgets.php:16
 msgid "Add widgets here to appear in your sidebar."
-msgstr ""
+msgstr "サイドバーに表示されるウィジェットをここに追加してください。"
 
 #: hooks/widgets.php:24
 msgid "Banners"
-msgstr ""
+msgstr "バナー"
 
 #: hooks/widgets.php:26
 msgid "Display banners"
@@ -209,7 +313,7 @@ msgstr "このサイトの作者は？"
 msgid "Author:"
 msgstr "投稿者："
 
-#: template-parts/biography.php:26
+#: template-parts/biography.php:49
 msgid "See articles"
 msgstr "記事を見る"
 
@@ -223,7 +327,7 @@ msgstr "ニュースレターを購読してください"
 
 #: template-parts/block-mail.php:11
 msgid "We send you updates. Not often, no spam."
-msgstr ""
+msgstr "最新情報をお届けします。控えめな頻度でスパムなし。"
 
 #: template-parts/block-mail.php:23
 msgid "Email Address"
@@ -238,6 +342,8 @@ msgid ""
 "You can enter more detailed information like language. <a href=\"#mc-form-"
 "more\" class=\"toggle-button\">Click here</a>."
 msgstr ""
+"言語などの詳細な情報を入力できます。<a href=\"#mc-form-more\" class=\"toggle-"
+"button\">こちらをクリック</a>。"
 
 #: template-parts/block-mail.php:36
 msgid "First Name"
@@ -254,7 +360,7 @@ msgstr "目次"
 #: template-parts/block-toc.php:24
 #, php-format
 msgid "Pages of %s"
-msgstr ""
+msgstr "%sのページ"
 
 #: template-parts/card.php:10
 msgid "Check this add on"
@@ -283,7 +389,7 @@ msgstr "ページ"
 #: template-parts/content-page.php:44 template-parts/content-single.php:45
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\"> \"%s\"</span>を編集"
 
 #: template-parts/loop.php:28
 msgid "Read this article"
@@ -295,7 +401,7 @@ msgstr "フォローしてください"
 
 #: template-parts/share.php:4
 msgid "Do you like this article? Please follow us and keep updated!"
-msgstr ""
+msgstr "この記事はいかがでしたか？　フォローして最新情報をゲット！"
 
 #: template-parts/warifu.php:17
 msgid "Get product license!"
@@ -306,6 +412,8 @@ msgid ""
 "Grab license at <strong>Gumroad</strong> and download a copy. You can get "
 "any time for any site!"
 msgstr ""
+"<strong>Gumroad</strong>でライセンスを取得し、ファイルをダウンロードしてくだ"
+"さい。何回でも、どのサイトでも！"
 
 #: template-parts/warifu.php:21
 msgid "Product Support by Plugin Author"
@@ -315,6 +423,8 @@ msgstr "プラグイン作者によるサポート"
 #, php-format
 msgid "Welcome back %s! Please open chat box if you need our support!"
 msgstr ""
+"%sさん、おかえりなさい！　サポートが必要な場合は、チャットルームを開いてくだ"
+"さい。"
 
 #: template-parts/warifu.php:27
 msgid "Open support chat"

@@ -94,12 +94,24 @@ img.no-content {
     background: $brand-brown;
   }
   &-instruction {
+    position: relative;
     font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
+    padding: 20px 20px 20px 60px;
+    margin: 20px;
+    text-align: left;
+    color: $brand-red;
+    border: 1px solid $brand-red;
+    &:before{
+      font-family: "Material Icons";
+      font-size: 40px;
+      content: "info_outline";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
     a:link, a:visited {
-      color: #fff;
+      color: $brand-red;
       text-decoration: underline;
       font-weight: bold;
     }

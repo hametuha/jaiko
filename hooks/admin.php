@@ -18,3 +18,10 @@ add_filter( 'tiny_mce_before_init', function ( $mce_array ) {
 
 	return $mce_array;
 }, 1000 );
+
+
+add_filter( 'user_contactmethods', function( $methods ) {
+	$methods['twitter'] = __( 'Twitter Account', 'jaiko' );
+	$methods['facebook'] = __( 'Facebook Page URL', 'jaiko' );
+	return $methods;
+} );

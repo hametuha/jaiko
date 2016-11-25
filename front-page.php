@@ -14,7 +14,7 @@ the_post(); ?>
 			<?php the_content() ?>
 		</div>
 		<div class="article-jumbotron-btn">
-			<a class="btn"><?php _e( 'Install Gianism', 'jako' ) ?></a>
+			<a class="btn"><?php _e( 'Install Gianism', 'jaiko' ) ?></a>
 		</div>
 		<?php get_template_part( 'template-parts/language', 'changer' ) ?>
 	</div>
@@ -27,10 +27,10 @@ the_post(); ?>
 			<div class="container">
 
 				<h2 class="front-title">
-					Enhance Your Login
+					<?php _e( 'Enhance Your Login', 'jaiko' ) ?>
 				</h2>
 				<p class="front-lead">
-					Missing link between WordPress and Application
+					<?php _e( 'Missing link between WordPress and Application', 'jaiko' ) ?>
 				</p>
 
 				<div class="row">
@@ -62,10 +62,10 @@ the_post(); ?>
 
 
 				<h2 class="front-title">
-					What We Provide You
+					<?php _e( 'What We Provide You', 'jaiko' ) ?>
 				</h2>
 				<p class="front-lead">
-					Gianism.info is the information hub for WordPress Developer!
+					<?php _e( 'Gianism.info is the information hub for WordPress Developer!', 'jaiko' ) ?>
 				</p>
 				<div class="row">
 					<div class="col m4 hide-on-small-and-down">
@@ -123,44 +123,44 @@ the_post(); ?>
 			<div class="container">
 
 				<h2 class="front-title">
-					Our load maps
+					<?php _e( 'Our load maps', 'jaiko' ) ?>
 				</h2>
 				<p class="front-lead">
-					We have plans for making our WordPress super social
+					<?php _e( 'We have plans for making our WordPress super social', 'jaiko' ) ?>
 				</p>
 				<div class="row">
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">nature_people</i><br/>
-							Natural UX
+							<?php _e( 'Natural UX', 'jaiko' ) ?>
 						</h3>
 						<p class="front-block-lead">
-							WordPress is blog tool. So, authors and users are separated. Admin screen is complicated for
+							<?php _e( 'WordPress is blog tool. So, authors and users are separated. Admin screen is complicated for
 							ordinary user.
 							We are creating plugins which are well integrated with Gianism and make user experience
-							better.
+							better.', 'jaiko' ) ?>
 						</p>
 					</div>
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">compare_arrows</i><br/>
-							1 to 1
+							<?php _e( '1 to 1', 'jaiko' ) ?>
 						</h3>
 						<p class="front-block-lead">
-							All interactive actions on WordPress are author-centered like comment.
+							<?php _e( 'All interactive actions on WordPress are author-centered like comment.
 							Social web site requires 1 to 1 communication like message, chat and non-verbal "like".
-							Besides that, we need notification system. Of course, we are ahead toward them.
+							Besides that, we need notification system. Of course, we are ahead toward them.', 'jaiko' ); ?>
 						</p>
 					</div>
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">phone_iphone</i><br/>
-							Mobile Apps
+							<?php _e( 'Mobile Apps', 'jaiko' ) ?>
 						</h3>
 						<p class="front-block-lead">
-							As long as we know, there are few solution to use WordPress as Mobile App's backend.
+							<?php _e( 'As long as we know, there are few solution to use WordPress as Mobile App\'s backend.
 							WP REST API is the one, but there are many things to integrate a bunch of plugins to it.
-							We think all our plugins should be REST API ready.
+							We think all our plugins should be REST API ready.', 'jaiko' ); ?>
 						</p>
 					</div>
 				</div>

@@ -121,6 +121,10 @@ the_post(); ?>
 		</div>
 	</section>
 
+	<?php if ( ! is_user_logged_in() ) {
+		jaiko_ad( 'after-content' );
+	} ?>
+
 	<?php get_template_part( 'template-parts/biography' ); ?>
 
 	<section class="comment-list-section">
