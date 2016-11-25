@@ -1,9 +1,10 @@
 %post-body{
 
+  color: #444;
   font-size: 18px;
   line-height: 1.6;
+  @include sans();
 
-  color: #444;
   a{
     &:link, &:visited{
       color: $brand-blue;
@@ -45,15 +46,10 @@
     margin: 1em 0;
   }
 
-  .lang-en &{
-    font-size: 20px;
-    @include sans-en();
-  }
   .lang-ja &{
     font-feature-settings: "palt";
     text-align: justify;
     text-justify: inter-ideograph;
-    @include serif-ja();
   }
 
   img{

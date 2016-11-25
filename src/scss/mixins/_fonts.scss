@@ -1,36 +1,26 @@
 
 @mixin sans-ja{
-  font-family: "mr-eaves-sans", "ryo-gothic-plusn", sans-serif ;
+  font-family: "ff-basic-gothic-web-pro", "ryo-gothic-plusn", sans-serif ;
 }
 
 @mixin sans-en{
-  font-family: "mr-eaves-sans", "ryo-gothic-plusn", sans-serif ;
+  font-family: "ff-basic-gothic-web-pro", "ryo-gothic-plusn", sans-serif ;
 }
 
 
 @mixin serif-ja{
-  font-family: "mrs-eaves", "ryo-text-plusn", serif;
+  font-family: "Georgia", "ryo-text-plusn", serif;
 }
 
 @mixin serif-en{
-  font-family: "mrs-eaves", "ryo-text-plusn", serif;
+  font-family: "Georgia", "ryo-text-plusn", serif;
 }
 
 @mixin serif(){
-  .lang-en &{
-    @include serif-en();
-  }
-  .lang-ja &{
-    @include serif-ja();
-  }
+  @include serif-en();
 }
 
 
 @mixin sans(){
-  .lang-en &{
-    @include sans-en();
-  }
-  .lang-ja &{
-    @include sans-ja();
-  }
+  @include sans-ja();
 }

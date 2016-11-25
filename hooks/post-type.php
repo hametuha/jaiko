@@ -20,6 +20,11 @@ add_action( 'init', function () {
 	);
 } );
 
+add_filter( 'bbp_register_forum_post_type', function( $arg ) {
+	$arg['taxonomies'] = [ 'category' ];
+	return $arg;
+} );
+
 /**
  * Change query
  *
@@ -63,7 +68,7 @@ SQL;
 }, 10, 2 );
 
 /**
- * 降順にする
+ * Change order
  */
 add_filter( 'posts_orderby', function( $orderby, $wp_query ) {
 	if ( isset( $wp_query->on_related_to ) && $wp_query->on_related_to ) {
