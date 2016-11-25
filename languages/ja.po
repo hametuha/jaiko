@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2016-11-06 02:07+0900\n"
-"PO-Revision-Date: 2016-11-06 02:07+0900\n"
+"POT-Creation-Date: 2016-11-24 21:04+0900\n"
+"PO-Revision-Date: 2016-11-24 21:07+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -21,82 +21,248 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: assets\n"
 "X-Poedit-SearchPathExcluded-2: src\n"
 
-#: functions.php:71
-msgid "Add On"
-msgstr "﻿アドオン"
+#: comments.php:5
+msgid "Feedbacks"
+msgstr "フィードバック"
 
-#: functions.php:93
+#: comments.php:12
 #, php-format
-msgid "Hi, %s!"
-msgstr "こんにちは、%sさん"
+msgid "One response to %s"
+msgstr "%sへの一件の返信"
 
-#: functions.php:96
-msgid "Try It!"
-msgstr "試してみる"
+#: comments.php:15
+#, php-format
+msgid "%1$s response to %2$s"
+msgid_plural "%1$s responses to %2$s"
+msgstr[0] ""
 
-#: functions.php:129
+#: comments.php:43
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:17
+msgid ""
+"We provide you the professional information about WordPress plugins. Join us "
+"and hack WP!"
+msgstr ""
+
+#: footer.php:21
+msgid "Links"
+msgstr "リンク"
+
+#: footer.php:59
+msgid "Profile"
+msgstr "プロフィール"
+
+#: footer.php:64
+msgid "Log out"
+msgstr "ログアウト"
+
+#: footer.php:70
+msgid "Log in"
+msgstr "ログイン"
+
+#: footer.php:84
+msgid "Share"
+msgstr "シェア"
+
+#: footer.php:89
+msgid "Tweet"
+msgstr "つぶやく"
+
+#: front-page.php:17
+msgid "Install Gianism"
+msgstr "Gianismをインストール"
+
+#: front-page.php:40
+msgid ""
+"User can login via facebook, google, twitter and instagram account. Extra "
+"SNS are add-ons."
+msgstr ""
+
+#: front-page.php:43
+msgid ""
+"Experienced developers can use additional features. Facebook Graph API, "
+"Twitter API and Google API."
+msgstr ""
+
+#: front-page.php:87
+#, php-format
+msgid ""
+"<strong>Tips blog:</strong> You can get latest information and notable tips "
+"from our <a href=\"%1$s\">blog list</a>. The latest is &quot;%2$s&quot;."
+msgstr ""
+
+#: front-page.php:96
+#, php-format
+msgid ""
+"<strong>Add ons:</strong> We provide <a href=\"%s\">add ons and plugins</a>. "
+"Each of them is intended to work with user oriented features."
+msgstr ""
+
+#: front-page.php:104
+msgid ""
+"<strong>Support Forum:</strong> In progress. You will be able to ask "
+"anything there!"
+msgstr ""
+
+#: front-page.php:111
+msgid ""
+"<strong>Private Chat:</strong> In Progress. You might have some secret "
+"information. So, aks us privately!"
+msgstr ""
+
+#: front-page.php:173
+#, php-format
+msgid "Howday, %s! Please let me know <a href=\"%s\">about you</a>!"
+msgstr ""
+
+#: front-page.php:181
+msgid ""
+"Are you interested with them? Gianism.info is the living example. Log in and "
+"get in touch with us!"
+msgstr ""
+
+#: front-page.php:185
 msgid "Login"
 msgstr "ログイン"
 
-#: header.php:27
-msgid "Skip to content"
-msgstr "コンテンツへ"
+#: functions/format.php:17
+#, php-format
+msgid ""
+"This article is only for registered user. To continue reading another %1$d%% "
+"of content, please <a href=\"%2$s\" rel=\"nofollow\">login</a>."
+msgstr ""
+"この記事は登録済みユーザー専用です。残り%1$d%%のコンテンツを読むためには、<a "
+"href=\"%2$s\" rel=\"nofollow\">ログイン</a>してください。"
 
-#: header.php:47
-msgid "Menu"
-msgstr "メニュー"
+#: hooks/comments.php:6
+msgctxt "noun"
+msgid "Comment"
+msgstr "コメント"
 
-#: header.php:51
-#, fuzzy
-msgid "Primary Menu"
-msgstr "メニュー"
+#: hooks/post-type.php:10
+msgid "Add On"
+msgstr "﻿アドオン"
 
-#: header.php:62
-#, fuzzy
-msgid "Social Links Menu"
-msgstr "メニュー"
+#: hooks/widgets.php:7
+msgid "Header Navigation"
+msgstr "ヘッダーナビゲーション"
 
-#: template-parts/biography.php:31
+#: hooks/widgets.php:8
+msgid "Social Links"
+msgstr "ソーシャルリンク"
+
+#: hooks/widgets.php:9
+msgid "Footer Links"
+msgstr "フッターリンク"
+
+#: hooks/widgets.php:14
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: hooks/widgets.php:16
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: hooks/widgets.php:24
+msgid "Banners"
+msgstr ""
+
+#: hooks/widgets.php:26
+msgid "Display banners"
+msgstr "バナーを表示する"
+
+#: hooks/widgets.php:34
+msgid "Footer Widgets"
+msgstr "フッターウィジェット"
+
+#: hooks/widgets.php:36
+msgid "Footer blocks"
+msgstr "フッターブロック"
+
+#: searchform.php:5
+msgid "Type and hit enter"
+msgstr "入力してエンターを押す"
+
+#: singular.php:27
+msgid "F j, Y"
+msgstr "Y年n月j日"
+
+#: singular.php:83
+msgid "Recent Posts"
+msgstr "最近の記事"
+
+#: singular.php:87
+msgid "Recommended"
+msgstr "おすすめ記事"
+
+#: singular.php:118
+msgid "See blog archive"
+msgstr "ブログ一覧を見る"
+
+#: template-parts/biography.php:13
 msgid "Who meade this site?"
 msgstr "このサイトの作者は？"
 
-#: template-parts/biography.php:33
+#: template-parts/biography.php:15
 msgid "Author:"
 msgstr "投稿者："
 
-#: template-parts/biography.php:42
-#, fuzzy, php-format
-msgid "View all posts by %s"
-msgstr "%sを見る"
+#: template-parts/biography.php:26
+msgid "See articles"
+msgstr "記事を見る"
 
-#: template-parts/block-mail.php:7
-msgid "Join our News Letter!"
+#: template-parts/block-add-on.php:5
+msgid "Our Add Ons"
+msgstr "提供しているアドオン"
+
+#: template-parts/block-mail.php:9
+msgid "Join our News Letter"
 msgstr "ニュースレターを購読してください"
 
-#: template-parts/block-mail.php:10
+#: template-parts/block-mail.php:11
+msgid "We send you updates. Not often, no spam."
+msgstr ""
+
+#: template-parts/block-mail.php:23
 msgid "Email Address"
 msgstr "メールアドレス"
 
-#: template-parts/block-mail.php:15
-msgid "First Name"
-msgstr "姓"
-
-#: template-parts/block-mail.php:19
-msgid "Last Name"
-msgstr "名"
-
-#: template-parts/block-mail.php:23
-msgid "Available Languages"
-msgstr "利用できる言語"
-
-#: template-parts/block-mail.php:40
+#: template-parts/block-mail.php:26
 msgid "Subscribe"
 msgstr "購読する"
 
+#: template-parts/block-mail.php:31
+msgid ""
+"You can enter more detailed information like language. <a href=\"#mc-form-"
+"more\" class=\"toggle-button\">Click here</a>."
+msgstr ""
+
+#: template-parts/block-mail.php:36
+msgid "First Name"
+msgstr "姓"
+
+#: template-parts/block-mail.php:40
+msgid "Last Name"
+msgstr "名"
+
+#: template-parts/block-toc.php:10
+msgid "Table Of Contents"
+msgstr "目次"
+
+#: template-parts/block-toc.php:24
+#, php-format
+msgid "Pages of %s"
+msgstr ""
+
+#: template-parts/card.php:10
+msgid "Check this add on"
+msgstr "このアドオンを見る"
+
 #: template-parts/content-none.php:13
-#, fuzzy
 msgid "Nothing Found"
-msgstr "申し訳ございません。入力された住所にはなにもみつかりませんでした。"
+msgstr "何も見つかりませんでした。"
 
 #: template-parts/content-none.php:18
 msgid ""
@@ -106,23 +272,73 @@ msgstr ""
 "コンテンツが見つかりませんでした。URLが間違っているか、翻訳が存在しません。検"
 "索するとなにかわかるかもしれません。"
 
-#: template-parts/content-page.php:30 template-parts/content-single.php:15
-#, fuzzy
+#: template-parts/content-page.php:30 template-parts/content-single.php:20
 msgid "Pages:"
-msgstr ""
-"WordPressのログイン・ユーザー登録・パスワード紛失のページをあなたのテーマに準"
-"じたテーマに。"
+msgstr "ページ: "
 
-#: template-parts/content-page.php:34 template-parts/content-single.php:19
-#, fuzzy
+#: template-parts/content-page.php:34 template-parts/content-single.php:24
 msgid "Page"
-msgstr "あなたのページ"
+msgstr "ページ"
 
-#: template-parts/content-page.php:44 template-parts/content-single.php:41
+#: template-parts/content-page.php:44 template-parts/content-single.php:45
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-single.php:25
-msgid "Product Support"
-msgstr "プロダクト サポート"
+#: template-parts/loop.php:28
+msgid "Read this article"
+msgstr "この記事を読む"
+
+#: template-parts/share.php:2
+msgid "Follow Us"
+msgstr "フォローしてください"
+
+#: template-parts/share.php:4
+msgid "Do you like this article? Please follow us and keep updated!"
+msgstr ""
+
+#: template-parts/warifu.php:17
+msgid "Get product license!"
+msgstr "プロダクトライセンスを取得！"
+
+#: template-parts/warifu.php:18
+msgid ""
+"Grab license at <strong>Gumroad</strong> and download a copy. You can get "
+"any time for any site!"
+msgstr ""
+
+#: template-parts/warifu.php:21
+msgid "Product Support by Plugin Author"
+msgstr "プラグイン作者によるサポート"
+
+#: template-parts/warifu.php:26
+#, php-format
+msgid "Welcome back %s! Please open chat box if you need our support!"
+msgstr ""
+
+#: template-parts/warifu.php:27
+msgid "Open support chat"
+msgstr "サポートチャットを開く"
+
+#~ msgid "Hi, %s!"
+#~ msgstr "こんにちは、%sさん"
+
+#~ msgid "Try It!"
+#~ msgstr "試してみる"
+
+#~ msgid "Skip to content"
+#~ msgstr "コンテンツへ"
+
+#~ msgid "Menu"
+#~ msgstr "メニュー"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "メニュー"
+
+#, fuzzy
+#~ msgid "View all posts by %s"
+#~ msgstr "%sを見る"
+
+#~ msgid "Available Languages"
+#~ msgstr "利用できる言語"

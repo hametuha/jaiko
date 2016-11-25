@@ -1,0 +1,25 @@
+.archive-item{
+  &-thumbnail{
+    background: $brand-yellow;
+    position: relative;
+    img{
+      position: absolute;
+      max-width: 100px !important;
+      width: auto;
+      height: auto;
+    }
+  }
+  &-title{
+    margin: 0 0 5px;
+    font-size: 24px;
+    .lang-en &{
+      @include sans-en();
+    }
+    .lang-ja &{
+      @include sans-ja();
+    }
+    small{
+      color: #888;
+    }
+  }
+}

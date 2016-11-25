@@ -1,0 +1,16 @@
+.widget{
+  padding: 20px 0;
+  border-bottom: 3px solid $brand-yellow;
+  &-title{
+    @include sans();
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  ul:not(.browser-default){
+    padding-left: 25px;
+    li{
+      list-style: outside disc;
+    }
+  }
+}

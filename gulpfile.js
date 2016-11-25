@@ -18,8 +18,7 @@ gulp.task('sass', function () {
       outputStyle    : 'compressed',
       includePaths   : [
         './src/scss',
-        // './node_modules/bootstrap-sass/assets/stylesheets',
-        // './node_modules/slick-carousel'
+        './node_modules/materialize-css/sass'
       ]
     }))
     .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
@@ -50,37 +49,16 @@ gulp.task('jshint', function () {
 
 // Build modernizr
 gulp.task('copylib', function () {
-  // return eventStream.merge(
-  //   // Build Bootstrap
-  //   gulp.src([
-  //     './node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'
-  //   ])
-  //     .pipe($.uglify())
-  //     .pipe(gulp.dest('./assets/js/')),
-  //   // Build unpacked Libraries.
-  //   gulp.src([
-  //     './node_modules/modernizr/modernizr.js',
-  //     './node_modules/html5shiv/dist/html5shiv.js',
-  //     './node_modules/respond.js/dest/respond.src.js',
-  //     './node_modules/slick-carousel/slick/slick.js',
-  //   ])
-  //     .pipe($.uglify())
-  //     .pipe(gulp.dest('./assets/js/')),
-  //   // Copy slick font
-  //   gulp.src([
-  //     './node_modules/slick-carousel/slick/fonts/*'
-  //   ]).pipe(gulp.dest('./assets/fonts/slick')),
-  //   // Copy image
-  //   gulp.src([
-  //     './node_modules/slick-carousel/slick/ajax-loader.gif'
-  //   ])
-  //     .pipe($.imagemin({
-  //       progressive: true,
-  //       svgoPlugins: [{removeViewBox: false}],
-  //       use        : [pngquant()]
-  //     }))
-  //     .pipe(gulp.dest('./assets/img'))
-  // );
+  return eventStream.merge(
+    gulp.src([
+      './node_modules/materialize-css/dist/js/materialize.min.js',
+    ])
+      .pipe(gulp.dest('./assets/js')),
+    gulp.src([
+      './node_modules/materialize-css/dist/fonts/**/*'
+    ]).
+    pipe(gulp.dest('./assets/fonts'))
+  );
 });
 
 // Image min

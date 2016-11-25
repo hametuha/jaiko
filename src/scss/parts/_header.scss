@@ -1,0 +1,7 @@
+header{
+  nav{
+    .brand-logo, .header-menu{
+      @include sans-en();
+    }
+  }
+}

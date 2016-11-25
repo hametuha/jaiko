@@ -1,0 +1,166 @@
+%post-body{
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  color: #444;
+  a{
+    &:link, &:visited{
+      color: $brand-blue;
+      text-decoration: underline;
+    }
+    &:hover, &:active{
+      color: $brand-red;
+      text-decoration: none;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    .lang-ja &{
+      @include sans-ja();
+    }
+  }
+
+  h2{
+    @extend .row;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid $brand-yellow;
+  }
+
+  h3{
+    font-size: 1.8em;
+  }
+
+  h4{
+    font-size: 1.6em;
+  }
+
+  h6{
+    font-weight: bold;
+  }
+
+  & > p{
+    margin: 1em 0;
+  }
+
+  .lang-en &{
+    font-size: 20px;
+    @include sans-en();
+  }
+  .lang-ja &{
+    font-feature-settings: "palt";
+    text-align: justify;
+    text-justify: inter-ideograph;
+    @include serif-ja();
+  }
+
+  img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  // Images
+  .wp-caption{
+    &, & img{
+      max-width: 100%;
+    }
+    &-text{
+      font-size: 0.85em;
+      color: #999;
+      margin: 0;
+      line-height: 1.2;
+    }
+  }
+
+  // aligns
+  $align-pad: 10px;
+  .alignleft,
+  .aligncenter,
+  .alignright{
+    margin: $align-pad;
+  }
+  .alignleft{
+    float: left;
+    margin-left: 0;
+  }
+  .alignright{
+    float: right;
+    margin-right: 0;
+  }
+  .aligncenter{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  & > pre,
+  code{
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #666;
+    font-family: monospace;
+  }
+  code{
+    padding: 0.125em 0.25em;
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+  }
+  & > pre{
+    margin: 1.5em 0;
+    padding: 1.5em;
+    overflow-x: scroll;
+    line-height: 1.1;
+    font-size: 0.85em;
+  }
+
+  // Markup
+  blockquote{
+    color: #000;
+  }
+
+  iframe{
+    max-width: 100%;
+  }
+
+  // Lists
+  dl{
+    dt{
+      font-weight: bold;
+    }
+  }
+  ul:not(.browser-default){
+    padding-left: 40px;
+    li{
+      list-style: outside disc;
+      li{
+        list-style-type: circle;
+      }
+    }
+  }
+
+  aside{
+    clear: both;
+    margin: 1em 0;
+    padding: 1em;
+    background: #f9f9f9;
+    color: #888;
+    font-size: 0.9em;
+  }
+
+  // inlines
+  strong{
+    font-weight: bold;
+    color: #000;
+  }
+  em{
+    color: #000;
+    .lang-ja &{
+      font-style: normal;
+      text-emphasis: dot filled;
+    }
+  }
+}

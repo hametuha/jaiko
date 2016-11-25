@@ -17,7 +17,7 @@
 
 		<p><?php _e( 'We can\'t find any contents. URL is wrong or no translation available. Search form might help you.', 'jaiko' ) ?></p>
 
-		<?php get_search_form(); ?>
+		<img class="no-content" src="<?= get_stylesheet_directory_uri() ?>/assets/img/bg-not-found.png" alt="" />
 
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

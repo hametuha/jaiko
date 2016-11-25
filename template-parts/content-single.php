@@ -9,8 +9,13 @@
 
 	<div class="entry-content">
 		<?php
-			the_content();
+		chiramise_the_toc();
 
+		the_content();
+
+		if ( ( $label = jaiko_how_to_read() ) ) {
+			echo $label;
+		} else {
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
 				'after'       => '</div>',
@@ -19,14 +24,13 @@
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
+		}
 
-			echo warifu_gumroad_button();
 
-			warifu_form( __( 'Product Support', 'jaiko' ) );
 
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
-			}
+		if ( '' !== get_the_author_meta( 'description' ) ) {
+
+		}
 
 		?>
 	</div><!-- .entry-content -->
@@ -35,15 +39,15 @@
 	<footer class="entry-footer">
 		<?php twentysixteen_entry_meta(); ?>
 		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+		edit_post_link(
+			sprintf(
+			/* translators: %s: Name of current post */
+				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -1,0 +1,31 @@
+.author{
+  &-info{
+    background-color: $brand-yellow;
+  }
+  &-section{
+    padding: 40px 20px;
+  }
+  &-image{
+    float: left;
+    max-width: 128px;
+    margin-right: 22px;
+  }
+  &-content{
+    margin-left: 150px;
+  }
+  &-title{
+    margin: 0 0 10px;
+    font-size: 22px;
+    @include sans-en();
+    &-label{
+      color: $brand-brown;
+    }
+  }
+  &-desc{
+    font-size: 20px;
+    color: $brand-brown;
+    line-height: 1.4;
+    @include sans-en();
+  }
+
+}

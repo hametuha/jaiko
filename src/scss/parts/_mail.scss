@@ -1,0 +1,29 @@
+.mail-chimp{
+  .container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: url("../img/bg-mailchimp.png") center bottom no-repeat;
+    background-size: cover;
+  }
+  &-notice{
+    color: #888;
+    a{
+      @extend %text-link;
+    }
+  }
+  &-title{
+    text-align: center;
+    color: $brand-blue;
+    @include sans();
+    font-size: 48px;
+    i{
+      font-size: 120px;
+      color: #aaa;
+    }
+    small{
+      font-size: 22px;
+      display: block;
+      color: #aaa;
+    }
+  }
+}

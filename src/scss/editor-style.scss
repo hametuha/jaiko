@@ -2,5 +2,9 @@
 @import "mixins/*";
 @import "materialize_override";
 @import "materialize";
-@import "parts/*";
+body{
+  margin: 20px;
+  @include sans();
+  @extend %post-body;
+}
 

@@ -1,0 +1,20 @@
+footer.page-footer{
+  margin: 0;
+  padding-top: 40px;
+  @include sans-en();
+  color: $brand-brown;
+  a{
+    &:link, &:visited{
+      color: darken( $brand-brown, 10);
+      text-decoration: underline;
+    }
+    &:hover, &:active{
+      color: $brand-red;
+      text-decoration: none;
+    }
+  }
+  .footer-copyright{
+    color: $brand-brown;
+  }
+}
+
