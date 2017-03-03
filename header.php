@@ -56,4 +56,20 @@ $locale = 'ja' == get_locale() ? 'ja_JP' : 'en_US';
 		</div>
 	</nav>
 
+	<?php
+	foreach ( get_posts( [
+		'post_type'   => 'announce',
+	    'post_status' => 'publish',
+	    'posts_per_page' => 1,
+	    'orderby' => [ 'date' => 'DESC' ],
+	] ) as $post ) :
+
+	?>
+	<div class="announce">
+		<div class="container">
+			<?= apply_filters( 'the_content', $post->post_content ) ?>
+		</div>
+	</div>
+	<?php endforeach; ?>
+
 </header><!-- .site-header -->

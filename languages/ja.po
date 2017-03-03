@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2016-11-25 23:24+0900\n"
-"PO-Revision-Date: 2016-11-25 23:28+0900\n"
+"POT-Creation-Date: 2017-03-03 20:06+0900\n"
+"PO-Revision-Date: 2017-03-03 20:07+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -40,7 +40,7 @@ msgstr[0] "%2$sへのコメント%1$s件"
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
 
-#: footer.php:17
+#: footer.php:16
 msgid ""
 "We provide you the professional information about WordPress plugins. Join us "
 "and hack WP!"
@@ -48,27 +48,27 @@ msgstr ""
 "WordPressプラグインに関するプロフェッショナルな情報を提供します。登録し、"
 "WordPressをハックしましょう！"
 
-#: footer.php:21
+#: footer.php:20
 msgid "Links"
 msgstr "リンク"
 
-#: footer.php:59
+#: footer.php:58
 msgid "Profile"
 msgstr "プロフィール"
 
-#: footer.php:64
+#: footer.php:63
 msgid "Log out"
 msgstr "ログアウト"
 
-#: footer.php:70
+#: footer.php:69
 msgid "Log in"
 msgstr "ログイン"
 
-#: footer.php:84
+#: footer.php:83
 msgid "Share"
 msgstr "シェア"
 
-#: footer.php:89
+#: footer.php:88
 msgid "Tweet"
 msgstr "つぶやく"
 
@@ -228,6 +228,10 @@ msgstr ""
 "この記事は登録済みユーザー専用です。残り%1$d%%のコンテンツを読むためには、<a "
 "href=\"%2$s\" rel=\"nofollow\">ログイン</a>してください。"
 
+#: hooks/add-on.php:18
+msgid "Download URL"
+msgstr "ダウンロードURL"
+
 #: hooks/admin.php:12
 msgid "aside"
 msgstr "余談"
@@ -244,6 +248,18 @@ msgstr "FacebookページのURL"
 msgctxt "noun"
 msgid "Comment"
 msgstr "コメント"
+
+#: hooks/post-expires.php:8
+msgid "Announcement"
+msgstr "告知"
+
+#: hooks/post-expires.php:25
+msgid "Expiration Setting"
+msgstr "有効期限設定"
+
+#: hooks/post-expires.php:29
+msgid "Expires at"
+msgstr "期限切れになる日"
 
 #: hooks/post-type.php:10
 msgid "Add On"
@@ -293,18 +309,6 @@ msgstr "入力してエンターを押す"
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
-#: singular.php:83
-msgid "Recent Posts"
-msgstr "最近の記事"
-
-#: singular.php:87
-msgid "Recommended"
-msgstr "おすすめ記事"
-
-#: singular.php:118
-msgid "See blog archive"
-msgstr "ブログ一覧を見る"
-
 #: template-parts/biography.php:13
 msgid "Who meade this site?"
 msgstr "このサイトの作者は？"
@@ -318,8 +322,8 @@ msgid "See articles"
 msgstr "記事を見る"
 
 #: template-parts/block-add-on.php:5
-msgid "Our Add Ons"
-msgstr "提供しているアドオン"
+msgid "Our Plugins"
+msgstr "私たちのプラグイン"
 
 #: template-parts/block-mail.php:9
 msgid "Join our News Letter"
@@ -353,11 +357,35 @@ msgstr "姓"
 msgid "Last Name"
 msgstr "名"
 
+#: template-parts/block-related.php:9
+msgid "Recent Posts"
+msgstr "最近の記事"
+
+#: template-parts/block-related.php:13
+msgid "Recommended"
+msgstr "おすすめ記事"
+
+#: template-parts/block-related.php:28
+msgid "Tips"
+msgstr "ティップス"
+
+#: template-parts/block-related.php:33
+msgid "FAQ"
+msgstr "FAQ"
+
+#: template-parts/block-related.php:82
+msgid "See All"
+msgstr "すべて見る"
+
+#: template-parts/block-related.php:88
+msgid "Sorry, but no post found."
+msgstr "申し訳ございません。投稿が見つかりませんでした。"
+
 #: template-parts/block-toc.php:10
 msgid "Table Of Contents"
 msgstr "目次"
 
-#: template-parts/block-toc.php:24
+#: template-parts/block-toc.php:26
 #, php-format
 msgid "Pages of %s"
 msgstr "%sのページ"
@@ -395,40 +423,124 @@ msgstr "<span class=\"screen-reader-text\"> \"%s\"</span>を編集"
 msgid "Read this article"
 msgstr "この記事を読む"
 
-#: template-parts/share.php:2
+#: template-parts/share.php:6
 msgid "Follow Us"
 msgstr "フォローしてください"
 
-#: template-parts/share.php:4
+#: template-parts/share.php:8
 msgid "Do you like this article? Please follow us and keep updated!"
 msgstr "この記事はいかがでしたか？　フォローして最新情報をゲット！"
 
-#: template-parts/warifu.php:17
-msgid "Get product license!"
-msgstr "プロダクトライセンスを取得！"
+#: template-parts/warifu.php:24 template-parts/warifu.php:33
+msgid "Download"
+msgstr "ダウンロード"
 
-#: template-parts/warifu.php:18
-msgid ""
-"Grab license at <strong>Gumroad</strong> and download a copy. You can get "
-"any time for any site!"
+#: template-parts/warifu.php:27
+msgid "View on Github"
+msgstr "Githubで表示"
+
+#: template-parts/warifu.php:35
+msgid "Yes, they are open source and any pull requests are welcome!"
+msgstr "このプラグインはオープンソースで、プルリクエストも受け付け中です！"
+
+#: template-parts/warifu.php:65
+msgid "Get Supported"
+msgstr "安心のサポート"
+
+#: template-parts/warifu.php:67
+msgid "Grab license at <strong>Gumroad</strong> and premium support!"
 msgstr ""
-"<strong>Gumroad</strong>でライセンスを取得し、ファイルをダウンロードしてくだ"
-"さい。何回でも、どのサイトでも！"
+"<strong>Gumroad</strong>でライセンスを取得し、プレミアムサポートを受けましょ"
+"う！"
 
-#: template-parts/warifu.php:21
-msgid "Product Support by Plugin Author"
-msgstr "プラグイン作者によるサポート"
+#: template-parts/warifu.php:79
+msgid "Allows installing "
+msgstr "インストール可能数 "
 
-#: template-parts/warifu.php:26
+#: template-parts/warifu.php:81
+msgid "infinite sites!"
+msgstr "無限！"
+
+#: template-parts/warifu.php:83
+#, php-format
+msgid "%s site."
+msgid_plural "%s sites."
+msgstr[0] "%s サイト"
+
+#: template-parts/warifu.php:96
+msgid "License Manager"
+msgstr "ライセンス管理"
+
+#: template-parts/warifu.php:99
+#, php-format
+msgid ""
+"Do you have license already? We are developing license manager. Stay tuned "
+"on our <a href=\"%s\">news letter</a>!"
+msgstr ""
+"すでにライセンスキーをお持ちですか？　私たちは現在ライセンスマネージャーを開"
+"発中です。<a href=\"%s\">ニュースレター</a>を購読していただい方にはできしだい"
+"お知らせします！"
+
+#: template-parts/warifu.php:106
+msgid "Chat & Forum"
+msgstr "チャット & フォーラム"
+
+#: template-parts/warifu.php:109
+msgid ""
+"We have a plan to make forum. Please be patient while we are working on!"
+msgstr ""
+"フォーラムを設置する予定です。現在作業中ですので、いましばらお待ちください。"
+
+#: template-parts/warifu.php:117
+msgid "30 Days Refund"
+msgstr "30日以内返金"
+
+#: template-parts/warifu.php:120
+#, php-format
+msgid ""
+"All of our premium plugins are refundable within 30 days. Please refer our "
+"<a href=\"%s\">refund policy</a>."
+msgstr ""
+"すべてのプレミアムプラグインは30日以内ならば返金可能です。詳細は<a href=\"%s"
+"\">返金ポリシー</a>をご参照ください。"
+
+#: template-parts/warifu.php:127
+msgid "Yes, GPL."
+msgstr "もちろん、GPL"
+
+#: template-parts/warifu.php:130
+#, php-format
+msgid ""
+"We respect <a href=\"%1$s\">WordPress license policy</a> and most of our "
+"plugins are <strong>100%% GPL</strong>. Why \"most\"? Because sometimes we "
+"prefer <a href=\"%2$s\">MIT</a>."
+msgstr ""
+"<a href=\"%1$s\">WordPressのライセンスポリシー</a>を尊重しています。私たちの"
+"プラグインの多くは<strong>100%% GPL</strong>です。なぜ「多くは」なのかという"
+"と、ときどき<a href=\"%2$s\">MITライセンス</a>を採用することがあるからです。"
+
+#: template-parts/warifu.php:155
 #, php-format
 msgid "Welcome back %s! Please open chat box if you need our support!"
 msgstr ""
 "%sさん、おかえりなさい！　サポートが必要な場合は、チャットルームを開いてくだ"
 "さい。"
 
-#: template-parts/warifu.php:27
+#: template-parts/warifu.php:156
 msgid "Open support chat"
 msgstr "サポートチャットを開く"
+
+#~ msgid "See blog archive"
+#~ msgstr "ブログ一覧を見る"
+
+#~ msgid "Our Add Ons"
+#~ msgstr "提供しているアドオン"
+
+#~ msgid "Get product license!"
+#~ msgstr "プロダクトライセンスを取得！"
+
+#~ msgid "Product Support by Plugin Author"
+#~ msgstr "プラグイン作者によるサポート"
 
 #~ msgid "Hi, %s!"
 #~ msgstr "こんにちは、%sさん"

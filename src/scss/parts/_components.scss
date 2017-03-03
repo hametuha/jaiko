@@ -137,6 +137,13 @@ img.no-content {
         a {
           display: block;
           padding: 10px;
+          &:before {
+            display: inline;
+            content: "done";
+            font-family: "Material Icons";
+            margin-right: 0.25em;
+            color: $brand-green;
+          }
           &:link, &:visited {
             color: #fff;
             text-decoration: none;
@@ -164,10 +171,15 @@ img.no-content {
 }
 
 .follow {
-  &-wrapper {
+  &-wrapper{
     margin: 40px auto;
+  }
+  &-ad {
+    margin: 0 auto;
+    max-width: 336px;
+  }
+  &-wrapper {
     padding: 20px;
-    max-width: 450px;
     border: 1px solid #ddd;
     background: #f9f9f9;
     text-align: center;
@@ -198,4 +210,31 @@ img.no-content {
   }
 }
 
+.announce{
+  text-align: center;
+  overflow: hidden;
+  background: $brand-yellow;
+  $text-color: $brand-brown;
+  p{
+    display: inline-block;
+    margin: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    color: $text-color;
+  }
+  a{
 
+    font-weight: bold;
+    border-bottom: 3px solid $brand-red;
+    transition: color .3s linear;
+    &:link, &:visited{
+      color: $text-color;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      color: $brand-red;
+      text-decoration: none;
+    }
+  }
+}

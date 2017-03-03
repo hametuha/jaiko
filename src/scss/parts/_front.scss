@@ -1,0 +1,88 @@
+.front{
+  &-block{
+    padding: 40px 0;
+    background-color: #fff;
+    &:nth-child(even){
+      background-color: #f9f9f9;
+    }
+    &-title{
+      text-align: center;
+      color: $brand-red;
+      font-weight: bold;
+      font-size: 28px;
+      @include sans();
+      i{
+        color: $brand-yellow;
+        font-size: 64px;
+        margin-bottom: 10px;
+      }
+    }
+    &-lead{
+    }
+    &-conclusion{
+      text-align: center;
+      span{
+        color: $brand-brown;
+        font-size: 20px;
+        @include sans();
+        a{
+          @extend %text-link;
+        }
+      }
+      .btn{
+        margin-top: 20px;
+      }
+    }
+  }
+  &-title{
+    font-size: 32px;
+    @include sans();
+    color: $brand-brown;
+    text-align: center;
+  }
+  &-lead{
+    color: #aaa;
+    @include sans();
+    font-size: 20px;
+    text-align: center;
+  }
+  &-image{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+  &-list{
+    a{
+      @extend %text-link;
+    }
+    li{
+      margin: 0 0 20px 40px;
+      position: relative;
+      strong{
+        color: inherit;
+        font-weight: bold;
+      }
+      &:before{
+        font-family: "Material Icons";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -35px;
+        font-size: 30px;
+      }
+      &.ok{
+        color: $brand-brown;
+        &:before{
+          content: "done";
+          color: $brand-green;
+        }
+      }
+      &.ng{
+        color: #aaa;
+        &:before{
+          content: "new_releases";
+        }
+      }
+    }
+  }
+}

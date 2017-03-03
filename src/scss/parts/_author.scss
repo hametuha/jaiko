@@ -1,6 +1,9 @@
 .author{
   &-info{
     background-color: $brand-yellow;
+    .single &{
+      background: #eee;
+    }
   }
   &-section{
     padding: 40px 20px;

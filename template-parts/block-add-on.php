@@ -2,7 +2,7 @@
 
 <div class="container">
 
-	<h2 class="add-ons-title"><?php _e( 'Our Add Ons', 'jaiko' ) ?></h2>
+	<h2 class="add-ons-title"><?php _e( 'Our Plugins', 'jaiko' ) ?></h2>
 
 	<div class="row">
 
@@ -11,6 +11,7 @@
 			'post_type' => 'add-on',
 			'posts_per_page' => 3,
 			'post_status' => 'publish',
+		    'post_parent' => 0,
 		];
 		if ( is_singular( 'add-on' ) ) {
 			$args['post__not_in'] = [ get_queried_object_id() ];

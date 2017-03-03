@@ -13,7 +13,9 @@ if ( ( $label = jaiko_how_to_read() ) ) {
 			</div>
 		</div>
 		<div class="col s12 m6">
-			<?php jaiko_ad( 'after-content' ) ?>
+			<div class="follow-ad">
+				<?php jaiko_ad( 'after-content' ) ?>
+			</div>
 		</div>
 	</div>
 

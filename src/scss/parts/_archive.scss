@@ -11,12 +11,6 @@
   }
 }
 
-.related{
-  &-title{
-    @include separated-title( $brand-yellow );
-    font-size: 20px;
-  }
-}
 
 .list-item{
   position: relative;

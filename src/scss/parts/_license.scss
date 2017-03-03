@@ -1,0 +1,141 @@
+.license{
+  // Item on single page
+  &-item{
+    background: #fff;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    &:hover{
+      box-shadow: 0 0 5px 5px rgba( 0, 0, 0, .2 );
+    }
+    &-title{
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #eee;
+      @include sans();
+    }
+    &-buy{
+      margin-top: 20px;
+      text-align: center;
+    }
+    &-count{
+      text-align: center;
+      color: $brand-green;
+      @include sans();
+    }
+  }
+}
+
+
+.product {
+  &-buy {
+    @include sans();
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    &-title {
+      @include separated-title($brand-brown, $brand-yellow);
+    }
+    &-desc {
+      @include sans();
+      font-size: 18px;
+      color: $brand-green;
+    }
+  }
+  &-support {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $brand-yellow;
+    .warifu-license-title,
+    .mikkai-form-title {
+      @include separated-title($brand-brown, $brand-yellow);
+      @include sans();
+    }
+    .warifu-license-wrapper,
+    .mikkai-form {
+      margin-top: 40px;
+    }
+    .warifu-license-message {
+      display: block;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid $brand-green;
+      color: $brand-green;
+    }
+    .warifu-license-p {
+      margin: 0;
+      a {
+        @extend %text-link;
+      }
+    }
+    .warifu-license-span {
+      font-size: 18px;
+      color: #666;
+      @include sans();
+      a {
+        @extend %text-link;
+      }
+    }
+    button,
+    .btn {
+      margin: 10px auto 30px;
+      @extend .btn;
+      @extend .waves-effect;
+    }
+  }
+
+  &-notice{
+    &-item{
+      text-align: center;
+      color: #444;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .material-icons{
+      color: $brand-blue;
+      font-size: 80px;
+
+    }
+    &-title{
+      font-size: 20px;
+      @include sans();
+    }
+    &-desc{
+      font-size: 14px;
+      a:link, a:visited{
+        color: $brand-blue;
+        text-decoration: underline;
+      }
+      a:hover, a:active{
+        color: $brand-red;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.download{
+
+  &-section{
+    @extend .product-support;
+    .col{
+      text-align: center;
+      .dashicons{
+        vertical-align: middle;
+      }
+    }
+  }
+  &-header{
+    @extend .product-buy;
+  }
+  &-title{
+    @extend .product-buy-title;
+  }
+  &-desc{
+    @extend .product-buy-desc;
+  }
+
+}

@@ -10,5 +10,6 @@ load_theme_textdomain( 'jaiko', get_stylesheet_directory() . '/languages' );
  */
 add_filter( 'bogo_localizable_post_types', function( $post_types ){
 	$post_types[] = 'add-on';
+	$post_types[] = 'announce';
 	return $post_types;
 } );

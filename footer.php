@@ -1,4 +1,3 @@
-
 <?php get_template_part( 'template-parts/block', 'add-on' ) ?>
 
 <?php get_template_part( 'template-parts/block', 'mail' ) ?>

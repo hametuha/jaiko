@@ -104,3 +104,73 @@ function jaiko_pagination( $query = null ) {
 
 	echo '<ul class="pagination">' . implode( "\n", $out ) . '</ul>';
 }
+
+/**
+ * Get posts
+ *
+ * @param null|int|WP_Post $post
+ *
+ * @return array
+ */
+function jaiko_add_ons_query( $post = null ) {
+	return get_posts( [
+		'post_type'      => 'add-on',
+		'post_status'    => 'publish',
+	    'post_parent'    => $post->ID,
+	    'posts_per_page' => -1,
+	] );
+}
+
+/**
+ * Return add-on's category
+ *
+ * @param null|int|WP_Post $post
+ *
+ * @return WP_Term
+ */
+function jaiko_add_on_category( $post = null ) {
+	$post = get_post( $post );
+	$post_id = $post->post_parent ?: $post->ID;
+	$categories = get_the_category( $post_id );
+	foreach ( $categories as $category ) {
+		return $category;
+	}
+	return null;
+}
+
+/**
+ * Get add on number
+ *
+ * @param null|int|WP_Post $post
+ *
+ * @return int
+ */
+function jaiko_add_on_count( $post = null ) {
+	$post = get_post( $post );
+	return count( jaiko_add_ons_query( $post ) );
+}
+
+/**
+ * Count license and show good result.
+ *
+ * @param int    $length
+ * @param string $type
+ * @todo Allow various situations.
+ * @return string
+ */
+function jaiko_calc_row_class( $length, $type = 'license' ) {
+	switch ( $length ) {
+		case 1:
+			return 's12';
+			break;
+		case 2:
+			return 's6';
+			break;
+		case 4:
+			return 's6 l3';
+			break;
+		default:
+			return 's4';
+			break;
+	}
+}

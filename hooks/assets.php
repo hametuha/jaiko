@@ -16,24 +16,26 @@ add_action( 'after_setup_theme', function () {
  * Register scripts
  */
 add_action( 'init', function () {
-
 	// Material Design Icons
 	wp_register_style( 'material-design-icon', 'https://fonts.googleapis.com/icon?family=Material+Icons', [], null );
-
+	// Typekit
+	wp_register_script( 'typekit', 'https://use.typekit.net/lro6chq.js', [], null, true );
+	wp_add_inline_script( 'typekit', 'try{Typekit.load({ async: true });}catch(e){}' );
 	// Material Desgin js
 	wp_register_script( 'materialize', get_template_directory_uri() . '/assets/js/materialize.min.js', [ 'jquery' ], '0.97.8', true );
-
+	// Default style
 	wp_register_style( 'jaiko', get_stylesheet_directory_uri() . '/assets/css/style.css', [
 		'material-design-icon',
 		'dashicons',
 	], wp_get_theme()->get( 'Version' ) );
+	// Default script
 	wp_register_script( 'jaiko', get_stylesheet_directory_uri() . '/assets/js/jaiko.js', [ 'materialize' ], wp_get_theme()->get( 'Version' ), true );
-
 } );
 
 // Register style
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'jaiko' );
+	wp_enqueue_script( 'typekit' );
 	wp_enqueue_style( 'jaiko' );
 	if ( is_singular() && post_type_supports( get_queried_object()->post_type, 'comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -73,37 +75,3 @@ add_action( 'wp_footer', function () {
 	</script>
 	<?php
 }, 11 );
-
-/**
- * Load typekit
- */
-add_action( 'wp_footer', function () {
-	?>
-	<script>
-		(function (d) {
-			var config                                                                 = {
-				    kitId        : 'lro6chq',
-				    scriptTimeout: 3000,
-				    async        : true
-			    },
-			    h = d.documentElement, t = setTimeout(function () {
-				    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-			    }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
-			h.className += " wf-loading";
-			tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-			tk.async = true;
-			tk.onload = tk.onreadystatechange = function () {
-				a = this.readyState;
-				if (f || a && a != "complete" && a != "loaded")return;
-				f = true;
-				clearTimeout(t);
-				try {
-					Typekit.load(config)
-				} catch (e) {
-				}
-			};
-			s.parentNode.insertBefore(tk, s)
-		})(document);
-	</script>
-	<?php
-}, 9999 );

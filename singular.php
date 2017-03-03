@@ -57,6 +57,8 @@ the_post(); ?>
 			jaiko_ad( 'after-title' );
 		} ?>
 
+		<?php get_template_part( 'template-parts/block', 'download' ) ?>
+
 		<div class="article-content">
 			<?php the_content(); ?>
 			<div style="clear:both;"></div>
@@ -72,58 +74,7 @@ the_post(); ?>
 		get_template_part( 'template-parts/share' );
 	} ?>
 
-
-	<section class="related">
-
-		<div class="container">
-
-			<div class="row">
-				<?php foreach (
-					[
-						__( 'Recent Posts', 'jaiko' ) => [
-							'post_type' => 'post',
-						    'post__not_in' => [ get_the_ID() ]
-						],
-						__( 'Recommended', 'jaiko' )  => [
-							'post_type'  => [ 'post', 'add-on' ],
-						    'orderby'    => 'score',
-						    'relates_to' => get_the_ID(),
-						],
-					] as $title => $query
-				) {
-					$query = array_merge( $query, [
-						'lang' => ( 'ja' == get_locale() ? 'ja' : 'en_US' ),
-						'posts_per_page' => 3,
-					] );
-					?>
-					<div class="col s12 m6">
-						<h2 class="related-title"><?= esc_html( $title ) ?></h2>
-						<ul class="collection">
-							<?php
-							$sub_query = new WP_Query( $query );
-							while ( $sub_query->have_posts() ) {
-								$sub_query->the_post();
-								get_template_part( 'template-parts/list', get_post_type() );
-							}
-							wp_reset_postdata();
-							?>
-						</ul>
-					</div>
-					<?php
-				}
-				?>
-			</div>
-			<p class="center">
-				<a href="<?= get_permalink( get_option( 'page_for_posts' ) ) ?>" class="btn-flat waves-effect">
-					<?php _e( 'See blog archive', 'jaiko' ) ?>
-				</a>
-			</p>
-		</div>
-	</section>
-
-	<?php if ( ! is_user_logged_in() ) {
-		jaiko_ad( 'after-content' );
-	} ?>
+	<?php get_template_part( 'template-parts/block', 'related' ) ?>
 
 	<?php get_template_part( 'template-parts/biography' ); ?>
 

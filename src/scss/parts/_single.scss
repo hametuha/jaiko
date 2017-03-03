@@ -5,6 +5,13 @@
     padding-bottom: 40px;
   }
 
+  &-excerpt{
+    font-size: 22px;
+    font-weight: bold;
+    @include sans();
+    color: #666;
+  }
+
   &-thumbnail {
     background: $brand-yellow;
     margin-bottom: 20px;
@@ -72,6 +79,9 @@
 
   &-content {
     @extend %post-body;
+    margin: 0 auto;
+    overflow-x: hidden;
+    max-width: 860px;
     .tiled-gallery .gallery-row {
       margin-right: auto;
       margin-left: auto;
@@ -80,59 +90,6 @@
   }
 }
 
-.product {
-  &-buy {
-    margin-top: 40px;
-    @include sans();
-    text-align: center;
-    &-title {
-      @include separated-title($brand-brown, $brand-yellow);
-    }
-    &-desc {
-      @include sans();
-      font-size: 18px;
-      color: $brand-green;
-    }
-  }
-  &-support {
-    .warifu-license-title,
-    .mikkai-form-title {
-      @include separated-title($brand-brown, $brand-yellow);
-      @include sans();
-    }
-    .warifu-license-wrapper,
-    .mikkai-form {
-      margin-top: 40px;
-    }
-    .warifu-license-message {
-      display: block;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid $brand-green;
-      color: $brand-green;
-    }
-    .warifu-license-p {
-      margin: 0;
-      a {
-        @extend %text-link;
-      }
-    }
-    .warifu-license-span {
-      font-size: 18px;
-      color: #666;
-      @include sans();
-      a {
-        @extend %text-link;
-      }
-    }
-    button,
-    .btn {
-      margin: 10px auto 30px;
-      @extend .btn;
-      @extend .waves-effect;
-    }
-  }
-}
 
 p.nocomments {
   margin: 20px auto;
@@ -250,91 +207,16 @@ p.nocomments {
   }
 }
 
-.front{
-  &-block{
-    padding: 40px 0;
-    background-color: #fff;
-    &:nth-child(even){
-      background-color: #f9f9f9;
-    }
-    &-title{
-      text-align: center;
-      color: $brand-red;
-      font-weight: bold;
-      font-size: 28px;
-      @include sans();
-      i{
-        color: $brand-yellow;
-        font-size: 64px;
-        margin-bottom: 10px;
-      }
-    }
-    &-lead{
-    }
-    &-conclusion{
-      text-align: center;
-      span{
-        color: $brand-brown;
-        font-size: 20px;
-        @include sans();
-        a{
-          @extend %text-link;
-        }
-      }
-      .btn{
-        margin-top: 20px;
-      }
-    }
-  }
+
+.related{
   &-title{
-    font-size: 32px;
-    @include sans();
-    color: $brand-brown;
-    text-align: center;
-  }
-  &-lead{
-    color: #aaa;
-    @include sans();
+    @include separated-title( $brand-yellow );
     font-size: 20px;
+  }
+  &-none{
     text-align: center;
-  }
-  &-image{
-    width: auto;
-    height: auto;
-    max-width: 100%;
-  }
-  &-list{
-    a{
-      @extend %text-link;
-    }
-    li{
-      margin: 0 0 20px 40px;
-      position: relative;
-      strong{
-        color: inherit;
-        font-weight: bold;
-      }
-      &:before{
-        font-family: "Material Icons";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -35px;
-        font-size: 30px;
-      }
-      &.ok{
-        color: $brand-brown;
-        &:before{
-          content: "done";
-          color: $brand-green;
-        }
-      }
-      &.ng{
-        color: #aaa;
-        &:before{
-          content: "new_releases";
-        }
-      }
-    }
+    padding: 20px;
+    background: #f9f9f9;
+    color: #999;
   }
 }
