@@ -24,3 +24,10 @@
 @mixin sans(){
   @include sans-ja();
 }
+
+@mixin if-small($font-size){
+  @media #{$small-and-down}{
+    font-size: $font-size;
+    @content;
+  }
+}

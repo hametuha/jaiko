@@ -14,7 +14,7 @@ the_post(); ?>
 			<?php the_content() ?>
 		</div>
 		<div class="article-jumbotron-btn">
-			<a class="btn"><?php _e( 'Install Gianism', 'jaiko' ) ?></a>
+			<a class="btn" href="https://wordpress.org/plugins/gianism/"><?php _e( 'Install Gianism', 'jaiko' ) ?></a>
 		</div>
 		<?php get_template_part( 'template-parts/language', 'changer' ) ?>
 	</div>

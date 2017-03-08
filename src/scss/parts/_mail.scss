@@ -16,12 +16,14 @@
     color: $brand-blue;
     @include sans();
     font-size: 48px;
+    @include if-small(32px);
     i{
       font-size: 120px;
       color: #aaa;
     }
     small{
-      font-size: 22px;
+      font-size: 0.5em;
+      line-height: 1.1;
       display: block;
       color: #aaa;
     }

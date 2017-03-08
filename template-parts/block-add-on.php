@@ -12,6 +12,7 @@
 			'posts_per_page' => 3,
 			'post_status' => 'publish',
 		    'post_parent' => 0,
+			'orderby' => [ 'menu_order' => 'DESC' ],
 		];
 		if ( is_singular( 'add-on' ) ) {
 			$args['post__not_in'] = [ get_queried_object_id() ];
@@ -27,6 +28,10 @@
 			wp_reset_postdata();
 		}
 		?>
+	</div>
+
+	<div class="add-ons-link">
+		<a class="add-ons-btn" href="<?= get_post_type_archive_link( 'add-on' ) ?>"><?php esc_html_e( 'See All Plugins', 'jaiko' ) ?></a>
 	</div>
 
 </div>

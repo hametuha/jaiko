@@ -10,6 +10,7 @@
     }
     &-title{
       font-size: 22px;
+      @include if-small(16px);
       font-weight: bold;
       text-align: center;
       margin: 0 0 10px;
@@ -38,6 +39,7 @@
     text-align: center;
     &-title {
       @include separated-title($brand-brown, $brand-yellow);
+      @include if-small(32px);
     }
     &-desc {
       @include sans();
@@ -100,6 +102,7 @@
     }
     &-title{
       font-size: 20px;
+      @include if-small(16px);
       @include sans();
     }
     &-desc{

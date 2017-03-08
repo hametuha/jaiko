@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2017-03-03 20:06+0900\n"
-"PO-Revision-Date: 2017-03-03 20:07+0900\n"
+"POT-Creation-Date: 2017-03-08 18:52+0900\n"
+"PO-Revision-Date: 2017-03-08 18:52+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -114,9 +114,8 @@ msgid ""
 "<strong>Tips blog:</strong> You can get latest information and notable tips "
 "from our <a href=\"%1$s\">blog list</a>. The latest is &quot;%2$s&quot;."
 msgstr ""
-"<strong>ティップス記事:</strong> You can get latest information and notable "
-"tips from our <a href=\"%1$s\">ブログ一覧</a>から最新情報や役立つティップスを"
-"探してください。最新の記事は「%2$s」です。"
+"<strong>ティップス記事:</strong> <a href=\"%1$s\">ブログ一覧</a>から最新情報"
+"や役立つティップスを探してください。最新の記事は「%2$s」です。"
 
 #: front-page.php:96
 #, php-format
@@ -249,6 +248,10 @@ msgctxt "noun"
 msgid "Comment"
 msgstr "コメント"
 
+#: hooks/meta.php:62
+msgid "WordPress Plugin"
+msgstr "WordPressプラグイン"
+
 #: hooks/post-expires.php:8
 msgid "Announcement"
 msgstr "告知"
@@ -324,6 +327,10 @@ msgstr "記事を見る"
 #: template-parts/block-add-on.php:5
 msgid "Our Plugins"
 msgstr "私たちのプラグイン"
+
+#: template-parts/block-add-on.php:34
+msgid "See All Plugins"
+msgstr "すべてのプラグインを見る"
 
 #: template-parts/block-mail.php:9
 msgid "Join our News Letter"
@@ -467,11 +474,11 @@ msgid "%s site."
 msgid_plural "%s sites."
 msgstr[0] "%s サイト"
 
-#: template-parts/warifu.php:96
+#: template-parts/warifu.php:97
 msgid "License Manager"
 msgstr "ライセンス管理"
 
-#: template-parts/warifu.php:99
+#: template-parts/warifu.php:100
 #, php-format
 msgid ""
 "Do you have license already? We are developing license manager. Stay tuned "
@@ -481,21 +488,21 @@ msgstr ""
 "発中です。<a href=\"%s\">ニュースレター</a>を購読していただい方にはできしだい"
 "お知らせします！"
 
-#: template-parts/warifu.php:106
+#: template-parts/warifu.php:107
 msgid "Chat & Forum"
 msgstr "チャット & フォーラム"
 
-#: template-parts/warifu.php:109
+#: template-parts/warifu.php:110
 msgid ""
 "We have a plan to make forum. Please be patient while we are working on!"
 msgstr ""
 "フォーラムを設置する予定です。現在作業中ですので、いましばらお待ちください。"
 
-#: template-parts/warifu.php:117
+#: template-parts/warifu.php:124
 msgid "30 Days Refund"
 msgstr "30日以内返金"
 
-#: template-parts/warifu.php:120
+#: template-parts/warifu.php:127
 #, php-format
 msgid ""
 "All of our premium plugins are refundable within 30 days. Please refer our "
@@ -504,11 +511,11 @@ msgstr ""
 "すべてのプレミアムプラグインは30日以内ならば返金可能です。詳細は<a href=\"%s"
 "\">返金ポリシー</a>をご参照ください。"
 
-#: template-parts/warifu.php:127
+#: template-parts/warifu.php:134
 msgid "Yes, GPL."
 msgstr "もちろん、GPL"
 
-#: template-parts/warifu.php:130
+#: template-parts/warifu.php:137
 #, php-format
 msgid ""
 "We respect <a href=\"%1$s\">WordPress license policy</a> and most of our "
@@ -519,14 +526,14 @@ msgstr ""
 "プラグインの多くは<strong>100%% GPL</strong>です。なぜ「多くは」なのかという"
 "と、ときどき<a href=\"%2$s\">MITライセンス</a>を採用することがあるからです。"
 
-#: template-parts/warifu.php:155
+#: template-parts/warifu.php:162
 #, php-format
 msgid "Welcome back %s! Please open chat box if you need our support!"
 msgstr ""
 "%sさん、おかえりなさい！　サポートが必要な場合は、チャットルームを開いてくだ"
 "さい。"
 
-#: template-parts/warifu.php:156
+#: template-parts/warifu.php:163
 msgid "Open support chat"
 msgstr "サポートチャットを開く"
 

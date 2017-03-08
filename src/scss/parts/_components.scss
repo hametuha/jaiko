@@ -208,6 +208,26 @@ img.no-content {
     @include separated-title($brand-brown);
     @include sans();
   }
+  &-link{
+    margin: 20px 0;
+    text-align: center;
+  }
+  &-btn{
+    display: inline-block;
+    padding: 10px 1em;
+    transition: color .3s 0 linear, background-color .3s 0 linear;
+    font-size: 32px;
+    border: 3px solid $brand-brown;
+    @include sans();
+    &:link, &:visited{
+      color: $brand-brown;
+      background: transparent;
+    }
+    &:hover, &:active{
+      color: $brand-yellow;
+      background: $brand-brown;
+    }
+  }
 }
 
 .announce{

@@ -1,5 +1,6 @@
 @import "_variables.scss";
-@import "mixins/*";
+@import "mixins/fonts";
+@import "mixins/global";
 @import "materialize_override";
 
 html, body, .container-mikkai, .row-mikkai, .col-mikkai{
@@ -8,5 +9,6 @@ html, body, .container-mikkai, .row-mikkai, .col-mikkai{
 }
 
 @import "materialize";
+@import "mixins/post_body";
 @import "parts/*";
 

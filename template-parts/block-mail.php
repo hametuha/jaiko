@@ -18,11 +18,11 @@
 			      target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
 					<div class="row">
-						<div class="input-field col s8 l10">
+						<div class="input-field col s12 l10">
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 							<label for="mce-EMAIL"><?php esc_html_e( 'Email Address', 'jaiko' ) ?></label>
 						</div>
-						<div class="col s4 l2">
+						<div class="col s12 l2">
 							<input type="submit" value="<?php esc_attr_e( 'Subscribe', 'jaiko' ) ?>"
 							       name="subscribe" id="mc-embedded-subscribe"
 							       class="waves-effect waves-light btn-large btn-success">

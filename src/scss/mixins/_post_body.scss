@@ -5,6 +5,10 @@
   line-height: 1.6;
   @include sans();
 
+  @media #{$small-and-down} {
+    font-size: 16px;
+  }
+
   a{
     &:link, &:visited{
       color: $brand-blue;
@@ -26,16 +30,19 @@
     margin-top: 2em;
     margin-bottom: 1em;
     font-size: 2em;
+    @include if-small(1.8em);
     padding-bottom: 0.5em;
     border-bottom: 3px solid $brand-yellow;
   }
 
   h3{
     font-size: 1.8em;
+    @include if-small(1.6em);
   }
 
   h4{
     font-size: 1.6em;
+    @include if-small(1.4em);
   }
 
   h6{
@@ -47,7 +54,6 @@
   }
 
   .lang-ja &{
-    font-feature-settings: "palt";
     text-align: justify;
     text-justify: inter-ideograph;
   }

@@ -1,7 +1,9 @@
 @import "_variables.scss";
-@import "mixins/*";
+@import "mixins/fonts";
+@import "mixins/global";
 @import "materialize_override";
 @import "materialize";
+@import "mixins/post_body";
 body{
   margin: 20px;
   @include sans();

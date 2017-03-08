@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
-<head>
+<head prefix="<?= jaiko_ogp_type() ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -18,7 +18,7 @@ $locale = 'ja' == get_locale() ? 'ja_JP' : 'en_US';
 <script>
 	window.fbAsyncInit = function() {
 		FB.init({
-			appId      : '983379265125123',
+			appId      : '<?= jaiko_fb_app_id() ?>',
 			xfbml      : true,
 			version    : 'v2.8'
 		});

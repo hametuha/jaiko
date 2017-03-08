@@ -90,6 +90,7 @@ if ( $licenses = warifu_license_posts() ) :
 			</div><!-- //.license-col  -->
 			<?php endforeach; ?>
 		</div>
+
 		<div class="product-notice row">
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">confirmation_number</i>
@@ -110,6 +111,12 @@ if ( $licenses = warifu_license_posts() ) :
 						''
 					); ?>
 				</p>
+				<div class="fb-messengermessageus"
+					 messenger_app_id="<?= jaiko_fb_app_id() ?>"
+					 page_id="<?= jaiko_fb_page_id() ?>"
+					 color="blue"
+					 size="standard">
+				</div>
 			</div>
 			<div style="clear:left" class="hide-on-med-and-up"></div>
 			<div class="col s6 m3 product-notice-item">
@@ -118,7 +125,7 @@ if ( $licenses = warifu_license_posts() ) :
 				<p class="product-notice-desc">
 					<?php printf(
 						__( 'All of our premium plugins are refundable within 30 days. Please refer our <a href="%s">refund policy</a>.', 'jaiko' ),
-						get_permalink( get_page_by_path( 'refund' ) )
+						get_permalink( get_page_by_path( 'refund' . ( 'ja' == get_locale() ? '-ja' : '' ) ) )
 					); ?>
 				</p>
 			</div>

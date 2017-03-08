@@ -64,12 +64,13 @@ add_action( 'wp_footer', function () {
 					} else {
 						var curLang = $link.text();
 						if ( $(li).hasClass('ja') ) {
-							$link.text( curLang + '版があります' );
+							$link.text( curLang + '版あり' );
 						} else {
-							$link.text('Also available in ' + curLang + '.');
+							$link.text( curLang + ' available.');
 						}
 					}
 				}
+
 			});
 		});
 	</script>
