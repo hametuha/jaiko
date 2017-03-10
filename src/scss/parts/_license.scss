@@ -1,13 +1,19 @@
 .license{
+  &-row{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
   // Item on single page
+  &-col{
+    border-left: 1px solid #eee;
+    &:last-child{
+      border-right: 1px solid #eee;
+    }
+  }
   &-item{
     background: #fff;
-    padding: 40px 20px;
+    padding: 40px 0;
     margin-bottom: 20px;
-    border: 1px solid #eee;
-    &:hover{
-      box-shadow: 0 0 5px 5px rgba( 0, 0, 0, .2 );
-    }
     &-title{
       font-size: 22px;
       @include if-small(16px);
@@ -18,9 +24,38 @@
       border-bottom: 3px solid #eee;
       @include sans();
     }
+    &-desc{
+      @include sans();
+      ul{
+        li{
+          margin-bottom: 0.5em;
+          padding-left: 2em;
+          list-style: none;
+          position: relative;
+          &:before{
+            position: absolute;
+            content: "check_circle";
+            font-family: "Material Icons";
+            color: $brand-green;
+            display: block;
+            left: 0.5em;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
     &-buy{
       margin-top: 20px;
       text-align: center;
+    }
+    &-price{
+      text-align: center;
+      color: $brand-red;
+      @include sans();
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 0.5em 0;
     }
     &-count{
       text-align: center;

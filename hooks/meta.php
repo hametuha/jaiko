@@ -79,6 +79,7 @@ add_action( 'wp_head', function() {
 	$excerpt = get_bloginfo( 'description' );
 	$type    = 'article';
 	$url     = '';
+	$keywords = [ 'WordPress', 'Plugin' ];
 	$metas = [
 		''   => [],
 		'og' => [],
@@ -92,12 +93,20 @@ add_action( 'wp_head', function() {
 	}
 	if ( is_singular() ) {
 		// This is post
-		$post = get_queried_object();
+		if ( is_home() ) {
+			$post = get_post( get_option( 'posts_per_page' ) );
+		} else {
+			$post = get_queried_object();
+		}
 		$url = get_permalink( $post );
 		if ( has_post_thumbnail( $post ) ) {
 			$image = get_the_post_thumbnail_url( $post, 'full' );
 		}
-		$excerpt = get_the_excerpt( $post );
+		if ( has_excerpt( $post ) ) {
+			$excerpt = get_the_excerpt( $post );
+		} else {
+			$excerpt = wp_trim_words( apply_filters( 'get_the_excerpt', strip_shortcodes( strip_tags( $post->post_content ) ) ) );
+		}
 		foreach ( [ 'category', 'post_tag' ] as $taxonomy ) {
 			$terms = get_the_terms( $post, $taxonomy );
 			if ( $terms && ! is_wp_error( $terms ) ) {
@@ -113,8 +122,7 @@ add_action( 'wp_head', function() {
 		$excerpt = $term->description;
 		$keywords[] = $term->name;
 	}
-	$keywords = [ 'WordPress', 'Plugin' ];
-	$excerpt = preg_replace( '#(\r|\n)#', '', $excerpt );
+	$excerpt = preg_replace( '#(\r|\n)#', ' ', $excerpt );
 	// Get image dimension
 	list( $width, $height ) = jaiko_image_dimension( $image );
 	$metas['og']['image:width']  = $width;

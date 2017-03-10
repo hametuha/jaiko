@@ -28,8 +28,9 @@ add_action( 'init', function () {
 		'material-design-icon',
 		'dashicons',
 	], wp_get_theme()->get( 'Version' ) );
+	wp_register_script( 'jquery-match-height', get_stylesheet_directory_uri() . '/assets/js/jquery.matchHeight-min.js', [ 'jquery' ], '1.0.1', true );
 	// Default script
-	wp_register_script( 'jaiko', get_stylesheet_directory_uri() . '/assets/js/jaiko.js', [ 'materialize' ], wp_get_theme()->get( 'Version' ), true );
+	wp_register_script( 'jaiko', get_stylesheet_directory_uri() . '/assets/js/jaiko.js', [ 'jquery-match-height', 'materialize' ], wp_get_theme()->get( 'Version' ), true );
 } );
 
 // Register style

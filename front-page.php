@@ -22,98 +22,110 @@ the_post(); ?>
 
 	<section class="front-section">
 
-		<div class="front-block">
+		<div class="front-block front-cards-block">
 
-			<div class="container">
-
-				<h2 class="front-title">
-					<?php _e( 'Enhance Your Login', 'jaiko' ) ?>
-				</h2>
-				<p class="front-lead">
-					<?php _e( 'Missing link between WordPress and Application', 'jaiko' ) ?>
-				</p>
-
-				<div class="row">
-					<div class="col s12 m8">
-						<ul class="front-list mt80">
-							<li class="ok">
-								<?php _e( 'User can login via facebook, google, twitter and instagram account. Extra SNS are add-ons.', 'jaiko' ) ?>
-							</li>
-							<li class="ok">
-								<?php _e( 'Experienced developers can use additional features. Facebook Graph API, Twitter API and Google API.', 'jaiko' ) ?>
-							</li>
-						</ul>
-					</div>
-					<div class="col m4 hide-on-small-and-down">
-						<img class="front-image"
-						     src="<?= get_stylesheet_directory_uri() ?>/assets/img/front/login-screen.png"
-						     alt="Login screen"/>
-					</div>
-				</div>
-
+			<div class="front-cards-video youtube-bg">
+				<iframe data-width="560" data-height="315"
+						src="https://www.youtube.com/embed/JXl3EMPmXkY?rel=0&autoplay=1&showinfo=0&loop=1&controls=0&wmode=transparent"
+						frameborder="0" allowfullscreen="true"></iframe>
 			</div>
 
+			<div class="container">
 
-		</div>
+				<div class="front-cards">
+					<?php
+					$counter = 0;
+					$rows = [];
+					foreach ( [
+						[ 'facebook', __( 'Log in with Facebook.', 'jaiko' ), '#3b5998' ],
+						[ 'twitter', __( 'Why not twitter?', 'jaiko' ), '#1da1f2' ],
+						[ 'google', __( 'Google? Yes, of course.', 'jaiko' ), '#dd4b39' ],
+						[ 'instagram', __( 'Also Instagram. True.', 'jaiko' ), '#833ab4' ],
+						[ 'github', __( 'We have add-ons like Github, mixi and so on.', 'jaiko' ), '#333' ],
+						[ 'setup', __( 'Service API available for experienced developers.', 'jaiko' ), '#4D8E26' ],
+						[ 'graph', __( 'Every service extensible like Google Analytics, Facebook Graph API and so on.', 'jaiko' ), '#176B86' ],
+						[ 'heart', __( 'We have support plan in case you are lost yourself.', 'jaiko' ), '#E03A01' ],
+					] as $card ) {
+						$index = (int) floor( $counter / 4 );
+						if ( ! isset( $rows[ $index ] ) ) {
+							$rows[ $index ] = [];
+						}
+						$rows[ $index ][] = $card;
+						$counter++;
+					}
+					foreach ( $rows as $row ) :
+						$counter = 0;
+						$row_index = 0;
+						?>
+						<div class="row front-cards-row">
+							<?php foreach ( $row as list( $icon, $text, $color ) ) : $row_index++; ?>
+								<div class="col s6 m3">
+									<div class="front-cards-item">
+										<span class="lsf lsf-<?= $icon ?>" style="<?= $color ? "color:{$color};" : '' ?>"></span>
+										<p data-mh="match-height-<?= $row_index ?>">
+											<?= $text ?>
+										</p>
+									</div>
+								</div>
+								<?php if ( 1 === $counter ) : ?>
+									<div style="clear:left" class="hide-on-med-and-up"></div>
+								<?php endif; ?>
+							<?php $counter++; endforeach; ?>
+						</div>
+					<?php endforeach; ?>
+				</div><!-- // .front-cards -->
+			</div><!-- //.container -->
+		</div><!-- // .front-block -->
 
 		<div class="front-block">
 
 			<div class="container">
 
-
 				<h2 class="front-title">
-					<?php _e( 'What We Provide You', 'jaiko' ) ?>
+					<?php _e( 'Our Blog Posts', 'jaiko' ) ?>
 				</h2>
 				<p class="front-lead">
 					<?php _e( 'Gianism.info is the information hub for WordPress Developer!', 'jaiko' ) ?>
 				</p>
 				<div class="row">
-					<div class="col m4 hide-on-small-and-down">
-						<img class="front-image"
-						     src="<?= get_stylesheet_directory_uri() ?>/assets/img/front/gianism-love.png" alt="Love"/>
+					<?php
+					$latest = new WP_Query( [
+						'post_type'        => 'post',
+						'post_status'      => 'publish',
+						'posts_per_page'   => 7,
+						'lang'             => 'ja' == get_locale() ? 'ja' : 'en_US',
+					] );
+					?>
+					<div class="col m12 l4 card-big">
+						<?php $latest->the_post() ?>
+						<?php get_template_part( 'template-parts/card', 'post' ) ?>
 					</div>
-					<div class="col s12 m8 mt80">
-						<ul class="front-list">
-							<li class="ok">
-								<?php
-								$latest = get_posts( [
-									'post_type'        => 'post',
-									'post_status'      => 'publish',
-									'posts_per_page'   => 1,
-								    'lang'             => 'ja' == get_locale() ? 'ja' : 'en_US',
-								    'suppress_filters' => false,
-								] );
-								printf(
-									__( '<strong>Tips blog:</strong> You can get latest information and notable tips from our <a href="%1$s">blog list</a>. The latest is &quot;%2$s&quot;.', 'jaiko' ),
-									get_permalink( get_option( 'page_for_posts' ) ),
-									sprintf( '<a href="%1$s">%2$s</a>', get_permalink( $latest[0] ), get_the_title( $latest[0] ) )
-								);
+					<div class="col m12 l8">
+						<div class="row front-list-divider">
+							<?php
+							$counter = 0;
+							for ( $i = 0; $i < 6; $i++ ) :
+								if ( ! $latest->have_posts() ) {
+									break;
+								}
+								$latest->the_post();
 								?>
-							</li>
-							<li class="ok">
-								<?php
-								printf(
-									__( '<strong>Add ons:</strong> We provide <a href="%s">add ons and plugins</a>. Each of them is intended to work with user oriented features.', 'jaiko' ),
-									get_post_type_archive_link( 'add-on' )
-								);
-								?>
-							</li>
-							<li class="ng">
-								<?php
-								printf(
-									__( '<strong>Support Forum:</strong> In progress. You will be able to ask anything there!', 'jaiko' )
-								);
-								?>
-							</li>
-							<li class="ng">
-								<?php
-								printf(
-									__( '<strong>Private Chat:</strong> In Progress. You might have some secret information. So, aks us privately!', 'jaiko' )
-								);
-								?>
-							</li>
-						</ul>
+								<div class="col m12 l6">
+									<?php get_template_part( 'template-parts/loop', 'front' ) ?>
+								</div>
+								<?php if ( false !== array_search( $counter, [ 1, 3 ] ) ) : ?>
+								<div style="clear:left" class="hide-on-med-and-down divider"></div>
+								<?php endif; ?>
+							<?php $counter++; endfor;
+							wp_reset_postdata() ?>
+						</div>
 					</div>
+				</div>
+
+				<div class="center">
+					<a class="waves-effect waves-light btn-large" href="<?= get_permalink( get_post( get_option( 'page_for_posts' ) ) ) ?>">
+						<?php _e( 'See All Posts', 'jaiko' ) ?>
+					</a>
 				</div>
 
 			</div>

@@ -34,6 +34,72 @@
       }
     }
   }
+  &-cards{
+    &-video{
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      iframe{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &-block{
+      position: relative;
+      .container{
+        position: relative;
+        z-index: 10;
+      }
+    }
+    &-row{
+      margin-bottom: 0;
+    }
+    &-header{
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    &-title{
+      font-size: 32px;
+      @include sans();
+      font-weight:bold;
+      color: $brand-brown;
+      text-shadow: 0 0 1px rgba(255, 255, 255, 1);
+    }
+    &-lead{
+      font-size: 22px;
+      @include sans();
+      color: $brand-blue;
+      font-weight: bold;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+    }
+    &-item{
+      text-align: center;
+      margin-bottom: 20px;
+      background: rgba( 255, 255, 255, .9 );
+      padding: 10px;
+      box-shadow: 0 0 3px 5px rgba(0, 0, 0, .2);
+      .lsf{
+        font-size: 64px;
+        margin-bottom: 20px;
+        color: $brand-blue;
+      }
+      p{
+        margin: 0;
+        @include sans();
+        color: $brand-brown;
+        font-size: 16px;
+        @include if-small(12px);
+      }
+    }
+  }
   &-title{
     font-size: 32px;
     @include sans();
@@ -52,6 +118,24 @@
     max-width: 100%;
   }
   &-list{
+    &-divider{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      a{
+        .list-item-arrow{
+          transition: color .3s 0 linear;
+        }
+        &:hover{
+          .list-item-arrow{
+            color: $brand-red;
+          }
+        }
+      }
+    }
     a{
       @extend %text-link;
     }
@@ -72,6 +156,8 @@
       }
       &.ok{
         color: $brand-brown;
+        font-size: 18px;
+        @include if-small(16px);
         &:before{
           content: "done";
           color: $brand-green;

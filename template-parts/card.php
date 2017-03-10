@@ -7,6 +7,8 @@
 		<?php the_excerpt() ?>
 	</div>
 	<div class="card-action">
-		<a class="btn waves-effect deep-orange" href="<?php the_permalink() ?>"><?php _e( 'Check this add on', 'jaiko' ) ?></a>
+		<a class="btn waves-effect deep-orange" href="<?php the_permalink() ?>">
+			<?php _e( 'Check this add on', 'jaiko' ) ?>
+		</a>
 	</div>
 </div>

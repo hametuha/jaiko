@@ -67,13 +67,18 @@ if ( $licenses = warifu_license_posts() ) :
 				<?php _e( 'Grab license at <strong>Gumroad</strong> and premium support!', 'jaiko' ) ?>
 			</p>
 		</div>
-		<div class="row">
+		<div class="row license-row">
 			<?php foreach ( $licenses as $license ) : ?>
 			<div class="license-col col <?= jaiko_calc_row_class( count( $licenses ) ) ?>">
 				<div class="license-item">
-					<h3 class="license-item-title"><?= esc_html( get_the_title( $license ) ) ?></h3>
-					<div class="license-item-desc">
+					<h3 class="license-item-title" data-mh="license-title"><?= esc_html( get_the_title( $license ) ) ?></h3>
+					<?php if ( $license->post_content ) : ?>
+					<div class="license-item-desc" data-mh="license-content">
 						<?= apply_filters( 'the_content', $license->post_content ) ?>
+					</div>
+					<?php endif; ?>
+					<div class="license-item-price">
+						&yen; <?= esc_html( warifu_price( $license ) ?: '---' ) ?>
 					</div>
 					<div class="license-item-count">
 						<?php esc_html_e( 'Allows installing ', 'jaiko' ) ?>
@@ -84,7 +89,7 @@ if ( $licenses = warifu_license_posts() ) :
 						<?php endif; ?>
 					</div>
 					<div class="license-item-buy">
-						<?= warifu_gumroad_button( $license ); ?>
+						<?= warifu_gumroad_button( $license, [ 'label' => __( 'See Detail', 'jaiko' ) ] ); ?>
 					</div>
 				</div>
 			</div><!-- //.license-col  -->
@@ -94,7 +99,7 @@ if ( $licenses = warifu_license_posts() ) :
 		<div class="product-notice row">
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">confirmation_number</i>
-				<p class="product-notice-title"><?php esc_html_e( 'License Manager', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'License Manager', 'jaiko' ) ?></p>
 				<p class="product-notice-desc">
 					<?php printf(
 						__( 'Do you have license already? We are developing license manager. Stay tuned on our <a href="%s">news letter</a>!', 'jaiko' ),
@@ -104,7 +109,7 @@ if ( $licenses = warifu_license_posts() ) :
 			</div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">forum</i>
-				<p class="product-notice-title"><?php esc_html_e( 'Chat & Forum', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Chat & Forum', 'jaiko' ) ?></p>
 				<p class="product-notice-desc">
 					<?php printf(
 						__( 'We have a plan to make forum. Please be patient while we are working on!', 'jaiko' ),
@@ -121,7 +126,7 @@ if ( $licenses = warifu_license_posts() ) :
 			<div style="clear:left" class="hide-on-med-and-up"></div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">attach_money</i>
-				<p class="product-notice-title"><?php esc_html_e( '30 Days Refund', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( '30 Days Refund', 'jaiko' ) ?></p>
 				<p class="product-notice-desc">
 					<?php printf(
 						__( 'All of our premium plugins are refundable within 30 days. Please refer our <a href="%s">refund policy</a>.', 'jaiko' ),
@@ -131,7 +136,7 @@ if ( $licenses = warifu_license_posts() ) :
 			</div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">done_all</i>
-				<p class="product-notice-title"><?php esc_html_e( 'Yes, GPL.', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Yes, GPL.', 'jaiko' ) ?></p>
 				<p class="product-notice-desc">
 					<?php printf(
 						__( 'We respect <a href="%1$s">WordPress license policy</a> and most of our plugins are <strong>100%% GPL</strong>. Why "most"? Because sometimes we prefer <a href="%2$s">MIT</a>.', 'jaiko' ),

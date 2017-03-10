@@ -42,7 +42,10 @@ gulp.task('js', function () {
 
 // JS Hint
 gulp.task('jshint', function () {
-  return gulp.src(['./src/js/**/*.js'])
+  return gulp.src([
+      './src/js/**/*.js',
+      '!./src/js/jquery.tubular.1.0.js'
+  ])
     .pipe($.jshint('./src/.jshintrc'))
     .pipe($.jshint.reporter('jshint-stylish'));
 });
@@ -52,6 +55,7 @@ gulp.task('copylib', function () {
   return eventStream.merge(
     gulp.src([
       './node_modules/materialize-css/dist/js/materialize.min.js',
+      './node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
     ])
       .pipe(gulp.dest('./assets/js')),
     gulp.src([
