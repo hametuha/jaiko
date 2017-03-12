@@ -1,0 +1,100 @@
+.forum {
+  &-logo{
+    color: $brand-brown;
+    i{
+      font-size: 60px;
+    }
+  }
+  &-header {
+    h1 {
+      color: $brand-brown;
+      line-height: 1.1;
+      @include sans();
+      font-size: 32px;
+      @include if-small(28px);
+      font-weight: bold;
+      small{
+        display: block;
+        color: $brand-blue;
+        font-weight: normal;
+      }
+    }
+  }
+  &-content {
+    #bbpress-forums{
+      font-size: 14px;
+      a{
+        &:link, &:visited{
+          color: $brand-blue;
+          text-decoration: underline;
+        }
+        &:hover, &:active{
+          color: $brand-red;
+          text-decoration: none;
+        }
+      }
+      select{
+        display: block;
+      }
+      .bbp{
+
+        &-template-notice{
+          border-radius: 0;
+          padding: 1em;
+        }
+
+        &-breadcrumb{
+          font-size: 11px;
+          &-sep{
+            color: #ccc;
+          }
+          p:before{
+            display: inline-block;
+            content: "place";
+            font-family: "Material Icons";
+            color: #ccc;
+            margin-right: 0.5em;
+          }
+
+        }
+
+        &-the-content{
+          min-height: 200px;
+          background: #f5f5f5;
+        }
+
+        &-reply{
+          &-content{
+            font-size: 16px;
+          }
+        }
+
+        &-submit-wrapper{
+          text-align: left;
+          margin: 20px 0;
+          float: none;
+          button{
+            @extend .btn-large;
+          }
+        }
+        &-category-block{
+          clear: left;
+          float: left;
+          a{
+            &:link, &:visited{
+              color: #000;
+              text-decoration: none;
+            }
+            &:hover, &:active{
+              opacity: .8;
+              color: $brand-blue;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

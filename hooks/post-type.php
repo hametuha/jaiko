@@ -21,11 +21,6 @@ add_action( 'init', function () {
 	);
 } );
 
-add_filter( 'bbp_register_forum_post_type', function( $arg ) {
-	$arg['taxonomies'] = [ 'category' ];
-	return $arg;
-} );
-
 
 /**
  * Add rewrite rules

@@ -47,6 +47,16 @@
   margin: 10px 0;
 }
 
+.ad{
+  &-title{
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+}
+
 img.no-content {
   width: auto;
   height: auto;

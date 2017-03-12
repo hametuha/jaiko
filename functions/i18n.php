@@ -26,3 +26,24 @@ function jaiko_no_translation( $post = null ) {
 		return $label;
 	}
 }
+
+/**
+ * Fix url changer of bogo.
+ *
+ * @param string $slug
+ * @param string $lang
+ * @internal
+ *
+ * @return string
+ */
+function jaiko_bogo_url_fixer( $slug, $lang ) {
+	return 'en';
+}
+
+/**
+ * Remove bogo fixer
+ */
+function jaiko_restore_bogo_url() {
+	add_filter( 'home_url', 'bogo_home_url' );
+	remove_filter( 'bogo_lang_slug', 'jaiko_bogo_url_fixer' );
+}

@@ -53,7 +53,7 @@ the_post(); ?>
 			</div>
 		<?php endif; ?>
 
-		<?php if ( ! is_user_logged_in() ) {
+		<?php if ( is_singular( 'post' ) ) {
 			jaiko_ad( 'after-title' );
 		} ?>
 
