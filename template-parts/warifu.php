@@ -111,10 +111,9 @@ if ( $licenses = warifu_license_posts() ) :
 				<i class="material-icons">forum</i>
 				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Chat & Forum', 'jaiko' ) ?></p>
 				<p class="product-notice-desc">
-					<?php printf(
-						__( 'We have a plan to make forum. Please be patient while we are working on!', 'jaiko' ),
-						''
-					); ?>
+					<?php
+						_e( '<a href="/forums/">Forum</a> is available! We are also working on chats support.', 'jaiko' );
+					?>
 				</p>
 				<div class="fb-messengermessageus"
 					 messenger_app_id="<?= jaiko_fb_app_id() ?>"

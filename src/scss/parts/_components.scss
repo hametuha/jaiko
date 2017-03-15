@@ -57,6 +57,17 @@
   }
 }
 
+a.chip{
+  &:link, &:visited{
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  &:hover, &:active{
+    color: $brand-blue !important;
+    text-decoration: none !important;
+  }
+}
+
 img.no-content {
   width: auto;
   height: auto;
@@ -186,15 +197,13 @@ img.no-content {
 }
 
 .follow {
-  &-wrapper{
-    margin: 40px auto;
-  }
   &-ad {
     margin: 0 auto;
     max-width: 336px;
   }
   &-wrapper {
-    padding: 20px;
+    margin: 0 auto;
+    padding: 40px;
     border: 1px solid #ddd;
     background: #f9f9f9;
     text-align: center;
@@ -211,7 +220,54 @@ img.no-content {
     color: #aaa;
     @include sans();
   }
+  &-button{
+    margin-bottom: 20px;
+    text-align: center;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
 
+
+.share{
+  &-container{
+    margin-bottom: 20px;
+    .col{
+      & > div, & > iframe {
+        display: inline-block;
+        vertical-align: middle;
+        span{
+          vertical-align: middle !important;
+        }
+      }
+    }
+  }
+  &-title{
+    @include separated-title(#999);
+    margin: 0 0 5px;
+    font-size: 18px;
+    @include sans();
+  }
+  &-sns{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  @each $var in (
+    facebook #3C5A96,
+    twitter  #1DAEEC,
+    hatena   #547CE4,
+    pocket   #EE4056
+  ) {
+    $brand: nth( $var, 1 );
+    $color: nth( $var, 2 );
+    &-sns-#{$brand} {
+      @extend .share-sns;
+      background-color: $color;
+    }
+  }
 }
 
 .add-ons {

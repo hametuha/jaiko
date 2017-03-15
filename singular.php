@@ -71,7 +71,10 @@ the_post(); ?>
 	</article>
 
 	<?php if ( 'post' == get_post_type() ) {
-		get_template_part( 'template-parts/share' );
+		if ( ! is_preview() ) {
+			get_template_part( 'template-parts/share' );
+		}
+		get_template_part( 'template-parts/share', 'follow' );
 	} ?>
 
 	<?php get_template_part( 'template-parts/block', 'related' ) ?>

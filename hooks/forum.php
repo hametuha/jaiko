@@ -1,34 +1,29 @@
 <?php
 
-//add_action( 'init', function( ) {
-//	if ( ! is_user_logged_in() ) {
-//		return;
-//	}
-//	$locale = get_user_locale( get_current_user_id() );
-//	if ( 'ja' == $locale ) {
-//		// Change locale
-//		/** @var WP_Locale_Switcher $wp_locale_switcher */
-//		global $wp_locale_switcher;
-//		$wp_locale_switcher->switch_to_locale( 'ja' );
-//	}
-//} );
-//
+/**
+ * Set locale for logged in user.
+ */
+add_action( 'init', function( ) {
+	// Check if this is a forum post.
+	if ( isset( $_SERVER['REQUEST_URI'] ) && preg_match( '#^/forums#', $_SERVER['REQUEST_URI'] ) ) {
+		if ( is_user_logged_in() ) {
+			$locale = get_user_locale( get_current_user_id() );
+			if ( 'ja' == $locale ) {
+				// Change locale
+				/** @var WP_Locale_Switcher $wp_locale_switcher */
+				global $wp_locale_switcher;
+				$wp_locale_switcher->switch_to_locale( 'ja' );
+			}
+		}
+	}
+} );
+
 /**
  * Change forum template.
  */
 add_filter( 'template_include', function( $path ) {
-	if ( is_bbpress() ) {
+	if ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
 		$path = get_template_directory() . '/forum-template.php';
-	}
-	if ( get_template_directory() . '/page.php' == $path ) {
-		// Singular template is got.
-		if ( ! is_page() ) {
-//			if ( is_user_logged_in() && 'ja' == get_user_locale( get_current_user_id() ) ) {
-//				remove_filter( 'home_url', 'bogo_home_url' );
-//				add_filter( 'bogo_lang_slug', 'jaiko_bogo_url_fixer', 10, 2 );
-//			}
-
-		}
 	}
 	return $path;
 } );
@@ -109,4 +104,17 @@ add_action( 'bbp_template_before_single_topic', function() {
 		<?php endforeach; ?>
 		</div>
 	<?php endif;
+} );
+
+add_action( 'bbp_theme_after_topic_title', function() {
+	if ( ! ( $categories = get_the_category() ) ) {
+		return;
+	}
+	?>
+	<?php foreach ( $categories as $term ) : ?>
+		<a class="chip" href="<?= get_term_link( $term ) ?>">
+			<?= esc_html( $term->name ) ?>
+		</a>
+	<?php endforeach; ?>
+	<?php
 } );
