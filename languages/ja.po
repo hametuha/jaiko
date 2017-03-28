@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2017-03-12 19:53+0900\n"
-"PO-Revision-Date: 2017-03-12 20:31+0900\n"
+"POT-Creation-Date: 2017-03-28 14:03+0900\n"
+"PO-Revision-Date: 2017-03-28 14:05+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
@@ -213,9 +213,13 @@ msgstr ""
 "この記事は登録済みユーザー専用です。残り%1$d%%のコンテンツを読むためには、<a "
 "href=\"%2$s\" rel=\"nofollow\">ログイン</a>してください。"
 
-#: hooks/add-on.php:18
+#: hooks/add-on.php:19
 msgid "Download URL"
 msgstr "ダウンロードURL"
+
+#: hooks/add-on.php:39 template-parts/bundles.php:13
+msgid "Bundled Plugins"
+msgstr "同梱されるプラグイン"
 
 #: hooks/admin.php:12
 msgid "aside"
@@ -259,8 +263,8 @@ msgid "Expires at"
 msgstr "期限切れになる日"
 
 #: hooks/post-type.php:10
-msgid "Add On"
-msgstr "﻿アドオン"
+msgid "Plugin"
+msgstr "プラグイン"
 
 #: hooks/widgets.php:7
 msgid "Header Navigation"
@@ -302,7 +306,7 @@ msgstr "フッターブロック"
 msgid "Type and hit enter"
 msgstr "入力してエンターを押す"
 
-#: singular.php:27
+#: singular.php:28
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
@@ -391,13 +395,39 @@ msgstr "目次"
 msgid "Pages of %s"
 msgstr "%sのページ"
 
+#: template-parts/bundles.php:15
+#, php-format
+msgid "This license provides you %s!"
+msgstr "このライセンスで%sをご提供します！"
+
+#: template-parts/bundles.php:15
+#, php-format
+msgid "%d more plugin"
+msgid_plural "%d more plugins"
+msgstr[0] "さらに%dつのプラグイン"
+
+#: template-parts/bundles.php:40
+msgid "Get Bundle Package"
+msgstr "バンドルパッケージを手に入れよう"
+
+#: template-parts/bundles.php:42
+#, php-format
+msgid "This plugin is included in %s!"
+msgstr "このプラグインは%sに含まれています。"
+
+#: template-parts/bundles.php:42
+#, php-format
+msgid "%d bundle"
+msgid_plural "%d bundles"
+msgstr[0] "%dつのバンドル"
+
 #: template-parts/card-post.php:18 template-parts/loop.php:28
 msgid "Read this article"
 msgstr "この記事を読む"
 
 #: template-parts/card.php:11
-msgid "Check this add on"
-msgstr "このアドオンを見る"
+msgid "Check this plugin"
+msgstr "プラグインを見る"
 
 #: template-parts/content-none.php:13
 msgid "Nothing Found"
@@ -411,36 +441,31 @@ msgstr ""
 "コンテンツが見つかりませんでした。URLが間違っているか、翻訳が存在しません。検"
 "索するとなにかわかるかもしれません。"
 
-#: template-parts/content-page.php:30 template-parts/content-single.php:20
-msgid "Pages:"
-msgstr "ページ: "
-
-#: template-parts/content-page.php:34 template-parts/content-single.php:24
-msgid "Page"
-msgstr "ページ"
-
-#: template-parts/content-page.php:44 template-parts/content-single.php:45
-#, php-format
-msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "<span class=\"screen-reader-text\"> \"%s\"</span>を編集"
-
-#: template-parts/share.php:6 template-parts/share.php:17
+#: template-parts/share-follow.php:6 template-parts/share-follow.php:19
 msgid "Follow Us"
 msgstr "フォローしてください"
 
-#: template-parts/share.php:8
+#: template-parts/share-follow.php:9
 msgid "Do you like this article? Please follow us and keep updated!"
 msgstr "この記事はいかがでしたか？　フォローして最新情報をゲット！"
 
-#: template-parts/warifu.php:24 template-parts/warifu.php:33
+#: template-parts/share.php:3
+msgid "Share This Article"
+msgstr "この記事をシェアする"
+
+#: template-parts/share.php:32 template-parts/share.php:34
+msgid "Add this entry to hatena bookmark."
+msgstr "このエントリーをはてなブックマークに追加する。"
+
+#: template-parts/warifu.php:22 template-parts/warifu.php:31
 msgid "Download"
 msgstr "ダウンロード"
 
-#: template-parts/warifu.php:27
+#: template-parts/warifu.php:25
 msgid "View on Github"
 msgstr "Githubで表示"
 
-#: template-parts/warifu.php:35
+#: template-parts/warifu.php:33
 msgid "Yes, they are open source and any pull requests are welcome!"
 msgstr "このプラグインはオープンソースで、プルリクエストも受け付け中です！"
 
@@ -526,16 +551,25 @@ msgstr ""
 "プラグインの多くは<strong>100%% GPL</strong>です。なぜ「多くは」なのかという"
 "と、ときどき<a href=\"%2$s\">MITライセンス</a>を採用することがあるからです。"
 
-#: template-parts/warifu.php:166
-#, php-format
-msgid "Welcome back %s! Please open chat box if you need our support!"
-msgstr ""
-"%sさん、おかえりなさい！　サポートが必要な場合は、チャットルームを開いてくだ"
-"さい。"
+#~ msgid "Add On"
+#~ msgstr "﻿アドオン"
 
-#: template-parts/warifu.php:167
-msgid "Open support chat"
-msgstr "サポートチャットを開く"
+#~ msgid "Pages:"
+#~ msgstr "ページ: "
+
+#~ msgid "Page"
+#~ msgstr "ページ"
+
+#~ msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+#~ msgstr "<span class=\"screen-reader-text\"> \"%s\"</span>を編集"
+
+#~ msgid "Welcome back %s! Please open chat box if you need our support!"
+#~ msgstr ""
+#~ "%sさん、おかえりなさい！　サポートが必要な場合は、チャットルームを開いてく"
+#~ "ださい。"
+
+#~ msgid "Open support chat"
+#~ msgstr "サポートチャットを開く"
 
 #~ msgid ""
 #~ "We have a plan to make forum. Please be patient while we are working on!"
@@ -597,9 +631,6 @@ msgstr "サポートチャットを開く"
 
 #~ msgid "See blog archive"
 #~ msgstr "ブログ一覧を見る"
-
-#~ msgid "Our Add Ons"
-#~ msgstr "提供しているアドオン"
 
 #~ msgid "Get product license!"
 #~ msgstr "プロダクトライセンスを取得！"

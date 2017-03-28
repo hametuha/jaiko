@@ -7,7 +7,7 @@ add_action( 'init', function () {
 	register_post_type(
 		'add-on',
 		[
-			'label'        => __( 'Add On', 'jaiko' ),
+			'label'        => __( 'Plugin', 'jaiko' ),
 			'public'       => true,
 			'has_archive'  => true,
 			'hierarchical' => true,

@@ -15,8 +15,9 @@ the_post(); ?>
 		<div class="article-header">
 
 			<?php if ( ! is_page() ) : ?>
-				<div
-					class="article-header-badge article-header-badge-<?= get_post_type() ?>"><?= esc_html( get_post_type_object( get_post_type() )->label ) ?></div>
+				<div class="article-header-badge article-header-badge-<?= get_post_type() ?>">
+					<?= esc_html( get_post_type_object( get_post_type() )->label ) ?>
+				</div>
 			<?php endif; ?>
 			<h1>
 				<?php the_title() ?>
@@ -67,6 +68,8 @@ the_post(); ?>
 		<?php get_template_part( 'template-parts/block', 'toc' ); ?>
 
 		<?php get_template_part( 'template-parts/warifu' ); ?>
+
+		<?php get_template_part( 'template-parts/bundles' ); ?>
 
 	</article>
 

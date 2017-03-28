@@ -12,8 +12,6 @@ if ( function_exists( 'bogo_get_post_translation' ) && ( 'ja' == get_locale() ) 
 }
 
 
-
-
 // ------------------------------
 //
 // Show download URL
@@ -48,6 +46,8 @@ if ( $url ) :
 	</div>
 	<?php
 endif;
+
+
 
 
 
@@ -149,29 +149,10 @@ if ( $licenses = warifu_license_posts() ) :
 	<?php
 endif;
 
-// ------------------------------
-//
-// Show related products
-//
-//
-
-//<div class="col s12 m6">
-//				<?php warifu_form( __( 'Save License key to be supported!', 'jaiko' ) );
-// </div>
-
-if ( warifu_guid() ) {
-	if ( defined( 'MIKKAI_VERSION' ) && is_user_logged_in() ) {
-		if ( $thread = mikkai_owned_thread() ) {
-			$user = get_userdata( get_current_network_id() );
-			printf( '<p class="product-buy-desc">%s</p>', sprintf( esc_html__( 'Welcome back %s! Please open chat box if you need our support!', 'jaiko' ), $user->display_name ) );
-			printf( '<a href="%s" class="waves-effect btn">%s</a>', mikkai_message_url( $thread->ID ), __( 'Open support chat', 'jaiko' ) );
-		} else {
-			mikkai_child_thread_button( $post );
-		}
-	}
-}
 
 if ( $restore ) {
 	wp_reset_postdata();
 	add_filter( 'home_url', 'bogo_home_url' );
 }
+
+

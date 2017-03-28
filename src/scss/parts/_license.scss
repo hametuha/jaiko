@@ -84,7 +84,6 @@
   }
   &-support {
     padding-bottom: 40px;
-    border-bottom: 1px solid $brand-yellow;
     .warifu-license-title,
     .mikkai-form-title {
       @include separated-title($brand-brown, $brand-yellow);
@@ -155,8 +154,8 @@
 }
 
 
+// Donwload section
 .download{
-
   &-section{
     @extend .product-support;
     .col{
@@ -176,4 +175,20 @@
     @extend .product-buy-desc;
   }
 
+}
+
+// Bundle section
+.bundles{
+  &-wrap{
+    @extend .product-support;
+  }
+  &-header{
+    @extend .product-buy;
+  }
+  &-title{
+    @extend .product-buy-title;
+  }
+  &-desc{
+    @extend .product-buy-desc;
+  }
 }

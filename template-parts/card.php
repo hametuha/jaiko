@@ -8,7 +8,7 @@
 	</div>
 	<div class="card-action">
 		<a class="btn waves-effect deep-orange" href="<?php the_permalink() ?>">
-			<?php _e( 'Check this add on', 'jaiko' ) ?>
+			<?php _e( 'Check this plugin', 'jaiko' ) ?>
 		</a>
 	</div>
 </div>
