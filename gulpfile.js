@@ -21,7 +21,7 @@ gulp.task('sass', function () {
         './node_modules/materialize-css/sass'
       ]
     }))
-    .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
+    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
     .pipe($.sourcemaps.write('./map'))
     .pipe(gulp.dest('./assets/css'));
 });

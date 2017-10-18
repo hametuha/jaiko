@@ -52,7 +52,7 @@ add_action( 'pre_get_posts', function ( &$wp_query ) {
 /**
  * Filter join if specified 'related_to'
  */
-add_filter( 'posts_join', function( $join, &$wp_query ) {
+add_filter( 'posts_join', function( $join, $wp_query ) {
 	global $wpdb;
 	if ( ! ( $post_id = $wp_query->get( 'relates_to' ) ) ) {
 		return $join;

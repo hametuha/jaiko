@@ -1,8 +1,8 @@
 <div class="card loop-card">
 	<div class="card-image">
 		<?php the_post_thumbnail( 'medium' ) ?>
-		<span class="card-title"><?php the_title() ?></span>
 	</div>
+	<span class="card-title"><?php the_title() ?></span>
 	<div class="card-content">
 		<?php foreach ( get_the_category() as $term ) : ?>
 			<a class="chip" href="<?= get_term_link( $term ) ?>">
