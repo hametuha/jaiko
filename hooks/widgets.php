@@ -3,12 +3,19 @@
 /**
  * Register menus
  */
-register_nav_menus( [
-	'primary' => __( 'Header Navigation', 'jaiko' ),
-	'social'  => __( 'Social Links', 'jaiko' ),
-	'footer'  => __( 'Footer Links', 'jaiko' ),
-] );
+add_action( 'init', function() {
+	register_nav_menus( [
+		'primary' => __( 'Header Navigation', 'jaiko' ),
+		'social'  => __( 'Social Links', 'jaiko' ),
+		'footer'  => __( 'Footer Links', 'jaiko' ),
+	] );
+}, 11 );
 
+/**
+ * Register sidebars
+ *
+ * widgets_init fires at init:1, so this must not be nested inside an init callback.
+ */
 add_action( 'widgets_init', function () {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'jaiko' ),

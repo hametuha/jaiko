@@ -8,8 +8,6 @@ add_theme_support( 'title-tag' );
 // Stop jetpack
 remove_action( 'wp_head', 'jetpack_og_tags' );
 
-
-
 /**
  * Echo Google analytics tag
  */

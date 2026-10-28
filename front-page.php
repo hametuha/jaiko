@@ -40,7 +40,7 @@ the_post(); ?>
 						[ 'facebook', __( 'Log in with Facebook.', 'jaiko' ), '#3b5998' ],
 						[ 'twitter', __( 'Why not twitter?', 'jaiko' ), '#1da1f2' ],
 						[ 'google', __( 'Google? Yes, of course.', 'jaiko' ), '#dd4b39' ],
-						[ 'instagram', __( 'Also Instagram. True.', 'jaiko' ), '#833ab4' ],
+						[ 'line', __( 'And LINE. True.', 'jaiko' ), '#06c755' ],
 						[ 'github', __( 'We have add-ons like Github, mixi and so on.', 'jaiko' ), '#333' ],
 						[ 'setup', __( 'Service API available for experienced developers.', 'jaiko' ), '#4D8E26' ],
 						[ 'graph', __( 'Every service extensible like Google Analytics, Facebook Graph API and so on.', 'jaiko' ), '#176B86' ],
