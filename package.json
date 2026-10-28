@@ -1,9 +1,8 @@
 {
   "name": "jaiko",
   "version": "1.0.0",
+  "description": "Jaiko WordPress theme build pipeline (Dart Sass + PostCSS + @kunoichi/grab-deps).",
   "homepage": "https://gianism.info",
-  "description": "Gulp task for jaiko",
-  "main": "gulpfile.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hametuha/jaiko.git"
@@ -11,38 +10,47 @@
   "bugs": {
     "url": "https://github.com/hametuha/jaiko/issues"
   },
-  "scripts": {
-    "start": "gulp build",
-    "watch": "gulp watch",
-    "gulp": "gulp"
-  },
   "author": "Hametuha INC.",
   "license": "GPL-2.0",
+  "private": true,
+  "scripts": {
+    "copy:lib": "node ./bin/copy-lib.mjs",
+    "build:css": "sass ./src/scss/:./assets/css/ --load-path=./node_modules/materialize-css/sass --style=compressed --no-source-map && postcss ./assets/css/*.css --use autoprefixer --replace --no-map",
+    "build:js": "grab-deps js src/js assets/js",
+    "dump": "grab-deps dump assets/js,assets/css",
+    "package": "npm run build:css && npm run build:js && npm run copy:lib && npm run dump",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "build:css": {
+      "extensions": "scss",
+      "patterns": [
+        "src/scss"
+      ]
+    },
+    "build:js": {
+      "extensions": "js",
+      "patterns": [
+        "src/js"
+      ]
+    },
+    "dump": {
+      "extensions": "js,css",
+      "patterns": [
+        "assets/js",
+        "assets/css"
+      ]
+    }
+  },
   "devDependencies": {
-    "event-stream": "^3.3.2",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-filter": "^3.0",
-    "gulp-imagemin": "^2.4",
-    "gulp-jade": "^1.1.0",
-    "gulp-jshint": "^2.0",
-    "gulp-load-plugins": "^1.2",
-    "gulp-notify": "^2.2.0",
-    "gulp-pleeease": "^2.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-sass": "^2.2",
-    "gulp-sass-bulk-import": "^1.0",
-    "gulp-sourcemaps": "^1.5",
-    "gulp-uglify": "^1.5",
-    "gulp-util": "^3.0",
-    "html5shiv": "^3.7.3",
-    "imagemin-pngquant": "^4.0.0",
+    "@kunoichi/grab-deps": "^3.1.4",
+    "@wordpress/scripts": "^37.0.0",
+    "autoprefixer": "^10.4.20",
     "jquery-match-height": "^0.7.2",
-    "jshint": "^2.9.1",
-    "jshint-stylish": "^2.0",
-    "lodash": "^4.2.1",
-    "materialize-css": "^0.97.8",
-    "respond.js": "^1.4.2"
+    "materialize-css": "0.97.8",
+    "npm-watch": "^0.13.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.83.0"
   }
 }
