@@ -105,7 +105,7 @@ add_action( 'wp_head', function() {
 		if ( has_excerpt( $post ) ) {
 			$excerpt = get_the_excerpt( $post );
 		} else {
-			$excerpt = wp_trim_words( apply_filters( 'get_the_excerpt', strip_shortcodes( strip_tags( $post->post_content ) ) ) );
+			$excerpt = wp_trim_words( apply_filters( 'get_the_excerpt', strip_shortcodes( strip_tags( $post->post_content ) ), $post ) );
 		}
 		foreach ( [ 'category', 'post_tag' ] as $taxonomy ) {
 			$terms = get_the_terms( $post, $taxonomy );
