@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import "variables";
 @import "mixins/fonts";
 @import "mixins/global";
 @import "materialize_override";
@@ -10,5 +10,18 @@ html, body, .container-mikkai, .row-mikkai, .col-mikkai{
 
 @import "materialize";
 @import "mixins/post_body";
-@import "parts/*";
+
+@import "parts/archive";
+@import "parts/author";
+@import "parts/cards";
+@import "parts/components";
+@import "parts/footer";
+@import "parts/forum";
+@import "parts/front";
+@import "parts/header";
+@import "parts/license";
+@import "parts/loop";
+@import "parts/mail";
+@import "parts/sidebar";
+@import "parts/single";
 

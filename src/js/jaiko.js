@@ -1,10 +1,8 @@
-/**
- * Description
+/*!
+ * @handle jaiko
+ * @deps jquery,jquery-match-height,materialize
  */
 
-/*global hoge: true*/
-
-// Enable menu
 jQuery(document).ready(function ($) {
   // Sidenav
   $('.button-collapse').sideNav();

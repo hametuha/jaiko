@@ -1,3 +1,5 @@
 node_modules/
 assets/
+wp-dependencies.json
+.DS_Store
 
