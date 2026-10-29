@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', function () {
  * Remove default style for Mikkai
  */
 add_action( 'template_redirect', function () {
-	if ( 'message' == get_query_var( 'mikkai_action' ) ) {
+	if ( 'message' === get_query_var( 'mikkai_action' ) ) {
 		remove_action( 'wp_enqueue_scripts', 'twentysixteen_scripts' );
 	}
 }, 1 );

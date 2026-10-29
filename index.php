@@ -1,8 +1,10 @@
 <?php get_header(); ?>
 
-<?php if ( is_author() ) {
+<?php
+if ( is_author() ) {
 	get_template_part( 'template-parts/biography' );
-} ?>
+}
+?>
 
 <section class="archive-wrapper">
 
@@ -13,14 +15,16 @@
 			<div class="col s12 l9 archive-list">
 
 				<div class="archive-header">
-					<h1 class="archive-header-title"><?php the_archive_title() ?></h1>
+					<h1 class="archive-header-title"><?php the_archive_title(); ?></h1>
 				</div>
 
-				<?php get_template_part( 'template-parts/language', 'changer' ) ?>
+				<?php get_template_part( 'template-parts/language', 'changer' ); ?>
 
-				<?php if ( ! is_user_logged_in() ) {
+				<?php
+				if ( ! is_user_logged_in() ) {
 					jaiko_ad( 'after-title' );
-				} ?>
+				}
+				?>
 
 				<?php
 				if ( have_posts() ) {
@@ -36,7 +40,7 @@
 			</div>
 
 			<div class="col s12 l3 sidebar">
-				<?php dynamic_sidebar( 'sidebar-widgets' ) ?>
+				<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 			</div>
 
 		</div>
@@ -46,4 +50,3 @@
 </section>
 
 <?php get_footer(); ?>
-

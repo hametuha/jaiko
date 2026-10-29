@@ -24,19 +24,19 @@ if ( is_singular( 'post' ) ) {
 		return;
 	}
 	list( $cat ) = $category;
-	$query = [
+	$query       = [
 		__( 'Tips', 'warifu' ) => [
 			'post_type' => 'post',
-			'cat' => $cat->term_id,
-			'tag' => 'tips',
+			'cat'       => $cat->term_id,
+			'tag'       => 'tips',
 		],
-		__( 'FAQ', 'warifu' ) => [
-			'post_type'   => 'post',
-			'cat' => $cat->term_id,
-			'tag' => 'faq',
+		__( 'FAQ', 'warifu' )  => [
+			'post_type' => 'post',
+			'cat'       => $cat->term_id,
+			'tag'       => 'faq',
 		],
 	];
-	$links = [
+	$links       = [
 		home_url( sprintf( '/tips/of/%s/', $cat->slug ) ),
 		home_url( sprintf( '/faq/of/%s/', $cat->slug ) ),
 	];
@@ -55,13 +55,13 @@ if ( is_singular( 'post' ) ) {
 			$counter = 0;
 			foreach ( $query as $title => $q ) {
 				$query = array_merge( [
-					'lang' => ( 'ja' == get_locale() ? 'ja' : 'en_US' ),
+					'lang'           => ( 'ja' === get_locale() ? 'ja' : 'en_US' ),
 					'post_status->publish',
 					'posts_per_page' => 3,
 				], $q );
 				?>
 				<div class="col s12 m6">
-					<h2 class="related-title"><?= esc_html( $title ) ?></h2>
+					<h2 class="related-title"><?php echo esc_html( $title ); ?></h2>
 					<?php
 					$sub_query = new WP_Query( $query );
 					if ( $sub_query->have_posts() ) :
@@ -77,20 +77,20 @@ if ( is_singular( 'post' ) ) {
 						</ul>
 						<?php if ( isset( $links[ $counter ] ) && $links[ $counter ] ) : ?>
 						<p class="center">
-							<a href="<?= esc_url( $links[ $counter ] ) ?>"
-							   class="waves-effect btn-flat btn-large waves-teal">
-								<?php _e( 'See All', 'jaiko' ) ?>
+							<a href="<?php echo esc_url( $links[ $counter ] ); ?>"
+								class="waves-effect btn-flat btn-large waves-teal">
+								<?php _e( 'See All', 'jaiko' ); ?>
 							</a>
 						</p>
 					<?php endif; ?>
 					<?php else : ?>
 					<p class="related-none">
-						<?php esc_html_e( 'Sorry, but no post found.', 'jaiko' ) ?>
+						<?php esc_html_e( 'Sorry, but no post found.', 'jaiko' ); ?>
 					</p>
 					<?php endif; ?>
 				</div>
 				<?php
-				$counter++;
+				++$counter;
 			}
 			?>
 		</div>

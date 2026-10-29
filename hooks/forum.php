@@ -3,12 +3,12 @@
 /**
  * Set locale for logged in user.
  */
-add_action( 'init', function( ) {
+add_action( 'init', function () {
 	// Check if this is a forum post.
 	if ( isset( $_SERVER['REQUEST_URI'] ) && preg_match( '#^/forums#', $_SERVER['REQUEST_URI'] ) ) {
 		if ( is_user_logged_in() ) {
 			$locale = get_user_locale( get_current_user_id() );
-			if ( 'ja' == $locale ) {
+			if ( 'ja' === $locale ) {
 				// Change locale
 				/** @var WP_Locale_Switcher $wp_locale_switcher */
 				global $wp_locale_switcher;
@@ -21,7 +21,7 @@ add_action( 'init', function( ) {
 /**
  * Change forum template.
  */
-add_filter( 'template_include', function( $path ) {
+add_filter( 'template_include', function ( $path ) {
 	if ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
 		$path = get_template_directory() . '/forum-template.php';
 	}
@@ -32,15 +32,15 @@ add_filter( 'template_include', function( $path ) {
  * Remove bbPress styles
  */
 //add_action( 'wp_enqueue_scripts', function() {
-//	wp_dequeue_style( 'bbp-default' );
-//	wp_dequeue_style( 'bbp-default-rtl' );
+//  wp_dequeue_style( 'bbp-default' );
+//  wp_dequeue_style( 'bbp-default-rtl' );
 //}, 15 );
 
 
 /**
  * Add forum category
  */
-add_filter( 'bbp_register_topic_post_type', function( $arg ) {
+add_filter( 'bbp_register_topic_post_type', function ( $arg ) {
 	$arg['taxonomies'] = [ 'category' ];
 	return $arg;
 } );
@@ -48,19 +48,19 @@ add_filter( 'bbp_register_topic_post_type', function( $arg ) {
 /**
  * Add category pull down
  */
-add_action( 'bbp_theme_after_topic_form_content', function() {
+add_action( 'bbp_theme_after_topic_form_content', function () {
 	$categories = get_the_category();
-	$cat_id = 0;
+	$cat_id     = 0;
 	if ( $categories ) {
 		$cat_id = current( $categories )->term_id;
 	}
 	printf( '<label for="bbp_topic_category">%s</label><br>', __( 'Topic Category', 'jaiko' ) );
 	wp_dropdown_categories( [
-		'show_option_none' => __( 'Please select category', 'jaiko' ),
+		'show_option_none'  => __( 'Please select category', 'jaiko' ),
 		'option_none_value' => 0,
-		'hide_empty' => false,
-		'name' => 'bbp_topic_category',
-		'selected' => $cat_id,
+		'hide_empty'        => false,
+		'name'              => 'bbp_topic_category',
+		'selected'          => $cat_id,
 	] );
 } );
 
@@ -94,8 +94,9 @@ add_action( 'bbp_edit_topic', '_jaiko_save_extra_fields', 10, 1 );
 /**
  * Show category
  */
-add_action( 'bbp_template_before_single_topic', function() {
-	if ( $categories = get_the_category() ) : ?>
+add_action( 'bbp_template_before_single_topic', function () {
+	$categories = get_the_category();
+	if ( $categories ) : ?>
 		<div class="bbp-category-block">
 		<?php foreach ( $categories as $term ) : ?>
 			<?php
@@ -104,16 +105,18 @@ add_action( 'bbp_template_before_single_topic', function() {
 				continue;
 			}
 			?>
-			<a class="chip" href="<?= esc_url( $link ) ?>">
-				<?= esc_html( $term->name ) ?>
+			<a class="chip" href="<?php echo esc_url( $link ); ?>">
+				<?php echo esc_html( $term->name ); ?>
 			</a>
 		<?php endforeach; ?>
 		</div>
-	<?php endif;
+		<?php
+	endif;
 } );
 
-add_action( 'bbp_theme_after_topic_title', function() {
-	if ( ! ( $categories = get_the_category() ) ) {
+add_action( 'bbp_theme_after_topic_title', function () {
+	$categories = get_the_category();
+	if ( ! $categories ) {
 		return;
 	}
 	?>
@@ -124,8 +127,8 @@ add_action( 'bbp_theme_after_topic_title', function() {
 			continue;
 		}
 		?>
-		<a class="chip" href="<?= esc_url( $link ) ?>">
-			<?= esc_html( $term->name ) ?>
+		<a class="chip" href="<?php echo esc_url( $link ); ?>">
+			<?php echo esc_html( $term->name ); ?>
 		</a>
 	<?php endforeach; ?>
 	<?php

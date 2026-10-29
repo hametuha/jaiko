@@ -15,9 +15,9 @@
 
 	<div class="page-content">
 
-		<p><?php _e( 'We can\'t find any contents. URL is wrong or no translation available. Search form might help you.', 'jaiko' ) ?></p>
+		<p><?php _e( 'We can\'t find any contents. URL is wrong or no translation available. Search form might help you.', 'jaiko' ); ?></p>
 
-		<img class="no-content" src="<?= get_stylesheet_directory_uri() ?>/assets/img/bg-not-found.png" alt="" />
+		<img class="no-content" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bg-not-found.png" alt="" />
 
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

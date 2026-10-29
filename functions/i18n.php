@@ -13,7 +13,7 @@ function jaiko_no_translation( $post = null ) {
 		return '';
 	}
 	$translations = bogo_get_post_translations( get_post( $post ) );
-	if ( 'ja' == get_locale() ) {
+	if ( 'ja' === get_locale() ) {
 		$locale = 'en_US';
 		$label  = 'This post is written only in Japanese. If you want read it in English, please leave a <a href="#respond">translation request.</a>';
 	} else {

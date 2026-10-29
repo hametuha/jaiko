@@ -1,11 +1,12 @@
 <?php
-if ( is_singular() &&  $label = jaiko_no_translation() ) :
+$label = is_singular() ? jaiko_no_translation() : '';
+if ( $label ) :
 	?>
 	<div class="no-translation">
-		<?= $label ?>
+		<?php echo $label; ?>
 	</div>
 	<?php
 else :
 	echo do_shortcode( '[bogo]' );
-endif;  ?>
-
+endif;
+?>

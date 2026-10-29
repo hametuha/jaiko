@@ -1,10 +1,11 @@
 <?php
-if ( 'add-on' != get_post_type() ) {
+if ( 'add-on' !== get_post_type() ) {
 	return;
 }
 $restore = false;
 
-if ( function_exists( 'bogo_get_post_translation' ) && ( 'ja' == get_locale() ) && ( $translation = bogo_get_post_translation( get_the_ID(), 'en_US' ) ) ) {
+$translation = ( function_exists( 'bogo_get_post_translation' ) && 'ja' === get_locale() ) ? bogo_get_post_translation( get_the_ID(), 'en_US' ) : null;
+if ( $translation ) {
 	$restore = true;
 	remove_filter( 'home_url', 'bogo_home_url' );
 	$post = $translation;
@@ -17,11 +18,13 @@ if ( function_exists( 'bogo_get_post_translation' ) && ( 'ja' == get_locale() ) 
 // Show download URL
 //
 //
-$url = [];
-if ( $wordpress = get_post_meta( get_the_ID(), '_wordpress_url', true ) ) {
+$url       = [];
+$wordpress = get_post_meta( get_the_ID(), '_wordpress_url', true );
+if ( $wordpress ) {
 	$url[] = [ $wordpress, 'wordpress', esc_html__( 'Download', 'jaiko' ), 'light-blue accent-4' ];
 }
-if ( $github    = get_post_meta( get_the_ID(), '_github_url', true ) ) {
+$github = get_post_meta( get_the_ID(), '_github_url', true );
+if ( $github ) {
 	$url[] = [ $github, 'share', esc_html__( 'View on Github', 'jaiko' ), 'blue-grey lighten-3' ];
 }
 if ( $url ) :
@@ -30,15 +33,15 @@ if ( $url ) :
 		<div class="download-header">
 			<h2 class="download-title"><?php _e( 'Download', 'jaiko' ); ?></h2>
 			<p class="download-desc">
-				<?php _e( 'Yes, they are open source and any pull requests are welcome!', 'jaiko' ) ?>
+				<?php _e( 'Yes, they are open source and any pull requests are welcome!', 'jaiko' ); ?>
 			</p>
 		</div>
 		<div class="row">
 			<?php foreach ( $url as list( $href, $dashicons, $label, $color ) ) : ?>
-				<div class="col <?= jaiko_calc_row_class( count( $url ) ) ?>">
-					<a href="<?= esc_url( $href ) ?>" class="waves-effect waves-light btn-large <?= $color ?>">
-						<span class="dashicons dashicons-<?= $dashicons ?>"></span>
-						<?= $label  ?>
+				<div class="col <?php echo jaiko_calc_row_class( count( $url ) ); ?>">
+					<a href="<?php echo esc_url( $href ); ?>" class="waves-effect waves-light btn-large <?php echo $color; ?>">
+						<span class="dashicons dashicons-<?php echo $dashicons; ?>"></span>
+						<?php echo $label; ?>
 					</a>
 				</div>
 			<?php endforeach; ?>
@@ -57,39 +60,41 @@ endif;
 //
 //
 
-if ( function_exists( 'warifu_license_posts' ) && ( $licenses = warifu_license_posts() ) ) :
+$licenses = function_exists( 'warifu_license_posts' ) ? warifu_license_posts() : [];
+if ( $licenses ) :
 	?>
 
 	<div class="product-support">
 		<div class="product-buy">
 			<h2 class="product-buy-title"><?php _e( 'Get Supported', 'jaiko' ); ?></h2>
 			<p class="product-buy-desc">
-				<?php _e( 'Grab license at <strong>Gumroad</strong> and premium support!', 'jaiko' ) ?>
+				<?php _e( 'Grab license at <strong>Gumroad</strong> and premium support!', 'jaiko' ); ?>
 			</p>
 		</div>
 		<div class="row license-row">
 			<?php foreach ( $licenses as $license ) : ?>
-			<div class="license-col col <?= jaiko_calc_row_class( count( $licenses ) ) ?>">
+			<div class="license-col col <?php echo jaiko_calc_row_class( count( $licenses ) ); ?>">
 				<div class="license-item">
-					<h3 class="license-item-title" data-mh="license-title"><?= esc_html( get_the_title( $license ) ) ?></h3>
+					<h3 class="license-item-title" data-mh="license-title"><?php echo esc_html( get_the_title( $license ) ); ?></h3>
 					<?php if ( $license->post_content ) : ?>
 					<div class="license-item-desc" data-mh="license-content">
-						<?= apply_filters( 'the_content', $license->post_content ) ?>
+						<?php echo apply_filters( 'the_content', $license->post_content ); ?>
 					</div>
 					<?php endif; ?>
 					<div class="license-item-price">
-						&yen; <?= esc_html( warifu_price( $license ) ?: '---' ) ?>
+						&yen; <?php echo esc_html( warifu_price( $license ) ?: '---' ); ?>
 					</div>
 					<div class="license-item-count">
-						<?php esc_html_e( 'Allows installing ', 'jaiko' ) ?>
-						<?php if ( ! ( $count = warifu_limit( $license ) ) ) : ?>
-							<strong><?php esc_html_e( 'infinite sites!', 'jaiko' ) ?></strong>
+						<?php esc_html_e( 'Allows installing ', 'jaiko' ); ?>
+						<?php $count = warifu_limit( $license ); ?>
+						<?php if ( ! $count ) : ?>
+							<strong><?php esc_html_e( 'infinite sites!', 'jaiko' ); ?></strong>
 						<?php else : ?>
-							<?php printf( _n( '%s site.', '%s sites.', $count, 'jaiko' ), $count ) ?>
+							<?php printf( _n( '%s site.', '%s sites.', $count, 'jaiko' ), $count ); ?>
 						<?php endif; ?>
 					</div>
 					<div class="license-item-buy">
-						<?= warifu_gumroad_button( $license, [ 'label' => __( 'See Detail', 'jaiko' ) ] ); ?>
+						<?php echo warifu_gumroad_button( $license, [ 'label' => __( 'See Detail', 'jaiko' ) ] ); ?>
 					</div>
 				</div>
 			</div><!-- //.license-col  -->
@@ -99,49 +104,55 @@ if ( function_exists( 'warifu_license_posts' ) && ( $licenses = warifu_license_p
 		<div class="product-notice row">
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">confirmation_number</i>
-				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'License Manager', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'License Manager', 'jaiko' ); ?></p>
 				<p class="product-notice-desc">
-					<?php printf(
+					<?php
+					printf(
 						__( 'Do you have license already? We are developing license manager. Stay tuned on our <a href="%s">news letter</a>!', 'jaiko' ),
 						'#mc_embed_signup'
-					); ?>
+					);
+					?>
 				</p>
 			</div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">forum</i>
-				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Chat & Forum', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Chat & Forum', 'jaiko' ); ?></p>
 				<p class="product-notice-desc">
 					<?php
 						_e( '<a href="/forums/">Forum</a> is available! We are also working on chats support.', 'jaiko' );
 					?>
 				</p>
 				<div class="fb-messengermessageus"
-					 messenger_app_id="<?= jaiko_fb_app_id() ?>"
-					 page_id="<?= jaiko_fb_page_id() ?>"
-					 color="blue"
-					 size="standard">
+					messenger_app_id="<?php echo jaiko_fb_app_id(); ?>"
+					page_id="<?php echo jaiko_fb_page_id(); ?>"
+					color="blue"
+					size="standard">
 				</div>
 			</div>
 			<div style="clear:left" class="hide-on-med-and-up"></div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">attach_money</i>
-				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( '30 Days Refund', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( '30 Days Refund', 'jaiko' ); ?></p>
 				<p class="product-notice-desc">
-					<?php printf(
+					<?php
+					printf(
 						__( 'All of our premium plugins are refundable within 30 days. Please refer our <a href="%s">refund policy</a>.', 'jaiko' ),
-						get_permalink( get_page_by_path( 'refund' . ( 'ja' == get_locale() ? '-ja' : '' ) ) )
-					); ?>
+						get_permalink( get_page_by_path( 'refund' . ( 'ja' === get_locale() ? '-ja' : '' ) ) )
+					);
+					?>
 				</p>
 			</div>
 			<div class="col s6 m3 product-notice-item">
 				<i class="material-icons">done_all</i>
-				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Yes, GPL.', 'jaiko' ) ?></p>
+				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Yes, GPL.', 'jaiko' ); ?></p>
 				<p class="product-notice-desc">
-					<?php printf(
+					<?php
+					printf(
 						__( 'We respect <a href="%1$s">WordPress license policy</a> and most of our plugins are <strong>100%% GPL</strong>. Why "most"? Because sometimes we prefer <a href="%2$s">MIT</a>.', 'jaiko' ),
 						'https://make.wordpress.org/community/handbook/wordcamp-organizer/first-steps/helpful-documents-and-templates/100-gpl-vetting-checklist/',
 						'https://opensource.org/licenses/MIT'
-					); ?>
+					);
+					?>
 				</p>
 			</div>
 		</div>
