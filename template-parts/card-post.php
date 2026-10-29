@@ -5,7 +5,7 @@
 	<span class="card-title"><?php the_title(); ?></span>
 	<div class="card-content">
 		<?php foreach ( get_the_category() as $term ) : ?>
-			<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+			<a class="chip" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
 				<?php echo esc_html( $term->name ); ?>
 			</a>
 		<?php endforeach; ?>
@@ -15,7 +15,7 @@
 	</div>
 	<div class="card-action">
 		<a class="btn waves-effect deep-orange" href="<?php the_permalink(); ?>">
-			<?php _e( 'Read this article', 'jaiko' ); ?>
+			<?php esc_html_e( 'Read this article', 'jaiko' ); ?>
 		</a>
 	</div>
 </div>

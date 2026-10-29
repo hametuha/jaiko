@@ -27,7 +27,7 @@ add_action( 'wp_head', function () {
 		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 		<?php if ( is_user_logged_in() ) : ?>
-		ga('set', 'userId', <?php echo get_current_user_id(); ?>);
+		ga('set', 'userId', <?php echo (int) get_current_user_id(); ?>);
 		<?php endif; ?>
 		ga('create', 'UA-1766751-11', 'auto');
 		ga('send', 'pageview');
@@ -176,7 +176,7 @@ add_action( 'wp_head', function () {
 			foreach ( $content as $c ) {
 				printf(
 					'<meta %s="%s" content="%s" />',
-					$property,
+					esc_attr( $property ),
 					esc_attr( ( $prefix ? $prefix . ':' : '' ) . $key ),
 					esc_attr( $c )
 				);

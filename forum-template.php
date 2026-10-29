@@ -18,14 +18,14 @@
 
 				<div class="forum-header">
 					<h1>
-						<small><?php _e( 'Support Forum', 'jaiko' ); ?></small>
+						<small><?php esc_html_e( 'Support Forum', 'jaiko' ); ?></small>
 						<?php the_title(); ?>
 					</h1>
 				</div>
 
 				<?php if ( is_singular( 'forum' ) ) : ?>
 					<div class="article-excerpt">
-						<?php echo wpautop( get_queried_object()->post_content ); ?>
+						<?php echo wp_kses_post( wpautop( get_queried_object()->post_content ) ); ?>
 					</div>
 				<?php endif; ?>
 
@@ -36,14 +36,14 @@
 						if ( ! is_user_logged_in() ) {
 							printf(
 								'このフォーラムは日本語でも利用できます。<a href="%s">ログイン</a>して、言語設定を変更してください。',
-								wp_login_url( $_SERVER['REQUEST_URI'] )
+								esc_url( wp_login_url( $_SERVER['REQUEST_URI'] ) )
 							);
 						} else {
 							$url = admin_url( 'profile.php' );
 							if ( 'ja' !== get_locale() ) {
-								printf( '日本語で利用する場合は<a href="%s" target="_blank">プロフィール</a>で言語設定を変更してください。', $url );
+								printf( '日本語で利用する場合は<a href="%s" target="_blank">プロフィール</a>で言語設定を変更してください。', esc_url( $url ) );
 							} else {
-								printf( 'You can change language setting <a href="%s">here</a>.', $url );
+								printf( 'You can change language setting <a href="%s">here</a>.', esc_url( $url ) );
 							}
 						}
 						?>

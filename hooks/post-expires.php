@@ -26,7 +26,7 @@ add_action( 'add_meta_boxes', function ( $post_type ) {
 			wp_nonce_field( 'update_expiration', '_expire_nonce', false );
 			?>
 			<label style="display: block;">
-				<?php _e( 'Expires at', 'jaiko' ); ?><br />
+				<?php esc_html_e( 'Expires at', 'jaiko' ); ?><br />
 				<input name="expires" type="text" value="<?php echo esc_attr( get_post_meta( $post->ID, '_expires', true ) ); ?>" />
 			</label>
 			<?php

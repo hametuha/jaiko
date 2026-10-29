@@ -3,7 +3,7 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'thumbnail' ); ?>
 		<?php else : ?>
-			<img width="150" height="150" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/identity/wp-login.png" alt="" />
+			<img width="150" height="150" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/identity/wp-login.png" alt="" />
 		<?php endif; ?>
 	</div>
 	<div class="card-stacked">
@@ -18,14 +18,14 @@
 			</h2>
 			<div>
 				<?php foreach ( get_the_category() as $term ) : ?>
-				<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+				<a class="chip" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
 					<?php echo esc_html( $term->name ); ?>
 				</a>
 				<?php endforeach; ?>
 			</div>
 		</div>
 		<div class="card-action archive-item-action">
-			<a class="btn waves-effect" href="<?php the_permalink(); ?>"><?php _e( 'Read this article', 'jaiko' ); ?></a>
+			<a class="btn waves-effect" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read this article', 'jaiko' ); ?></a>
 		</div>
 	</div>
 </div>

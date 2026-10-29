@@ -10,9 +10,9 @@
 				<h2 class="author-title">
 					<span class="author-title-label">
 						<?php if ( is_front_page() ) : ?>
-							<?php _e( 'Who meade this site?', 'jaiko' ); ?>
+							<?php esc_html_e( 'Who meade this site?', 'jaiko' ); ?>
 						<?php else : ?>
-							<?php _e( 'Author:', 'jaiko' ); ?>
+							<?php esc_html_e( 'Author:', 'jaiko' ); ?>
 						<?php endif; ?>
 					</span>
 					<?php echo get_the_author(); ?>
@@ -37,7 +37,7 @@
 						}
 						?>
 						<a href="<?php echo esc_url( $url ); ?>" target="_blank">
-							<i class="dashicons dashicons-<?php echo $sns; ?>"></i>
+							<i class="dashicons dashicons-<?php echo esc_attr( $sns ); ?>"></i>
 						</a>
 					<?php endforeach; ?>
 
@@ -48,7 +48,7 @@
 				<?php if ( ! is_author() ) : ?>
 				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
 					class="waves-effect waves-light btn">
-					<?php _e( 'See articles', 'jaiko' ); ?> <i class="material-icons right">chevron_right</i>
+					<?php esc_html_e( 'See articles', 'jaiko' ); ?> <i class="material-icons right">chevron_right</i>
 				</a>
 				<?php endif; ?>
 			</div>

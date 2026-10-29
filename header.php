@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
-<head prefix="<?php echo jaiko_ogp_type(); ?>">
+<head prefix="<?php echo esc_attr( jaiko_ogp_type() ); ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -18,7 +18,7 @@ $locale = 'ja' === get_locale() ? 'ja_JP' : 'en_US';
 <script>
 	window.fbAsyncInit = function() {
 		FB.init({
-			appId      : '<?php echo jaiko_fb_app_id(); ?>',
+			appId      : '<?php echo esc_js( jaiko_fb_app_id() ); ?>',
 			xfbml      : true,
 			version    : 'v2.8'
 		});
@@ -28,7 +28,7 @@ $locale = 'ja' === get_locale() ? 'ja_JP' : 'en_US';
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/<?php echo $locale; ?>/sdk.js";
+		js.src = "//connect.facebook.net/<?php echo esc_js( $locale ); ?>/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -67,7 +67,7 @@ $locale = 'ja' === get_locale() ? 'ja_JP' : 'en_US';
 		?>
 	<div class="announce">
 		<div class="container">
-			<?php echo apply_filters( 'the_content', $post->post_content ); ?>
+			<?php echo apply_filters( 'the_content', $post->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Same as the_content(). ?>
 		</div>
 	</div>
 	<?php endforeach; ?>

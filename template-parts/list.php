@@ -4,7 +4,7 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'medium', [ 'class' => 'list-item-image' ] ); ?>
 		<?php else : ?>
-			<img alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/identity/wp-login.png" class="list-item-image" />
+			<img alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/identity/wp-login.png" class="list-item-image" />
 		<?php endif; ?>
 		<div class="list-item-content">
 			<h3 class="list-item-title"><?php the_title(); ?><small><?php echo esc_html( get_post_type_object( get_post_type() )->label ); ?></small></h3>

@@ -31,17 +31,17 @@ if ( $url ) :
 	?>
 	<div class="download-section">
 		<div class="download-header">
-			<h2 class="download-title"><?php _e( 'Download', 'jaiko' ); ?></h2>
+			<h2 class="download-title"><?php esc_html_e( 'Download', 'jaiko' ); ?></h2>
 			<p class="download-desc">
-				<?php _e( 'Yes, they are open source and any pull requests are welcome!', 'jaiko' ); ?>
+				<?php esc_html_e( 'Yes, they are open source and any pull requests are welcome!', 'jaiko' ); ?>
 			</p>
 		</div>
 		<div class="row">
 			<?php foreach ( $url as list( $href, $dashicons, $label, $color ) ) : ?>
-				<div class="col <?php echo jaiko_calc_row_class( count( $url ) ); ?>">
-					<a href="<?php echo esc_url( $href ); ?>" class="waves-effect waves-light btn-large <?php echo $color; ?>">
-						<span class="dashicons dashicons-<?php echo $dashicons; ?>"></span>
-						<?php echo $label; ?>
+				<div class="col <?php echo esc_attr( jaiko_calc_row_class( count( $url ) ) ); ?>">
+					<a href="<?php echo esc_url( $href ); ?>" class="waves-effect waves-light btn-large <?php echo esc_attr( $color ); ?>">
+						<span class="dashicons dashicons-<?php echo esc_attr( $dashicons ); ?>"></span>
+						<?php echo esc_html( $label ); ?>
 					</a>
 				</div>
 			<?php endforeach; ?>
@@ -66,19 +66,19 @@ if ( $licenses ) :
 
 	<div class="product-support">
 		<div class="product-buy">
-			<h2 class="product-buy-title"><?php _e( 'Get Supported', 'jaiko' ); ?></h2>
+			<h2 class="product-buy-title"><?php esc_html_e( 'Get Supported', 'jaiko' ); ?></h2>
 			<p class="product-buy-desc">
-				<?php _e( 'Grab license at <strong>Gumroad</strong> and premium support!', 'jaiko' ); ?>
+				<?php echo wp_kses_post( __( 'Grab license at <strong>Gumroad</strong> and premium support!', 'jaiko' ) ); ?>
 			</p>
 		</div>
 		<div class="row license-row">
 			<?php foreach ( $licenses as $license ) : ?>
-			<div class="license-col col <?php echo jaiko_calc_row_class( count( $licenses ) ); ?>">
+			<div class="license-col col <?php echo esc_attr( jaiko_calc_row_class( count( $licenses ) ) ); ?>">
 				<div class="license-item">
 					<h3 class="license-item-title" data-mh="license-title"><?php echo esc_html( get_the_title( $license ) ); ?></h3>
 					<?php if ( $license->post_content ) : ?>
 					<div class="license-item-desc" data-mh="license-content">
-						<?php echo apply_filters( 'the_content', $license->post_content ); ?>
+						<?php echo apply_filters( 'the_content', $license->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Same as the_content(). ?>
 					</div>
 					<?php endif; ?>
 					<div class="license-item-price">
@@ -90,11 +90,11 @@ if ( $licenses ) :
 						<?php if ( ! $count ) : ?>
 							<strong><?php esc_html_e( 'infinite sites!', 'jaiko' ); ?></strong>
 						<?php else : ?>
-							<?php printf( _n( '%s site.', '%s sites.', $count, 'jaiko' ), $count ); ?>
+							<?php echo esc_html( sprintf( _n( '%s site.', '%s sites.', $count, 'jaiko' ), (int) $count ) ); ?>
 						<?php endif; ?>
 					</div>
 					<div class="license-item-buy">
-						<?php echo warifu_gumroad_button( $license, [ 'label' => __( 'See Detail', 'jaiko' ) ] ); ?>
+						<?php echo warifu_gumroad_button( $license, [ 'label' => __( 'See Detail', 'jaiko' ) ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML from Warifu plugin. ?>
 					</div>
 				</div>
 			</div><!-- //.license-col  -->
@@ -108,7 +108,7 @@ if ( $licenses ) :
 				<p class="product-notice-desc">
 					<?php
 					printf(
-						__( 'Do you have license already? We are developing license manager. Stay tuned on our <a href="%s">news letter</a>!', 'jaiko' ),
+						wp_kses_post( __( 'Do you have license already? We are developing license manager. Stay tuned on our <a href="%s">news letter</a>!', 'jaiko' ) ),
 						'#mc_embed_signup'
 					);
 					?>
@@ -119,12 +119,12 @@ if ( $licenses ) :
 				<p class="product-notice-title" data-mh="product-notice"><?php esc_html_e( 'Chat & Forum', 'jaiko' ); ?></p>
 				<p class="product-notice-desc">
 					<?php
-						_e( '<a href="/forums/">Forum</a> is available! We are also working on chats support.', 'jaiko' );
+						echo wp_kses_post( __( '<a href="/forums/">Forum</a> is available! We are also working on chats support.', 'jaiko' ) );
 					?>
 				</p>
 				<div class="fb-messengermessageus"
-					messenger_app_id="<?php echo jaiko_fb_app_id(); ?>"
-					page_id="<?php echo jaiko_fb_page_id(); ?>"
+					messenger_app_id="<?php echo esc_attr( jaiko_fb_app_id() ); ?>"
+					page_id="<?php echo esc_attr( jaiko_fb_page_id() ); ?>"
 					color="blue"
 					size="standard">
 				</div>
@@ -136,8 +136,8 @@ if ( $licenses ) :
 				<p class="product-notice-desc">
 					<?php
 					printf(
-						__( 'All of our premium plugins are refundable within 30 days. Please refer our <a href="%s">refund policy</a>.', 'jaiko' ),
-						get_permalink( get_page_by_path( 'refund' . ( 'ja' === get_locale() ? '-ja' : '' ) ) )
+						wp_kses_post( __( 'All of our premium plugins are refundable within 30 days. Please refer our <a href="%s">refund policy</a>.', 'jaiko' ) ),
+						esc_url( get_permalink( get_page_by_path( 'refund' . ( 'ja' === get_locale() ? '-ja' : '' ) ) ) )
 					);
 					?>
 				</p>
@@ -148,7 +148,7 @@ if ( $licenses ) :
 				<p class="product-notice-desc">
 					<?php
 					printf(
-						__( 'We respect <a href="%1$s">WordPress license policy</a> and most of our plugins are <strong>100%% GPL</strong>. Why "most"? Because sometimes we prefer <a href="%2$s">MIT</a>.', 'jaiko' ),
+						wp_kses_post( __( 'We respect <a href="%1$s">WordPress license policy</a> and most of our plugins are <strong>100%% GPL</strong>. Why "most"? Because sometimes we prefer <a href="%2$s">MIT</a>.', 'jaiko' ) ),
 						'https://make.wordpress.org/community/handbook/wordcamp-organizer/first-steps/helpful-documents-and-templates/100-gpl-vetting-checklist/',
 						'https://opensource.org/licenses/MIT'
 					);
