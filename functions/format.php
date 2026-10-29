@@ -90,6 +90,10 @@ function jaiko_pagination( $query = null ) {
 	    'prev_text' => '<i class="material-icons">chevron_left</i>',
 		'next_text' => '<i class="material-icons">chevron_right</i>',
 	] );
+	if ( ! $pagination ) {
+		// Only 1 page.
+		return;
+	}
 
 	$out = [];
 	foreach ( explode( "\n", $pagination ) as $link ) {
