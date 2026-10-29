@@ -54,7 +54,7 @@ add_action( 'bbp_theme_after_topic_form_content', function () {
 	if ( $categories ) {
 		$cat_id = current( $categories )->term_id;
 	}
-	printf( '<label for="bbp_topic_category">%s</label><br>', __( 'Topic Category', 'jaiko' ) );
+	printf( '<label for="bbp_topic_category">%s</label><br>', esc_html__( 'Topic Category', 'jaiko' ) );
 	wp_dropdown_categories( [
 		'show_option_none'  => __( 'Please select category', 'jaiko' ),
 		'option_none_value' => 0,
@@ -71,8 +71,11 @@ add_action( 'bbp_theme_after_topic_form_content', function () {
  * @param int $topic_id
  */
 function _jaiko_save_extra_fields( $topic_id ) {
+	// bbPress verifies its own nonce before firing bbp_new_topic / bbp_edit_topic.
+	// phpcs:disable WordPress.Security.NonceVerification.Missing
 	if ( isset( $_POST['bbp_topic_category'] ) ) {
 		$cat_id = (int) $_POST['bbp_topic_category'];
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
 		if ( $cat_id ) {
 			$category = get_category( $cat_id );
 			if ( ! $category || is_wp_error( $category ) ) {

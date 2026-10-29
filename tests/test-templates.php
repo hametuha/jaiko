@@ -26,6 +26,21 @@ class Jaiko_Templates_Test extends Jaiko_Template_TestCase {
 		$this->assertRenderedPage( $this->render( home_url( '/' ) ) );
 	}
 
+	public function test_front_page_logged_in() {
+		$front = self::factory()->post->create( [
+			'post_type' => 'page',
+		] );
+		update_option( 'show_on_front', 'page' );
+		update_option( 'page_on_front', $front );
+		self::factory()->post->create_many( 8 );
+		wp_set_current_user( self::factory()->user->create( [
+			'display_name' => 'Tom & "Jerry"',
+		] ) );
+		$html = $this->render( home_url( '/' ) );
+		$this->assertRenderedPage( $html );
+		$this->assertStringContainsString( 'Tom &amp; &quot;Jerry&quot;', $html, 'Display name should be escaped.' );
+	}
+
 	public function test_front_page_without_posts() {
 		$front = self::factory()->post->create( [
 			'post_type' => 'page',

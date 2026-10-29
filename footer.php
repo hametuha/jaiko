@@ -10,14 +10,14 @@
 			<div class="col l6 s12 footer-notice">
 				<h5>Gianism.info</h5>
 				<p>
-					<?php echo get_bloginfo( 'description', 'display' ); ?>
+					<?php bloginfo( 'description' ); ?>
 				</p>
 				<p>
-					<?php _e( 'We provide you the professional information about WordPress plugins. Join us and hack WP!', 'jaiko' ); ?>
+					<?php esc_html_e( 'We provide you the professional information about WordPress plugins. Join us and hack WP!', 'jaiko' ); ?>
 				</p>
 			</div>
 			<div class="col l4 offset-l2 s12">
-				<h5><?php _e( 'Links', 'jaiko' ); ?></h5>
+				<h5><?php esc_html_e( 'Links', 'jaiko' ); ?></h5>
 				<?php
 				wp_nav_menu( [
 					'theme_location' => 'footer',
@@ -42,7 +42,7 @@
 </footer>
 <div class="fixed-action-btn left">
 	<a class="btn-floating btn-large">
-		<img class="avatar" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/identity/wp-login.png" alt="Gianism" />
+		<img class="avatar" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/identity/wp-login.png" alt="Gianism" />
 	</a>
 </div>
 <div class="fixed-action-btn toolbar">
@@ -56,19 +56,19 @@
 	<ul>
 		<?php if ( is_user_logged_in() ) : ?>
 			<li>
-				<a class="waves-effect waves-light" href="<?php echo admin_url( 'profile.php' ); ?>">
-					<i class="material-icons">settings</i> <?php _e( 'Profile', 'jaiko' ); ?>
+				<a class="waves-effect waves-light" href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>">
+					<i class="material-icons">settings</i> <?php esc_html_e( 'Profile', 'jaiko' ); ?>
 				</a>
 			</li>
 			<li>
-				<a class="waves-effect waves-light" href="<?php echo wp_logout_url( $_SERVER['REQUEST_URI'] ); ?>">
-					<i class="material-icons">exit_to_app</i> <?php _e( 'Log out', 'jaiko' ); ?>
+				<a class="waves-effect waves-light" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>">
+					<i class="material-icons">exit_to_app</i> <?php esc_html_e( 'Log out', 'jaiko' ); ?>
 				</a>
 			</li>
 		<?php else : ?>
 			<li>
-				<a class="waves-effect waves-light" rel="nofollow" href="<?php echo wp_login_url( $_SERVER['REQUEST_URI'] ); ?>">
-					<i class="material-icons">input</i> <?php _e( 'Log in', 'jaiko' ); ?>
+				<a class="waves-effect waves-light" rel="nofollow" href="<?php echo esc_url( wp_login_url( $_SERVER['REQUEST_URI'] ) ); ?>">
+					<i class="material-icons">input</i> <?php esc_html_e( 'Log in', 'jaiko' ); ?>
 				</a>
 			</li>
 		<?php endif; ?>
@@ -82,12 +82,12 @@
 		?>
 		<li>
 			<a class="waves-effect waves-light fb-share-link" href="<?php echo esc_url( $url ); ?>">
-				<i class="dashicons dashicons-facebook"></i> <?php _e( 'Share', 'jaiko' ); ?>
+				<i class="dashicons dashicons-facebook"></i> <?php esc_html_e( 'Share', 'jaiko' ); ?>
 			</a>
 		</li>
 		<li>
 			<a class="waves-effect waves-light" target="_blank" href="<?php echo esc_url( $tweet ); ?>">
-				<i class="dashicons dashicons-twitter"></i> <?php _e( 'Tweet', 'jaiko' ); ?>
+				<i class="dashicons dashicons-twitter"></i> <?php esc_html_e( 'Tweet', 'jaiko' ); ?>
 			</a>
 		</li>
 	</ul>

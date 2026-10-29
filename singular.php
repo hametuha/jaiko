@@ -15,7 +15,7 @@ the_post(); ?>
 		<div class="article-header">
 
 			<?php if ( ! is_page() ) : ?>
-				<div class="article-header-badge article-header-badge-<?php echo get_post_type(); ?>">
+				<div class="article-header-badge article-header-badge-<?php echo esc_attr( get_post_type() ); ?>">
 					<?php echo esc_html( get_post_type_object( get_post_type() )->label ); ?>
 				</div>
 			<?php endif; ?>
@@ -30,7 +30,7 @@ the_post(); ?>
 				<?php $categories = get_the_category(); ?>
 				<?php if ( $categories ) : ?>
 					<?php foreach ( $categories as $term ) : ?>
-						<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+						<a class="chip" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
 							<?php echo esc_html( $term->name ); ?>
 						</a>
 					<?php endforeach; ?>
@@ -38,7 +38,7 @@ the_post(); ?>
 				<?php $tags = get_the_tags(); ?>
 				<?php if ( $tags ) : ?>
 					<?php foreach ( $tags as $term ) : ?>
-						<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+						<a class="chip" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
 							<?php echo esc_html( $term->name ); ?>
 						</a>
 					<?php endforeach; ?>

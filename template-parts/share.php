@@ -1,6 +1,6 @@
 <div class="share-container container">
 
-	<h2 class="share-title"><?php _e( 'Share This Article', 'jaiko' ); ?></h2>
+	<h2 class="share-title"><?php esc_html_e( 'Share This Article', 'jaiko' ); ?></h2>
 
 	<div class="row">
 		<div class="col s6 m3 share-sns-facebook">
@@ -25,7 +25,7 @@
 				}(document, "pocket-btn-js");</script>
 		</div>
 		<div class="col s6 m3 share-sns-hatena">
-			<a href="http://b.hatena.ne.jp/entry/<?php echo str_replace( 'https://', '/s/', get_permalink() ); ?>"
+			<a href="http://b.hatena.ne.jp/entry/<?php echo esc_attr( str_replace( 'https://', '/s/', get_permalink() ) ); ?>"
 				class="hatena-bookmark-button"
 				data-hatena-bookmark-layout="vertical-normal"
 				data-hatena-bookmark-lang="<?php echo 'ja' !== get_locale() ? 'en' : 'ja'; ?>"

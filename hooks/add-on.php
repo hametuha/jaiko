@@ -46,8 +46,8 @@ add_action( 'add_meta_boxes', function ( $post_type ) {
 		] ) as $add_on ) {
 			?>
 			<label style="display: block; margin: 5px 0;">
-				<input type="checkbox" value="<?php echo $add_on->ID; ?>" name="bundle[]" <?php checked( in_array( $add_on->ID, array_map( 'intval', $meta ), true ) ); ?> />
-				<?php echo get_the_title( $add_on ); ?>
+				<input type="checkbox" value="<?php echo (int) $add_on->ID; ?>" name="bundle[]" <?php checked( in_array( $add_on->ID, array_map( 'intval', $meta ), true ) ); ?> />
+				<?php echo esc_html( get_the_title( $add_on ) ); ?>
 				<small>( <?php echo esc_html( get_post_meta( $add_on->ID, '_locale', true ) ?: '---' ); ?> )</small>
 			</label>
 			<?php

@@ -79,7 +79,7 @@ if ( is_singular( 'post' ) ) {
 						<p class="center">
 							<a href="<?php echo esc_url( $links[ $counter ] ); ?>"
 								class="waves-effect btn-flat btn-large waves-teal">
-								<?php _e( 'See All', 'jaiko' ); ?>
+								<?php esc_html_e( 'See All', 'jaiko' ); ?>
 							</a>
 						</p>
 					<?php endif; ?>

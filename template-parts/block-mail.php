@@ -25,7 +25,7 @@
 									class="waves-effect waves-light btn-large btn-success">
 						</div>
 					</div>
-					<p class="mail-chimp-notice"><?php _e( 'You can enter more detailed information like language. <a href="#mc-form-more" class="toggle-button">Click here</a>.', 'jaiko' ); ?></p>
+					<p class="mail-chimp-notice"><?php echo wp_kses_post( __( 'You can enter more detailed information like language. <a href="#mc-form-more" class="toggle-button">Click here</a>.', 'jaiko' ) ); ?></p>
 					<div id="mc-form-more" class="hidden">
 						<div class="row">
 							<div class="input-field col s6">

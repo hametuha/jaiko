@@ -3,10 +3,10 @@
 		<div class="col s12 m6">
 			<div class="follow-wrapper">
 
-				<h2 class="follow-title"><?php _e( 'Follow Us', 'jaiko' ); ?></h2>
+				<h2 class="follow-title"><?php esc_html_e( 'Follow Us', 'jaiko' ); ?></h2>
 
 				<p class="follow-desc">
-					<?php _e( 'Do you like this article? Please follow us and keep updated!', 'jaiko' ); ?>
+					<?php esc_html_e( 'Do you like this article? Please follow us and keep updated!', 'jaiko' ); ?>
 				</p>
 
 				<div class="follow-button">
@@ -16,7 +16,7 @@
 
 				<div class="follow-button">
 					<a href="https://twitter.com/wpGianism" class="twitter-follow-button" data-show-count="false">
-						<?php _e( 'Follow Us', 'jaiko' ); ?>
+						<?php esc_html_e( 'Follow Us', 'jaiko' ); ?>
 					</a>
 				</div>
 

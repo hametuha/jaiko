@@ -7,14 +7,14 @@ the_post(); ?>
 	<div class="article-jumbotron">
 		<h1 class="article-jumbotron-title"><?php the_title(); ?></h1>
 		<div class="article-jumbotron-image">
-			<img width="150" height="150" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/identity/wp-login.png"
+			<img width="150" height="150" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/identity/wp-login.png"
 				alt="Gianism">
 		</div>
 		<div class="article-jumbotron-text">
 			<?php the_content(); ?>
 		</div>
 		<div class="article-jumbotron-btn">
-			<a class="btn" href="https://wordpress.org/plugins/gianism/"><?php _e( 'Install Gianism', 'jaiko' ); ?></a>
+			<a class="btn" href="https://wordpress.org/plugins/gianism/"><?php esc_html_e( 'Install Gianism', 'jaiko' ); ?></a>
 		</div>
 		<?php get_template_part( 'template-parts/language', 'changer' ); ?>
 	</div>
@@ -64,9 +64,9 @@ the_post(); ?>
 								?>
 								<div class="col s6 m3">
 									<div class="front-cards-item">
-										<span class="lsf lsf-<?php echo $icon; ?>" style="<?php echo $color ? "color:{$color};" : ''; ?>"></span>
-										<p data-mh="match-height-<?php echo $row_index; ?>">
-											<?php echo $text; ?>
+										<span class="lsf lsf-<?php echo esc_attr( $icon ); ?>" style="<?php echo esc_attr( $color ? "color:{$color};" : '' ); ?>"></span>
+										<p data-mh="match-height-<?php echo (int) $row_index; ?>">
+											<?php echo esc_html( $text ); ?>
 										</p>
 									</div>
 								</div>
@@ -88,10 +88,10 @@ endforeach;
 			<div class="container">
 
 				<h2 class="front-title">
-					<?php _e( 'Our Blog Posts', 'jaiko' ); ?>
+					<?php esc_html_e( 'Our Blog Posts', 'jaiko' ); ?>
 				</h2>
 				<p class="front-lead">
-					<?php _e( 'Gianism.info is the information hub for WordPress Developer!', 'jaiko' ); ?>
+					<?php esc_html_e( 'Gianism.info is the information hub for WordPress Developer!', 'jaiko' ); ?>
 				</p>
 				<div class="row">
 					<?php
@@ -134,8 +134,8 @@ endfor;
 				</div>
 
 				<div class="center">
-					<a class="waves-effect waves-light btn-large" href="<?php echo get_permalink( get_post( get_option( 'page_for_posts' ) ) ); ?>">
-						<?php _e( 'See All Posts', 'jaiko' ); ?>
+					<a class="waves-effect waves-light btn-large" href="<?php echo esc_url( get_permalink( get_post( get_option( 'page_for_posts' ) ) ) ); ?>">
+						<?php esc_html_e( 'See All Posts', 'jaiko' ); ?>
 					</a>
 				</div>
 
@@ -146,20 +146,20 @@ endfor;
 			<div class="container">
 
 				<h2 class="front-title">
-					<?php _e( 'Our load maps', 'jaiko' ); ?>
+					<?php esc_html_e( 'Our load maps', 'jaiko' ); ?>
 				</h2>
 				<p class="front-lead">
-					<?php _e( 'We have plans for making our WordPress super social', 'jaiko' ); ?>
+					<?php esc_html_e( 'We have plans for making our WordPress super social', 'jaiko' ); ?>
 				</p>
 				<div class="row">
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">nature_people</i><br/>
-							<?php _e( 'Natural UX', 'jaiko' ); ?>
+							<?php esc_html_e( 'Natural UX', 'jaiko' ); ?>
 						</h3>
 						<p class="front-block-lead">
 							<?php
-							_e( 'WordPress is blog tool. So, authors and users are separated. Admin screen is complicated for
+							esc_html_e( 'WordPress is blog tool. So, authors and users are separated. Admin screen is complicated for
 							ordinary user.
 							We are creating plugins which are well integrated with Gianism and make user experience
 							better.', 'jaiko' )
@@ -169,11 +169,11 @@ endfor;
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">compare_arrows</i><br/>
-							<?php _e( '1 to 1', 'jaiko' ); ?>
+							<?php esc_html_e( '1 to 1', 'jaiko' ); ?>
 						</h3>
 						<p class="front-block-lead">
 							<?php
-							_e( 'All interactive actions on WordPress are author-centered like comment.
+							esc_html_e( 'All interactive actions on WordPress are author-centered like comment.
 							Social web site requires 1 to 1 communication like message, chat and non-verbal "like".
 							Besides that, we need notification system. Of course, we are ahead toward them.', 'jaiko' );
 							?>
@@ -182,11 +182,11 @@ endfor;
 					<div class="col s12 m4">
 						<h3 class="front-block-title">
 							<i class="material-icons">phone_iphone</i><br/>
-							<?php _e( 'Mobile Apps', 'jaiko' ); ?>
+							<?php esc_html_e( 'Mobile Apps', 'jaiko' ); ?>
 						</h3>
 						<p class="front-block-lead">
 							<?php
-							_e( 'As long as we know, there are few solution to use WordPress as Mobile App\'s backend.
+							esc_html_e( 'As long as we know, there are few solution to use WordPress as Mobile App\'s backend.
 							WP REST API is the one, but there are many things to integrate a bunch of plugins to it.
 							We think all our plugins should be REST API ready.', 'jaiko' );
 							?>
@@ -199,7 +199,7 @@ endfor;
 						<?php
 						$user = get_userdata( get_current_user_id() );
 						printf(
-							__( 'Howday, %1$s! Please let me know <a href="%2$s">about you</a>!', 'jaiko' ),
+							wp_kses_post( __( 'Howday, %1$s! Please let me know <a href="%2$s">about you</a>!', 'jaiko' ) ),
 							esc_html( $user->display_name ),
 							esc_url( admin_url( 'profile.php' ) )
 						);
@@ -207,11 +207,11 @@ endfor;
 					</span>
 					<?php else : ?>
 						<span>
-						<?php _e( 'Are you interested with them? Gianism.info is the living example. Log in and get in touch with us!', 'jaiko' ); ?>
+						<?php esc_html_e( 'Are you interested with them? Gianism.info is the living example. Log in and get in touch with us!', 'jaiko' ); ?>
 					</span>
 						<br/>
 						<a class="btn teal waves-effect" href="" rel="nofollow">
-							<?php _e( 'Login', 'jaiko' ); ?>
+							<?php esc_html_e( 'Login', 'jaiko' ); ?>
 						</a>
 					<?php endif; ?>
 				</p>

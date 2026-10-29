@@ -106,7 +106,8 @@ function jaiko_pagination( $query = null ) {
 		}
 	}
 
-	echo '<ul class="pagination">' . implode( "\n", $out ) . '</ul>';
+	// $out is built from paginate_links() output.
+	echo '<ul class="pagination">' . implode( "\n", $out ) . '</ul>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**

@@ -13,9 +13,9 @@ if ( $bundles ) :
 	<div class="bundles-wrap">
 
 		<div class="bundles-header">
-			<h2 class="bundles-title"><?php _e( 'Bundled Plugins', 'jaiko' ); ?></h2>
+			<h2 class="bundles-title"><?php esc_html_e( 'Bundled Plugins', 'jaiko' ); ?></h2>
 			<p class="bundles-desc">
-				<?php printf( __( 'This license provides you %s!', 'jaiko' ), sprintf( _n( '%d more plugin', '%d more plugins', count( $bundles ), 'jaiko' ), count( $bundles ) ) ); ?>
+				<?php echo esc_html( sprintf( __( 'This license provides you %s!', 'jaiko' ), sprintf( _n( '%d more plugin', '%d more plugins', count( $bundles ), 'jaiko' ), count( $bundles ) ) ) ); ?>
 			</p>
 		</div>
 
@@ -46,9 +46,9 @@ elseif ( $parents ) :
 
 	<div class="bundles-wrap">
 		<div class="bundles-header">
-			<h2 class="bundles-title"><?php _e( 'Get Bundle Package', 'jaiko' ); ?></h2>
+			<h2 class="bundles-title"><?php esc_html_e( 'Get Bundle Package', 'jaiko' ); ?></h2>
 			<p class="bundles-desc">
-				<?php printf( __( 'This plugin is included in %s!', 'jaiko' ), sprintf( _n( '%d bundle', '%d bundles', count( $parents ), 'jaiko' ), count( $parents ) ) ); ?>
+				<?php echo esc_html( sprintf( __( 'This plugin is included in %s!', 'jaiko' ), sprintf( _n( '%d bundle', '%d bundles', count( $parents ), 'jaiko' ), count( $parents ) ) ) ); ?>
 			</p>
 		</div>
 

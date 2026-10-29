@@ -11,7 +11,7 @@ add_action( 'login_head', function () {
 	?>
 	<style>
 		.login h1 a{
-			background: url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/identity/wp-login.png") center center no-repeat;
+			background: url("<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/identity/wp-login.png") center center no-repeat;
 			background-size: 84px;
 			margin-bottom: 5px;
 		}

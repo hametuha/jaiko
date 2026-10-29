@@ -2,7 +2,7 @@
 
 <div class="container">
 
-	<h2 class="add-ons-title"><?php _e( 'Our Plugins', 'jaiko' ); ?></h2>
+	<h2 class="add-ons-title"><?php esc_html_e( 'Our Plugins', 'jaiko' ); ?></h2>
 
 	<div class="row">
 
@@ -31,7 +31,7 @@
 	</div>
 
 	<div class="add-ons-link">
-		<a class="add-ons-btn" href="<?php echo get_post_type_archive_link( 'add-on' ); ?>"><?php esc_html_e( 'See All Plugins', 'jaiko' ); ?></a>
+		<a class="add-ons-btn" href="<?php echo esc_url( get_post_type_archive_link( 'add-on' ) ); ?>"><?php esc_html_e( 'See All Plugins', 'jaiko' ); ?></a>
 	</div>
 
 </div>
