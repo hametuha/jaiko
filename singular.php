@@ -6,7 +6,7 @@ the_post(); ?>
 
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="article-thumbnail">
-			<?php the_post_thumbnail() ?>
+			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
 
@@ -15,50 +15,54 @@ the_post(); ?>
 		<div class="article-header">
 
 			<?php if ( ! is_page() ) : ?>
-				<div class="article-header-badge article-header-badge-<?= get_post_type() ?>">
-					<?= esc_html( get_post_type_object( get_post_type() )->label ) ?>
+				<div class="article-header-badge article-header-badge-<?php echo get_post_type(); ?>">
+					<?php echo esc_html( get_post_type_object( get_post_type() )->label ); ?>
 				</div>
 			<?php endif; ?>
 			<h1>
-				<?php the_title() ?>
+				<?php the_title(); ?>
 			</h1>
 
 			<p class="article-meta">
 				<?php if ( is_singular( 'post' ) ) : ?>
-					<i class="material-icons">today</i> <?php the_date( __( 'F j, Y', 'jaiko' ) ) ?>
+					<i class="material-icons">today</i> <?php the_date( __( 'F j, Y', 'jaiko' ) ); ?>
 				<?php endif; ?>
-				<?php if ( $categories = get_the_category() ) : ?>
+				<?php $categories = get_the_category(); ?>
+				<?php if ( $categories ) : ?>
 					<?php foreach ( $categories as $term ) : ?>
-						<a class="chip" href="<?= get_term_link( $term ) ?>">
-							<?= esc_html( $term->name ) ?>
+						<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+							<?php echo esc_html( $term->name ); ?>
 						</a>
 					<?php endforeach; ?>
 				<?php endif; ?>
-				<?php if ( $tags = get_the_tags() ) : ?>
+				<?php $tags = get_the_tags(); ?>
+				<?php if ( $tags ) : ?>
 					<?php foreach ( $tags as $term ) : ?>
-						<a class="chip" href="<?= get_term_link( $term ) ?>">
-							<?= esc_html( $term->name ) ?>
+						<a class="chip" href="<?php echo get_term_link( $term ); ?>">
+							<?php echo esc_html( $term->name ); ?>
 						</a>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</p>
 		</div>
 
-		<?php get_template_part( 'template-parts/language', 'changer' ) ?>
+		<?php get_template_part( 'template-parts/language', 'changer' ); ?>
 
 
 
 		<?php if ( has_excerpt() ) : ?>
 			<div class="article-excerpt">
-				<?php the_excerpt() ?>
+				<?php the_excerpt(); ?>
 			</div>
 		<?php endif; ?>
 
-		<?php if ( is_singular( 'post' ) ) {
+		<?php
+		if ( is_singular( 'post' ) ) {
 			jaiko_ad( 'after-title' );
-		} ?>
+		}
+		?>
 
-		<?php get_template_part( 'template-parts/block', 'download' ) ?>
+		<?php get_template_part( 'template-parts/block', 'download' ); ?>
 
 		<div class="article-content">
 			<?php the_content(); ?>
@@ -73,20 +77,22 @@ the_post(); ?>
 
 	</article>
 
-	<?php if ( 'post' == get_post_type() ) {
+	<?php
+	if ( 'post' === get_post_type() ) {
 		if ( ! is_preview() ) {
 			get_template_part( 'template-parts/share' );
 		}
 		get_template_part( 'template-parts/share', 'follow' );
-	} ?>
+	}
+	?>
 
-	<?php get_template_part( 'template-parts/block', 'related' ) ?>
+	<?php get_template_part( 'template-parts/block', 'related' ); ?>
 
 	<?php get_template_part( 'template-parts/biography' ); ?>
 
 	<section class="comment-list-section">
 		<div class="container">
-			<?php comments_template() ?>
+			<?php comments_template(); ?>
 		</div>
 	</section>
 </main>

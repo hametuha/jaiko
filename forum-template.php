@@ -18,14 +18,14 @@
 
 				<div class="forum-header">
 					<h1>
-						<small><?php _e( 'Support Forum', 'jaiko' ) ?></small>
-						<?php the_title() ?>
+						<small><?php _e( 'Support Forum', 'jaiko' ); ?></small>
+						<?php the_title(); ?>
 					</h1>
 				</div>
 
 				<?php if ( is_singular( 'forum' ) ) : ?>
 					<div class="article-excerpt">
-						<?php echo wpautop( get_queried_object()->post_content ) ?>
+						<?php echo wpautop( get_queried_object()->post_content ); ?>
 					</div>
 				<?php endif; ?>
 
@@ -40,7 +40,7 @@
 							);
 						} else {
 							$url = admin_url( 'profile.php' );
-							if ( 'ja' != get_locale() ) {
+							if ( 'ja' !== get_locale() ) {
 								printf( '日本語で利用する場合は<a href="%s" target="_blank">プロフィール</a>で言語設定を変更してください。', $url );
 							} else {
 								printf( 'You can change language setting <a href="%s">here</a>.', $url );
@@ -78,7 +78,7 @@
 			</article>
 
 			<div class="col s12 l3 sidebar">
-				<?php dynamic_sidebar( 'sidebar-widgets' ) ?>
+				<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 			</div>
 
 		</div>
@@ -88,4 +88,3 @@
 </section>
 
 <?php get_footer(); ?>
-

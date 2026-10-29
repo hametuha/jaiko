@@ -4,7 +4,7 @@
 
 		<div class="author-section">
 
-			<?= get_avatar( get_the_author_meta( 'user_email' ), 128, '', get_the_author(), [ 'class' => 'author-image circle' ] ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'user_email' ), 128, '', get_the_author(), [ 'class' => 'author-image circle' ] ); ?>
 
 			<div class="author-content">
 				<h2 class="author-title">
@@ -17,15 +17,17 @@
 					</span>
 					<?php echo get_the_author(); ?>
 
-					<?php foreach ( [ 'facebook', 'twitter' ] as $sns ) :
-						$url = false;
+					<?php
+					foreach ( [ 'facebook', 'twitter' ] as $sns ) :
+						$url   = false;
 						$value = get_user_meta( get_the_author_meta( 'ID' ), $sns, true );
 						switch ( $sns ) {
 							case 'facebook':
 								$url = $value;
 								break;
 							case 'twitter':
-								if ( $screen_name = ltrim( trim( $value ), '@' ) ) {
+								$screen_name = ltrim( trim( $value ), '@' );
+								if ( $screen_name ) {
 									$url = sprintf( 'https://twitter.com/%s', $screen_name );
 								}
 								break;
@@ -34,8 +36,8 @@
 							continue;
 						}
 						?>
-						<a href="<?= esc_url( $url ) ?>" target="_blank">
-							<i class="dashicons dashicons-<?= $sns ?>"></i>
+						<a href="<?php echo esc_url( $url ); ?>" target="_blank">
+							<i class="dashicons dashicons-<?php echo $sns; ?>"></i>
 						</a>
 					<?php endforeach; ?>
 
@@ -45,8 +47,8 @@
 				</p>
 				<?php if ( ! is_author() ) : ?>
 				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
-				   class="waves-effect waves-light btn">
-					<?php _e( 'See articles', 'jaiko' ) ?> <i class="material-icons right">chevron_right</i>
+					class="waves-effect waves-light btn">
+					<?php _e( 'See articles', 'jaiko' ); ?> <i class="material-icons right">chevron_right</i>
 				</a>
 				<?php endif; ?>
 			</div>

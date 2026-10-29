@@ -27,7 +27,7 @@ add_action( 'wp_head', function () {
 		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 		<?php if ( is_user_logged_in() ) : ?>
-		ga('set', 'userId', <?= get_current_user_id() ?>);
+		ga('set', 'userId', <?php echo get_current_user_id(); ?>);
 		<?php endif; ?>
 		ga('create', 'UA-1766751-11', 'auto');
 		ga('send', 'pageview');
@@ -39,8 +39,8 @@ add_action( 'wp_head', function () {
 /**
  * Add CSS body
  */
-add_filter( 'body_class', function( $classes ){
-	if ( 'ja' == get_locale() ) {
+add_filter( 'body_class', function ( $classes ) {
+	if ( 'ja' === get_locale() ) {
 		$classes[] = 'lang-ja';
 	} else {
 		$classes[] = 'lang-en';
@@ -51,12 +51,12 @@ add_filter( 'body_class', function( $classes ){
 /**
  * Change title tag
  */
-add_filter( 'document_title_parts', function( $title ) {
+add_filter( 'document_title_parts', function ( $title ) {
 	if ( is_singular( 'add-on' ) ) {
 		$new_title = [];
 		foreach ( $title as $key => $val ) {
 			$new_title[ $key ] = $val;
-			if ( 'title' == $key ) {
+			if ( 'title' === $key ) {
 				$new_title['plugin'] = __( 'WordPress Plugin', 'jaiko' );
 			}
 		}
@@ -66,23 +66,23 @@ add_filter( 'document_title_parts', function( $title ) {
 } );
 
 
-add_action( 'wp_head', function() {
+add_action( 'wp_head', function () {
 	if ( ! ( is_singular() || is_category() || is_tag() || is_tax() ) ) {
 		return;
 	}
 	// Initial value
-	$title   = wp_get_document_title();
-	$image   = get_site_icon_url( 512 );
-	$amp_img = $image;
-	$excerpt = get_bloginfo( 'description' );
-	$type    = 'article';
-	$url     = '';
+	$title    = wp_get_document_title();
+	$image    = get_site_icon_url( 512 );
+	$amp_img  = $image;
+	$excerpt  = get_bloginfo( 'description' );
+	$type     = 'article';
+	$url      = '';
 	$keywords = [ 'WordPress', 'Plugin' ];
-	$metas = [
-		''   => [],
-		'og' => [],
+	$metas    = [
+		''        => [],
+		'og'      => [],
 		'article' => [],
-		'fb' => [],
+		'fb'      => [],
 		'twitter' => [],
 	];
 	// Set type
@@ -115,36 +115,36 @@ add_action( 'wp_head', function() {
 		}
 	} else {
 		// This is taxonomy
-		$term = get_queried_object();
-		$url = get_term_link( $term );
-		$excerpt = $term->description;
+		$term       = get_queried_object();
+		$url        = get_term_link( $term );
+		$excerpt    = $term->description;
 		$keywords[] = $term->name;
 	}
 	$excerpt = preg_replace( '#(\r|\n)#', ' ', $excerpt );
 	// Get image dimension
-	list( $width, $height ) = jaiko_image_dimension( $image );
+	list( $width, $height )      = jaiko_image_dimension( $image );
 	$metas['og']['image:width']  = $width;
 	$metas['og']['image:height'] = $height;
 	// Build meta tag
 	$metas = array_merge_recursive( [
-		'' => [
+		''        => [
 			'description' => $excerpt,
-			'keywords' => implode( ',', $keywords ),
+			'keywords'    => implode( ',', $keywords ),
 		],
-		'og' => [
+		'og'      => [
 			'title'            => $title,
 			'url'              => $url,
 			'image'            => $image,
 			'description'      => $excerpt,
 			'type'             => $type,
 			'site_name'        => get_bloginfo( 'name' ),
-			'locale'           => ( 'ja' == get_locale() ? 'ja_jp' : 'en_us' ),
-			'locale:alternate' => ( 'ja' == get_locale() ? 'en_us' : 'ja_jp' ),
+			'locale'           => ( 'ja' === get_locale() ? 'ja_jp' : 'en_us' ),
+			'locale:alternate' => ( 'ja' === get_locale() ? 'en_us' : 'ja_jp' ),
 		],
 		'article' => [
 			'publisher' => 'https://www.facebook.com/gianism.info/',
 		],
-		'fb' => [
+		'fb'      => [
 			'admins' => '1034317368',
 			'app_id' => jaiko_fb_app_id(),
 			'pages'  => jaiko_fb_page_id(),
@@ -159,8 +159,6 @@ add_action( 'wp_head', function() {
 			'image'   => $image,
 		],
 	], $metas );
-
-
 
 	foreach ( $metas as $prefix => $meta ) {
 		foreach ( $meta as $key => $content ) {
@@ -179,7 +177,7 @@ add_action( 'wp_head', function() {
 				printf(
 					'<meta %s="%s" content="%s" />',
 					$property,
-					esc_attr( ( $prefix ? $prefix.':' : '' )  . $key ),
+					esc_attr( ( $prefix ? $prefix . ':' : '' ) . $key ),
 					esc_attr( $c )
 				);
 			}

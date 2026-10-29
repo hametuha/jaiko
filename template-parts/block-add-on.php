@@ -2,17 +2,17 @@
 
 <div class="container">
 
-	<h2 class="add-ons-title"><?php _e( 'Our Plugins', 'jaiko' ) ?></h2>
+	<h2 class="add-ons-title"><?php _e( 'Our Plugins', 'jaiko' ); ?></h2>
 
 	<div class="row">
 
 		<?php
 		$args = [
-			'post_type' => 'add-on',
+			'post_type'      => 'add-on',
 			'posts_per_page' => 3,
-			'post_status' => 'publish',
-		    'post_parent' => 0,
-			'orderby' => [ 'menu_order' => 'DESC' ],
+			'post_status'    => 'publish',
+			'post_parent'    => 0,
+			'orderby'        => [ 'menu_order' => 'DESC' ],
 		];
 		if ( is_singular( 'add-on' ) ) {
 			$args['post__not_in'] = [ get_queried_object_id() ];
@@ -31,7 +31,7 @@
 	</div>
 
 	<div class="add-ons-link">
-		<a class="add-ons-btn" href="<?= get_post_type_archive_link( 'add-on' ) ?>"><?php esc_html_e( 'See All Plugins', 'jaiko' ) ?></a>
+		<a class="add-ons-btn" href="<?php echo get_post_type_archive_link( 'add-on' ); ?>"><?php esc_html_e( 'See All Plugins', 'jaiko' ); ?></a>
 	</div>
 
 </div>

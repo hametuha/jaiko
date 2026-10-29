@@ -13,9 +13,9 @@ function jaiko_how_to_read( $post = null ) {
 		return '';
 	}
 	if ( chiramise_should_check( $post ) && ! chiramise_can_read( $post ) ) {
-		$url = wp_login_url( get_permalink( $post ) );
+		$url   = wp_login_url( get_permalink( $post ) );
 		$label = sprintf( __( 'This article is only for registered user. To continue reading another %1$d%% of content, please <a href="%2$s" rel="nofollow">login</a>.', 'jaiko' ), chiramise_content_ratio(), esc_url( $url ) );
-		$html = <<<HTML
+		$html  = <<<HTML
 <div class="chiramise">
 {$label}
 </div>
@@ -38,10 +38,10 @@ function jaiko_ad( $position ) {
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- Gianism AfterTitle -->
 			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-0087037684083564"
-			     data-ad-slot="8984022445"
-			     data-ad-format="auto"></ins>
+				style="display:block"
+				data-ad-client="ca-pub-0087037684083564"
+				data-ad-slot="8984022445"
+				data-ad-format="auto"></ins>
 			<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
@@ -52,10 +52,10 @@ function jaiko_ad( $position ) {
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- Gianism After content -->
 			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-0087037684083564"
-			     data-ad-slot="7646890046"
-			     data-ad-format="auto"></ins>
+				style="display:block"
+				data-ad-client="ca-pub-0087037684083564"
+				data-ad-slot="7646890046"
+				data-ad-format="auto"></ins>
 			<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
@@ -83,11 +83,11 @@ function jaiko_pagination( $query = null ) {
 	$big = 999999999; // need an unlikely integer
 
 	$pagination = paginate_links( [
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' => '/%#%',
-		'current' => max( 1, $query->get( 'paged' ) ),
-		'total' => $query->max_num_pages,
-	    'prev_text' => '<i class="material-icons">chevron_left</i>',
+		'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format'    => '/%#%',
+		'current'   => max( 1, $query->get( 'paged' ) ),
+		'total'     => $query->max_num_pages,
+		'prev_text' => '<i class="material-icons">chevron_left</i>',
 		'next_text' => '<i class="material-icons">chevron_right</i>',
 	] );
 	if ( ! $pagination ) {
@@ -120,8 +120,8 @@ function jaiko_add_ons_query( $post = null ) {
 	return get_posts( [
 		'post_type'      => 'add-on',
 		'post_status'    => 'publish',
-	    'post_parent'    => $post->ID,
-	    'posts_per_page' => -1,
+		'post_parent'    => $post->ID,
+		'posts_per_page' => -1,
 	] );
 }
 
@@ -133,8 +133,8 @@ function jaiko_add_ons_query( $post = null ) {
  * @return WP_Term
  */
 function jaiko_add_on_category( $post = null ) {
-	$post = get_post( $post );
-	$post_id = $post->post_parent ?: $post->ID;
+	$post       = get_post( $post );
+	$post_id    = $post->post_parent ?: $post->ID;
 	$categories = get_the_category( $post_id );
 	foreach ( $categories as $category ) {
 		return $category;

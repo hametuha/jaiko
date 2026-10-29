@@ -6,7 +6,7 @@
 
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="article-thumbnail">
-			<?php the_post_thumbnail() ?>
+			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
 
@@ -19,23 +19,25 @@
 
 				<div class="article-header">
 					<h1>
-						<?php the_title() ?>
+						<?php the_title(); ?>
 					</h1>
 				</div>
 
-				<?php get_template_part( 'template-parts/language', 'changer' ) ?>
+				<?php get_template_part( 'template-parts/language', 'changer' ); ?>
 
 
 
 				<?php if ( has_excerpt() ) : ?>
 					<div class="article-excerpt">
-						<?php the_excerpt() ?>
+						<?php the_excerpt(); ?>
 					</div>
 				<?php endif; ?>
 
-				<?php if ( ! is_user_logged_in() ) {
+				<?php
+				if ( ! is_user_logged_in() ) {
 					jaiko_ad( 'after-title' );
-				} ?>
+				}
+				?>
 
 				<div class="article-content">
 					<?php the_content(); ?>
@@ -44,14 +46,14 @@
 
 				<section class="comment-list-section">
 					<div class="container">
-						<?php comments_template() ?>
+						<?php comments_template(); ?>
 					</div>
 				</section>
 
 			</article>
 
 			<div class="col s12 l3 sidebar">
-				<?php dynamic_sidebar( 'sidebar-widgets' ) ?>
+				<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 			</div>
 
 		</div>
@@ -61,4 +63,3 @@
 </section>
 
 <?php get_footer(); ?>
-

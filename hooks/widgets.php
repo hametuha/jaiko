@@ -3,7 +3,7 @@
 /**
  * Register menus
  */
-add_action( 'init', function() {
+add_action( 'init', function () {
 	register_nav_menus( [
 		'primary' => __( 'Header Navigation', 'jaiko' ),
 		'social'  => __( 'Social Links', 'jaiko' ),

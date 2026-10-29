@@ -15,9 +15,9 @@
  * @return array
  */
 function jaiko_related_posts( $post = null, $args = [] ) {
-	$post = get_post( $post );
+	$post    = get_post( $post );
 	$default = [
-		'post_status' => 'publish',
+		'post_status'    => 'publish',
 		'posts_per_page' => 10,
 	];
 	switch ( $post->post_type ) {
