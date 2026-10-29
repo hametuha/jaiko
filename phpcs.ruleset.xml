@@ -37,6 +37,15 @@
 		<exclude name="Universal.Operators.DisallowShortTernary.Found" />
 	</rule>
 
+	<!-- Security sniffs live in WordPress-Extra, not WordPress-Core. -->
+	<rule ref="WordPress.Security.EscapeOutput">
+		<!-- Exception messages in the test bootstrap are not rendered. -->
+		<exclude-pattern>*/tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.Security.NonceVerification" />
+	<rule ref="WordPress.Security.SafeRedirect" />
+	<rule ref="WordPress.Security.PluginMenuSlug" />
+
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>
