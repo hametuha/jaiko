@@ -1,21 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaiko\n"
-"POT-Creation-Date: 2017-03-28 14:03+0900\n"
-"PO-Revision-Date: 2017-03-28 14:05+0900\n"
+"POT-Creation-Date: 2023-01-30 16:26+0900\n"
+"PO-Revision-Date: 2023-01-30 16:27+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
@@ -94,8 +94,8 @@ msgid "Google? Yes, of course."
 msgstr "Google? もちろんできます。"
 
 #: front-page.php:43
-msgid "Also Instagram. True."
-msgstr "Instagramだって。ほんとですよ。"
+msgid "And LINE. True."
+msgstr "LINEも追加します。本当です。"
 
 #: front-page.php:44
 msgid "We have add-ons like Github, mixi and so on."
@@ -233,6 +233,10 @@ msgstr "twitterアカウント"
 msgid "Facebook Page URL"
 msgstr "FacebookページのURL"
 
+#: hooks/admin.php:50
+msgid "To create account, SNS account is required!"
+msgstr "アカウント作成にはSNSアカウントが必須です。"
+
 #: hooks/comments.php:6
 msgctxt "noun"
 msgid "Comment"
@@ -246,7 +250,7 @@ msgstr "トピックカテゴリー"
 msgid "Please select category"
 msgstr "カテゴリーを選んでください"
 
-#: hooks/meta.php:62
+#: hooks/meta.php:60
 msgid "WordPress Plugin"
 msgstr "WordPressプラグイン"
 
@@ -550,6 +554,9 @@ msgstr ""
 "<a href=\"%1$s\">WordPressのライセンスポリシー</a>を尊重しています。私たちの"
 "プラグインの多くは<strong>100%% GPL</strong>です。なぜ「多くは」なのかという"
 "と、ときどき<a href=\"%2$s\">MITライセンス</a>を採用することがあるからです。"
+
+#~ msgid "Also Instagram. True."
+#~ msgstr "Instagramだって。ほんとですよ。"
 
 #~ msgid "Add On"
 #~ msgstr "﻿アドオン"

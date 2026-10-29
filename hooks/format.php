@@ -7,12 +7,13 @@ add_filter( 'show_admin_bar', function(){
 /**
  * Add login style
  */
-add_action( 'login_head', function(){
+add_action( 'login_head', function() {
 	?>
 	<style>
 		.login h1 a{
 			background: url("<?= get_stylesheet_directory_uri() ?>/assets/img/identity/wp-login.png") center center no-repeat;
-			background-size: cover;
+			background-size: 84px;
+			margin-bottom: 5px;
 		}
 		body{
 			background-color: #F4B700;
