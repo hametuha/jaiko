@@ -1,0 +1,34 @@
+{
+	"name": "hametuha/jaiko",
+	"description": "A WordPress theme for gianism.info",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"lint": "phpcs --standard=phpcs.ruleset.xml",
+		"test": "phpunit"
+	},
+	"authors": [
+		{
+			"name": "fumikito",
+			"email": "guy@hametuha.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=8.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.6",
+		"yoast/phpunit-polyfills": "^4.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"platform": {
+			"php": "8.0"
+		}
+	}
+}

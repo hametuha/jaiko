@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="Jaiko">
+	<description>PHP compatibility check for jaiko theme</description>
+
+	<file>.</file>
+	<arg name="extensions" value="php" />
+	<arg name="colors" />
+	<arg value="ps" />
+
+	<!-- Production runs PHP 8.0 and will move to 8.3 -->
+	<config name="testVersion" value="8.0-" />
+	<rule ref="PHPCompatibilityWP" />
+
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>
