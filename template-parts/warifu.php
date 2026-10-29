@@ -57,7 +57,7 @@ endif;
 //
 //
 
-if ( $licenses = warifu_license_posts() ) :
+if ( function_exists( 'warifu_license_posts' ) && ( $licenses = warifu_license_posts() ) ) :
 	?>
 
 	<div class="product-support">

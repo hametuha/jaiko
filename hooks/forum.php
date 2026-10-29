@@ -75,7 +75,7 @@ function _jaiko_save_extra_fields( $topic_id ) {
 		$cat_id = (int) $_POST['bbp_topic_category'];
 		if ( $cat_id ) {
 			$category = get_category( $cat_id );
-			if ( ! $category || is_wp_error( $cat_id ) ) {
+			if ( ! $category || is_wp_error( $category ) ) {
 				$cat_id = 0;
 			}
 		}
@@ -98,7 +98,13 @@ add_action( 'bbp_template_before_single_topic', function() {
 	if ( $categories = get_the_category() ) : ?>
 		<div class="bbp-category-block">
 		<?php foreach ( $categories as $term ) : ?>
-			<a class="chip" href="<?= get_term_link( $term ) ?>">
+			<?php
+			$link = get_term_link( $term );
+			if ( is_wp_error( $link ) ) {
+				continue;
+			}
+			?>
+			<a class="chip" href="<?= esc_url( $link ) ?>">
 				<?= esc_html( $term->name ) ?>
 			</a>
 		<?php endforeach; ?>
@@ -112,7 +118,13 @@ add_action( 'bbp_theme_after_topic_title', function() {
 	}
 	?>
 	<?php foreach ( $categories as $term ) : ?>
-		<a class="chip" href="<?= get_term_link( $term ) ?>">
+		<?php
+		$link = get_term_link( $term );
+		if ( is_wp_error( $link ) ) {
+			continue;
+		}
+		?>
+		<a class="chip" href="<?= esc_url( $link ) ?>">
 			<?= esc_html( $term->name ) ?>
 		</a>
 	<?php endforeach; ?>

@@ -97,8 +97,10 @@ the_post(); ?>
 					] );
 					?>
 					<div class="col m12 l4 card-big">
-						<?php $latest->the_post() ?>
-						<?php get_template_part( 'template-parts/card', 'post' ) ?>
+						<?php if ( $latest->have_posts() ) : ?>
+							<?php $latest->the_post() ?>
+							<?php get_template_part( 'template-parts/card', 'post' ) ?>
+						<?php endif; ?>
 					</div>
 					<div class="col m12 l8">
 						<div class="row front-list-divider">

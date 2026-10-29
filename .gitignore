@@ -3,3 +3,5 @@ assets/
 wp-dependencies.json
 .DS_Store
 
+vendor/
+.phpunit.result.cache
